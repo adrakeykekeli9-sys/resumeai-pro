@@ -470,6 +470,27 @@ ${json}
 // Route API inconnue → 404 JSON (et non la page HTML)
 app.use("/api", (_req, res) => res.status(404).json({ error: "Route inconnue." }));
 
+// Vérifie au démarrage que la clé Chariow fonctionne (résultat visible dans les journaux).
+async function checkChariow() {
+  const key = process.env.CHARIOW_API_KEY;
+  if (!key) {
+    console.log("[chariow] CHARIOW_API_KEY absente : vente de Pass désactivée");
+    return;
+  }
+  try {
+    const product = (process.env.CHARIOW_PRODUCT_IDS || "").split(",")[0]?.trim();
+    const qs = product ? `&product_id=${encodeURIComponent(product)}` : "";
+    const res = await fetch(`https://api.chariow.com/v1/licenses?per_page=1${qs}`, {
+      headers: { Authorization: `Bearer ${key}`, Accept: "application/json" },
+    });
+    const body: any = await res.json().catch(() => ({}));
+    if (res.ok) console.log(`[chariow] clé OK (lecture des licences autorisée), produit ${product || "tous"}`);
+    else console.log(`[chariow] clé refusée : HTTP ${res.status} ${body?.message || ""}`);
+  } catch (e: any) {
+    console.log(`[chariow] vérification impossible : ${e?.message}`);
+  }
+}
+
 // ─── VITE / FICHIERS STATIQUES ───
 async function startServer() {
   if (process.env.NODE_ENV !== "production") {
@@ -481,6 +502,7 @@ async function startServer() {
     app.use(express.static(distPath, { maxAge: "1h", index: false }));
     app.get("*", (_req, res) => res.sendFile(path.join(distPath, "index.html")));
   }
+  checkChariow();
   app.listen(PORT, "0.0.0.0", () => {
     console.log(`ResumeAI Pro : http://localhost:${PORT} (modèle ${CLAUDE_MODEL}, IA ${isAiConfigured() ? "prête" : "NON configurée"})`);
   });
