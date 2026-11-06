@@ -2,13 +2,15 @@ services:
   - type: web
     name: resumeai-pro
     runtime: node
-    plan: starter
-    buildCommand: npm ci && npm run build
+    plan: free
+    region: frankfurt
+    buildCommand: npm ci --include=dev && npm run build
     startCommand: npm start
     healthCheckPath: /api/health
+    autoDeploy: true
     envVars:
-      - key: NODE_ENV
-        value: production
+      - key: NODE_VERSION
+        value: "22"
       - key: ANTHROPIC_API_KEY
         sync: false
       - key: CHARIOW_API_KEY
