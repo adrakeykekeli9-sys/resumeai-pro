@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: resumeai-pro
+    runtime: node
+    plan: starter
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: CHARIOW_API_KEY
+        sync: false
+      - key: CHARIOW_PRODUCT_IDS
+        sync: false
+      - key: PASS_BUY_URL
+        sync: false
+      - key: PASS_PRICES
+        value: "Pass 7 jours|1 000 FCFA|Pour préparer une candidature;Pass 30 jours|2 500 FCFA|Le plus choisi;Pass Recruteur 30 jours|10 000 FCFA|Tri et classement de candidats"
+      - key: FREE_DAILY_ACTIONS
+        value: "3"

@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+/* ─── DARK THEME OVERRIDES ─── */
+.dark {
+  /* Main app container background */
+  div.min-h-screen.bg-\[\#F8FAFC\] {
+    background-color: #020617 !important; /* bg-slate-950 */
+    color: #f8fafc !important;
+  }
+
+  /* Main background surfaces */
+  .bg-white,
+  div.bg-white,
+  section.bg-white,
+  header.bg-white,
+  aside.bg-white {
+    background-color: #0f172a !important; /* bg-slate-900 */
+    color: #f1f5f9 !important;
+  }
+
+  /* Secondary cards and sub-containers */
+  .bg-slate-50,
+  div.bg-slate-50,
+  span.bg-slate-50 {
+    background-color: #1e293b !important; /* bg-slate-800 */
+    color: #cbd5e1 !important;
+  }
+
+  /* Standard input elements, selectors, textareas */
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  textarea,
+  select {
+    background-color: #1e293b !important; /* bg-slate-800 */
+    color: #f8fafc !important;
+    border-color: #334155 !important; /* border-slate-700 */
+  }
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  textarea:focus,
+  select:focus {
+    background-color: #0f172a !important; /* bg-slate-900 */
+    border-color: #6366f1 !important; /* border-indigo-500 */
+  }
+  input::placeholder,
+  textarea::placeholder {
+    color: #64748b !important; /* text-slate-500 */
+  }
+
+  /* Borders */
+  .border-slate-200 {
+    border-color: #334155 !important; /* border-slate-700 */
+  }
+  .border-slate-100 {
+    border-color: #1e293b !important; /* border-slate-800 */
+  }
+  .border-indigo-100 {
+    border-color: #312e81 !important; /* indigo-900 */
+  }
+
+  /* Typography / Text Colors */
+  .text-slate-800,
+  span.text-slate-800,
+  h1.text-slate-800,
+  h2.text-slate-800,
+  h3.text-slate-800,
+  h4.text-slate-800 {
+    color: #e2e8f0 !important; /* slate-200 */
+  }
+  .text-slate-700,
+  span.text-slate-700,
+  p.text-slate-700 {
+    color: #cbd5e1 !important; /* slate-300 */
+  }
+  .text-slate-600,
+  span.text-slate-600,
+  p.text-slate-600,
+  li.text-slate-600 {
+    color: #94a3b8 !important; /* slate-400 */
+  }
+  .text-slate-500,
+  span.text-slate-500,
+  p.text-slate-500 {
+    color: #64748b !important; /* slate-500 */
+  }
+
+  /* Specific Interactive controls */
+  .bg-slate-100 {
+    background-color: #1e293b !important; /* bg-slate-800 */
+  }
+  .bg-slate-100\/50 {
+    background-color: #020617 !important; /* bg-slate-950 */
+  }
+
+  /* Banners with light indigo-purple gradients */
+  .from-indigo-50.to-purple-50 {
+    background-image: linear-gradient(to bottom right, #1e1b4b, #311042) !important; /* dark indigo to dark purple */
+    border-color: #312e81 !important;
+  }
+  .from-indigo-50.to-purple-50 h4,
+  .from-indigo-50.to-purple-50 p {
+    color: #e2e8f0 !important;
+  }
+
+  /* Keep the CV paper preview layout standard white background for realistic representation */
+  .max-w-\[210mm\],
+  .max-w-\[210mm\] * {
+    background-color: #ffffff !important;
+    color: #111827 !important;
+    border-color: #e5e7eb !important;
+  }
+}
