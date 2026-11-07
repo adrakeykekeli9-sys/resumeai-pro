@@ -14,8 +14,10 @@ const OUT = "dist";
 const data = JSON.parse(fs.readFileSync("data/offres.json", "utf8"));
 const today = new Date(new Date().toISOString().slice(0, 10) + "T00:00:00Z");
 const MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
-const TYPES = { bourse: "Bourse d'études", emploi: "Emploi", stage: "Stage" };
-const TYPES_PL = { bourse: "Bourses d'études", emploi: "Emplois", stage: "Stages" };
+const TYPES = { bourse: "Bourse d'études", emploi: "Emploi", stage: "Stage", formation: "Formation" };
+const TYPES_PL = { bourse: "Bourses d'études", emploi: "Emplois", stage: "Stages", formation: "Formations" };
+const ALL_TYPES = ["bourse", "emploi", "stage", "formation"];
+const isOng = (o) => o.secteur === "ong";
 
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 const d = (iso) => (iso ? new Date(iso + "T00:00:00Z") : null);
@@ -54,7 +56,7 @@ input[type=search]{flex:1 1 220px;min-width:0;font:inherit;padding:8px 12px;bord
 .list{display:grid;gap:12px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:grid;gap:8px}
 .chips{display:flex;gap:8px;flex-wrap:wrap}.chip{font:700 .72rem var(--body);text-transform:uppercase;letter-spacing:.06em;padding:3px 9px;border-radius:999px}
-.chip.bourse{background:var(--bourse-soft);color:var(--bourse)}.chip.emploi{background:var(--emploi-soft);color:var(--emploi)}.chip.stage{background:var(--stage-soft);color:var(--stage)}.chip.new{background:var(--gold-soft);color:var(--gold)}.chip.full{border:1px solid var(--line);color:var(--muted)}
+.chip.bourse{background:var(--bourse-soft);color:var(--bourse)}.chip.emploi{background:var(--emploi-soft);color:var(--emploi)}.chip.stage{background:var(--stage-soft);color:var(--stage)}.chip.formation{background:var(--gold-soft);color:var(--gold)}.chip.ong{background:var(--urgent-soft);color:var(--urgent)}.chip.new{background:var(--gold-soft);color:var(--gold)}.chip.full{border:1px solid var(--line);color:var(--muted)}
 .card h2,.card h3{font-family:var(--display);font-weight:700;font-size:1.13rem;line-height:1.25;margin:0}.card h2 a,.card h3 a{color:var(--fg);text-decoration:none}.card h2 a:hover,.card h3 a:hover{text-decoration:underline}
 .meta{display:flex;flex-wrap:wrap;gap:2px 16px;font-size:.9rem;color:var(--muted)}.meta b{color:var(--fg);font-weight:600}
 .foot{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;border-top:1px dashed var(--line);padding-top:10px;font-size:.9rem}
@@ -101,7 +103,7 @@ ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld).replace(
 </head>
 <body>
 <header class="site"><div class="wrap"><a class="logo" href="/">${LOGO} ${NAME}</a>
-<nav class="top" aria-label="Menu principal"><a href="/bourses/">Bourses</a><a href="/emplois/">Emplois</a><a href="/stages/">Stages</a><a href="/guides/">Conseils</a></nav></div></header>
+<nav class="top" aria-label="Menu principal"><a href="/bourses/">Bourses</a><a href="/emplois/">Emplois</a><a href="/stages/">Stages</a><a href="/formations/">Formations</a><a href="/ong/">ONG</a><a href="/guides/">Conseils</a></nav></div></header>
 ${body}
 <footer class="site"><div class="wrap">
 <nav aria-label="Pages du site"><a href="/a-propos/">À propos</a><a href="/contact/">Contact</a><a href="/confidentialite/">Confidentialité et cookies</a><a href="/mentions-legales/">Mentions légales</a><a href="/guides/">Conseils</a></nav>
@@ -115,7 +117,7 @@ ${body}
 function offerCard(o, h = "h2") {
   const isNew = o.publie && Math.round((today - d(o.publie)) / 864e5) <= 2;
   return `<article class="card" data-type="${o.type}" data-text="${esc([o.titre, o.organisme, o.pays, o.niveau].join(" ").toLowerCase())}">
-<div class="chips"><span class="chip ${o.type}">${TYPES[o.type]}</span>${isNew ? '<span class="chip new">Nouveau</span>' : ""}${o.financement ? `<span class="chip full">${esc(o.financement)}</span>` : ""}</div>
+<div class="chips"><span class="chip ${o.type}">${TYPES[o.type]}</span>${isOng(o) ? '<span class="chip ong">ONG</span>' : ""}${isNew ? '<span class="chip new">Nouveau</span>' : ""}${o.financement ? `<span class="chip full">${esc(o.financement)}</span>` : ""}</div>
 <${h}><a href="/offres/${o.id}/">${esc(o.titre)}</a></${h}>
 <div class="meta"><span>Organisme : <b>${esc(o.organisme)}</b></span><span>Pays : <b>${esc(o.pays)}</b></span><span>Niveau : <b>${esc(o.niveau)}</b></span></div>
 <div class="foot"><span>Date limite : <b>${fmt(o.dateLimite)}</b>${badge(o)}</span><a class="btn ghost" href="/offres/${o.id}/">Voir les détails</a></div>
@@ -139,14 +141,14 @@ tabs.forEach(function(b){b.addEventListener('click',function(){t=b.dataset.t;tab
 </script>`;
 
 function listPage({ pathname, title, h1, lede, items, all, showTabs }) {
-  const counts = { tout: items.length, bourse: 0, emploi: 0, stage: 0 };
+  const counts = { tout: items.length, bourse: 0, emploi: 0, stage: 0, formation: 0 };
   items.forEach((o) => counts[o.type]++);
   const body = `<section class="hero"><div class="wrap">
 <h1>${h1}</h1><p class="lede">${lede}</p>
 <div class="stats"><div><b>${all.filter(isOpen).length}</b>offres ouvertes</div><div><b>${all.filter((o) => isOpen(o) && o.type === "bourse").length}</b>bourses</div><div><b>${all.filter((o) => isOpen(o) && o.type !== "bourse").length}</b>emplois et stages</div><div><b>${fmt(data.maj)}</b>dernière mise à jour</div></div>
 </div></section>
 <div class="tools"><div class="wrap">
-${showTabs ? `<div role="group" aria-label="Type d'offre" style="display:flex;gap:6px;flex-wrap:wrap">${["tout", "bourse", "emploi", "stage"].map((k) => `<button class="tab" type="button" data-t="${k}" aria-pressed="${k === "tout"}">${k === "tout" ? "Tout" : TYPES_PL[k]} (${counts[k]})</button>`).join("")}</div>` : ""}
+${showTabs ? `<div role="group" aria-label="Type d'offre" style="display:flex;gap:6px;flex-wrap:wrap">${["tout", ...ALL_TYPES].filter((k) => k === "tout" || counts[k] > 0).map((k) => `<button class="tab" type="button" data-t="${k}" aria-pressed="${k === "tout"}">${k === "tout" ? "Tout" : TYPES_PL[k]} (${counts[k]})</button>`).join("")}</div>` : ""}
 <input type="search" id="q" placeholder="Rechercher : pays, organisme, niveau…" aria-label="Rechercher une offre">
 </div></div>
 <main class="wrap layout"><section aria-label="Offres"><div class="list">
@@ -162,17 +164,18 @@ ${sideBar(all.filter(isOpen))}</main>${filterScript}`;
 function offerPage(o, all) {
   const n = daysLeft(o);
   const related = all.filter((x) => x.id !== o.id && isOpen(x) && x.type === o.type).slice(0, 4);
-  const typeLink = { bourse: "/bourses/", emploi: "/emplois/", stage: "/stages/" }[o.type];
+  const typeLink = { bourse: "/bourses/", emploi: "/emplois/", stage: "/stages/", formation: "/formations/" }[o.type];
   const shareText = `${o.titre} – date limite : ${fmt(o.dateLimite)}. Détails : ${SITE}/offres/${o.id}/`;
   const tips = {
     bourse: ["Vérifiez que votre nationalité, votre âge et votre diplôme correspondent aux critères.", "Préparez relevés de notes, diplômes traduits si nécessaire, passeport et lettres de recommandation.", "Soignez la lettre de motivation : c'est souvent elle qui fait la différence."],
     emploi: ["Lisez la fiche de poste en entier et adaptez votre CV aux compétences demandées.", "Préparez des exemples concrets de vos réalisations pour l'entretien.", "Postulez avant la date limite : certaines offres ferment plus tôt."],
+    formation: ["Vérifiez si la formation est gratuite, en ligne ou en présentiel, et si elle délivre un certificat.", "Notez les prérequis (niveau, langue, ordinateur, connexion internet).", "Bloquez du temps chaque semaine : une formation en ligne demande de la régularité."],
     stage: ["Vérifiez la durée, la rémunération et le niveau d'études demandé.", "Joignez une lettre courte qui explique ce que vous voulez apprendre.", "Demandez une lettre de recommandation à un enseignant ou un ancien encadrant."],
   }[o.type];
   const body = `<main class="wrap layout"><div>
 <nav class="crumbs" aria-label="Fil d'Ariane"><a href="/">Accueil</a> › <a href="${typeLink}">${TYPES_PL[o.type]}</a> › ${esc(o.organisme)}</nav>
 <article class="page">
-<div class="chips"><span class="chip ${o.type}">${TYPES[o.type]}</span>${o.financement ? `<span class="chip full">${esc(o.financement)}</span>` : ""}</div>
+<div class="chips"><span class="chip ${o.type}">${TYPES[o.type]}</span>${isOng(o) ? '<span class="chip ong">ONG</span>' : ""}${o.financement ? `<span class="chip full">${esc(o.financement)}</span>` : ""}</div>
 <h1>${esc(o.titre)}</h1>
 ${n !== null && n < 0 ? `<p class="notice">Cette offre est clôturée depuis le ${fmt(o.dateLimite)}. Consultez les <a href="${typeLink}">offres ouvertes</a>.</p>` : ""}
 <dl class="facts"><dt>Organisme</dt><dd>${esc(o.organisme)}</dd><dt>Pays / lieu</dt><dd>${esc(o.pays)}</dd><dt>Niveau</dt><dd>${esc(o.niveau)}</dd><dt>Financement</dt><dd>${esc(o.financement || "Non précisé")}</dd><dt>Date limite</dt><dd>${fmt(o.dateLimite)} ${badge(o)}</dd><dt>Publié le</dt><dd>${fmt(o.publie)}</dd></dl>
@@ -227,9 +230,10 @@ const articles = readArticles();
 write("style.css", CSS);
 write("favicon.svg", LOGO.replace('width="30" height="30" ', 'xmlns="http://www.w3.org/2000/svg" '));
 write("index.html", listPage({ pathname: "/", title: `${NAME} – Emplois, stages et bourses d'études en Afrique`, h1: "Emplois, stages et <em>bourses d'études</em>, mis à jour chaque jour.", lede: "Les offres ouvertes aux jeunes et aux professionnels d'Afrique francophone, avec un lien vers la source officielle. Service gratuit, sans inscription.", items: open, all, showTabs: true }));
-for (const [type, p] of [["bourse", "/bourses/"], ["emploi", "/emplois/"], ["stage", "/stages/"]]) {
-  write(`${p.slice(1)}index.html`, listPage({ pathname: p, title: `${TYPES_PL[type]} ouvertes`, h1: `${TYPES_PL[type]} ouvertes`, lede: { bourse: "Bourses d'études de licence, master et doctorat accessibles aux étudiants africains, classées par date limite.", emploi: "Offres d'emploi en Afrique et dans les organisations internationales, classées par date limite.", stage: "Stages pour étudiants et jeunes diplômés, classés par date limite." }[type], items: open.filter((o) => o.type === type), all, showTabs: false }));
+for (const [type, p] of [["bourse", "/bourses/"], ["emploi", "/emplois/"], ["stage", "/stages/"], ["formation", "/formations/"]]) {
+  write(`${p.slice(1)}index.html`, listPage({ pathname: p, title: `${TYPES_PL[type]} ouvertes`, h1: `${TYPES_PL[type]} ouvertes`, lede: { bourse: "Bourses d'études de licence, master et doctorat accessibles aux étudiants africains, classées par date limite.", emploi: "Offres d'emploi en Afrique et dans les organisations internationales, classées par date limite.", stage: "Stages pour étudiants et jeunes diplômés, classés par date limite.", formation: "Formations gratuites ou financées, en ligne et en présentiel, pour développer vos compétences.", }[type], items: open.filter((o) => o.type === type), all, showTabs: false }));
 }
+write("ong/index.html", listPage({ pathname: "/ong/", title: "Offres d'emploi et stages dans les ONG en Afrique", h1: "Emplois et stages dans les <em>ONG</em>", lede: "Offres des ONG et associations humanitaires et de développement qui travaillent en Afrique : santé, éducation, protection, agriculture, eau et assainissement.", items: open.filter(isOng), all, showTabs: true }));
 for (const o of all) write(`offres/${o.id}/index.html`, offerPage(o, all));
 
 write("guides/index.html", simplePage("/guides/", "Conseils pour réussir vos candidatures", "Guides pratiques pour postuler aux bourses, stages et emplois et éviter les arnaques.", `<p>Des guides pratiques, rédigés par l'équipe ${NAME}, pour préparer vos candidatures.</p><div class="list">${articles.map((a) => `<div class="card"><h2><a href="/guides/${a.slug}/">${esc(a.titre)}</a></h2><p style="margin:0">${esc(a.resume)}</p></div>`).join("")}</div>`));
@@ -248,7 +252,7 @@ write("whatsapp/index.html", simplePage("/whatsapp/", "Message WhatsApp du jour"
 write("whatsapp.txt", whatsappText(open));
 write("404.html", simplePage("/404.html", "Page introuvable", "Page introuvable.", `<p>Cette offre a peut-être été clôturée et retirée. <a href="/">Voir les offres ouvertes</a>.</p>`, { noindex: true }));
 
-const urls = ["/", "/bourses/", "/emplois/", "/stages/", "/guides/", "/a-propos/", "/contact/", "/confidentialite/", "/mentions-legales/", ...all.map((o) => `/offres/${o.id}/`), ...articles.map((a) => `/guides/${a.slug}/`)];
+const urls = ["/", "/bourses/", "/emplois/", "/stages/", "/formations/", "/ong/", "/guides/", "/a-propos/", "/contact/", "/confidentialite/", "/mentions-legales/", ...all.map((o) => `/offres/${o.id}/`), ...articles.map((a) => `/guides/${a.slug}/`)];
 write("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `<url><loc>${SITE}${u}</loc><lastmod>${data.maj}</lastmod></url>`).join("\n")}\n</urlset>\n`);
 write("robots.txt", `User-agent: *\nAllow: /\nDisallow: /whatsapp/\nSitemap: ${SITE}/sitemap.xml\n`);
 if (ADSENSE) write("ads.txt", `google.com, ${ADSENSE.replace(/^ca-/, "")}, DIRECT, f08c47fec0942fa0\n`);

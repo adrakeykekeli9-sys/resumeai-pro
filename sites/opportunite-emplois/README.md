@@ -7,3 +7,5 @@ Mise à jour quotidienne : modifier `data/offres.json` (ajouter les nouvelles of
 Variables d'environnement (Render) : `SITE_URL`, `ADSENSE_CLIENT` (ca-pub-…), `CONTACT_EMAIL`, `CONTACT_WHATSAPP`, `RESUMEAI_URL`.
 
 Champs d'une offre : `id` (unique, minuscules et tirets), `type` (bourse | emploi | stage), `titre`, `organisme`, `pays`, `niveau`, `financement`, `dateLimite` (AAAA-MM-JJ), `publie` (AAAA-MM-JJ), `description`, `lien` (source officielle de préférence).
+
+Types : `bourse`, `emploi`, `stage`, `formation`. Champ facultatif `secteur: "ong"` pour les offres d'ONG (rubrique /ong/). `dateLimite: null` = offre ouverte en continu.
