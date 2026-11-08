@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-07",
+ "maj": "2026-11-08",
  "offres": [
   {
    "id": "bad-shanghai-2027",
@@ -17,28 +17,28 @@
   {
    "id": "unicef-psea-nairobi",
    "type": "emploi",
-   "titre": "Spécialiste Programme PSEA (UNICEF, Nairobi)",
+   "titre": "Programme Specialist PSEA multi-pays, P-4, 365 jours (UNICEF, Nairobi)",
    "organisme": "UNICEF",
    "pays": "Kenya",
    "niveau": "Professionnel expérimenté",
    "financement": "Poste rémunéré",
    "dateLimite": "2026-11-12",
    "publie": "2026-11-06",
-   "description": "Poste de spécialiste en protection contre l'exploitation et les abus sexuels, basé à Nairobi. Consultez la fiche officielle pour les exigences d'expérience et de langue.",
+   "description": "Poste temporaire de 365 jours au bureau régional de l'UNICEF pour l'Afrique de l'Est et australe, sur la prévention de l'exploitation et des abus sexuels dans plusieurs pays. Ouvert à toutes les nationalités. Sur le portail officiel, cherchez la référence 596831 ; la date de clôture (12 novembre) vient d'un site qui reprend l'annonce.",
    "lien": "https://jobs.unicef.org/"
   },
   {
    "id": "unicef-me-sa",
    "type": "emploi",
-   "titre": "Consultant suivi-évaluation, 12 mois, à distance (UNICEF Afrique du Sud)",
+   "titre": "Consultant technique, demande de financement Fonds mondial (UNICEF Afrique du Sud, à distance)",
    "organisme": "UNICEF",
    "pays": "Afrique du Sud (télétravail)",
-   "niveau": "Professionnel expérimenté",
-   "financement": "Consultance rémunérée",
+   "niveau": "Professionnel expérimenté (ressortissants sud-africains)",
+   "financement": "Consultance rémunérée (nationaux uniquement)",
    "dateLimite": "2026-11-13",
    "publie": "2026-11-06",
-   "description": "Consultance de 12 mois en suivi et évaluation, réalisable à distance.",
-   "lien": "https://southafrica.un.org/en/jobs"
+   "description": "Consultance à distance, rattachée à Pretoria, pour préparer la demande de financement de l'Afrique du Sud au Fonds mondial (cycle GC8), avec un volet suivi-évaluation. Réservée aux ressortissants sud-africains. Vérifiez la durée et la date de clôture sur l'annonce officielle.",
+   "lien": "https://jobs.unicef.org/en-us/job/596706"
   },
   {
    "id": "unctad-intern-addis",
@@ -54,42 +54,29 @@
    "lien": "https://untalent.org/jobs/public-information-intern-111"
   },
   {
-   "id": "daejin-iucea",
-   "type": "bourse",
-   "titre": "Bourse Daejin University (Corée du Sud) via l'IUCEA",
-   "organisme": "Daejin University / IUCEA",
-   "pays": "Corée du Sud",
-   "niveau": "Licence / Master",
-   "financement": "Partielle ou complète selon le programme",
-   "dateLimite": "2026-11-15",
-   "publie": "2026-11-06",
-   "description": "Bourse proposée avec le Conseil inter-universitaire d'Afrique de l'Est (IUCEA). Dossier à transmettre avant le 15 novembre.",
-   "lien": "https://www.iucea.org/"
-  },
-  {
    "id": "tomorrows-leaders",
    "type": "bourse",
-   "titre": "Bourse Tomorrow's Leaders (Liban)",
+   "titre": "Programme Tomorrow's Leaders 2027-2028 : licence à l'AUB ou à la LAU (Liban)",
    "organisme": "MEPI Tomorrow's Leaders",
    "pays": "Liban",
    "niveau": "Licence",
    "financement": "Entièrement financée",
    "dateLimite": "2026-11-18",
    "publie": "2026-11-06",
-   "description": "Programme de licence avec leadership et engagement civique. Vérifiez la liste des nationalités éligibles sur le site officiel.",
-   "lien": "https://www.scholarshipsforafricans.com/blog/scholarships-closing-soon-this-quarter"
+   "description": "Bourse complète de licence à l'Université américaine de Beyrouth ou à la LAU, avec un volet leadership et engagement civique. Réservée aux jeunes de la région Moyen-Orient et Afrique du Nord : vérifiez que votre pays est éligible. La date du 18 novembre 2026 vient de plusieurs sites tiers ; la candidature se fait sur le site du programme.",
+   "lien": "https://www.aub.edu.lb/mepi/Pages/MEPI-TLU.aspx"
   },
   {
    "id": "unicef-wash-ethiopie",
    "type": "emploi",
-   "titre": "Spécialiste WASH (UNICEF Éthiopie)",
+   "titre": "WASH Specialist, NO-3, Awasa (UNICEF Éthiopie)",
    "organisme": "UNICEF",
-   "pays": "Éthiopie",
-   "niveau": "Professionnel expérimenté",
+   "pays": "Éthiopie (Awasa)",
+   "niveau": "Professionnel expérimenté (ressortissants éthiopiens)",
    "financement": "Poste rémunéré",
    "dateLimite": "2026-11-19",
    "publie": "2026-11-06",
-   "description": "Spécialiste eau, assainissement et hygiène pour le bureau pays d'Éthiopie.",
+   "description": "Poste national à durée déterminée pour développer, gérer et suivre le programme eau, assainissement et hygiène de l'UNICEF à Awasa. Réservé aux ressortissants éthiopiens. Référence 596841 sur le portail officiel ; date de clôture relevée sur un site qui reprend l'annonce.",
    "lien": "https://jobs.unicef.org/"
   },
   {
