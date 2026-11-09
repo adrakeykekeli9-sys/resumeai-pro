@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-08",
+ "maj": "2026-11-09",
  "offres": [
   {
    "id": "bad-shanghai-2027",
@@ -11,8 +11,8 @@
    "financement": "Entièrement financée",
    "dateLimite": "2026-11-12",
    "publie": "2026-11-06",
-   "description": "Programme de bourse de la BAD pour une licence en Chine. Réservé aux ressortissants des pays membres de la BAD âgés de 25 ans au plus au 1er septembre 2027.",
-   "lien": "https://www.lesopportunites.com/opportunite/afrique/bourses/formation/appel-a-candidatures-3-programmes-de-bourses-detudes-entierement-finances-de-la-banque-africaine-de-developpement-bad-au-titre-de-lannee-2027/"
+   "description": "Bourse de licence de la BAD à Shanghai Ocean University : frais de scolarité, logement, repas et allocation mensuelle couverts ; billet d'avion et visa à la charge du lauréat. Conditions : nationalité d'un pays membre régional de la BAD, moins de 25 ans au 1er septembre 2027, HSK 4 avec plus de 180 points obtenu depuis moins de deux ans et réussite au CSCA. Annonce publiée sur le site officiel de la BAD.",
+   "lien": "https://www.afdb.org/fr/poste-vacant/opportunites-bourses-detudes-premier-cycle-titre-98311"
   },
   {
    "id": "unicef-psea-nairobi",
@@ -48,10 +48,10 @@
    "pays": "Éthiopie",
    "niveau": "Étudiant / Jeune diplômé",
    "financement": "Stage (voir conditions sur la fiche)",
-   "dateLimite": "2026-11-14",
+   "dateLimite": "2026-11-13",
    "publie": "2026-11-07",
-   "description": "Stage au Bureau régional pour l'Afrique, à Addis-Abeba. Le diplôme doit être en journalisme, relations internationales, administration publique ou domaine voisin. Les candidatures sont gratuites.",
-   "lien": "https://untalent.org/jobs/public-information-intern-111"
+   "description": "Stage au Bureau régional pour l'Afrique de la CNUCED, à Addis-Abeba, dans le domaine de l'information publique (référence 287492 sur le portail des carrières de l'ONU). Les candidatures se font uniquement en ligne et sont gratuites.",
+   "lien": "https://careers.un.org/jobSearchDescription/287492"
   },
   {
    "id": "tomorrows-leaders",
@@ -99,11 +99,11 @@
    "organisme": "Université de Pékin",
    "pays": "Chine",
    "niveau": "Master",
-   "financement": "Bourse (vérifier la couverture sur le site officiel)",
+   "financement": "Bourse",
    "dateLimite": "2026-11-30",
    "publie": "2026-11-07",
-   "description": "Programme de master pluridisciplinaire sur la Chine à l'Université de Pékin. Date limite relevée sur une liste de bourses pour Africains : confirmez-la sur le site officiel.",
-   "lien": "https://scholarshipsforafricans.com/fr/bourses-etudes-etudiants-africains"
+   "description": "Master en études chinoises de l'Université de Pékin, ouvert aux candidats internationaux non chinois. Environ 120 étudiants admis par an. La date limite officielle pour la promotion 2027 est le 30 novembre 2026 à 9 h, heure de Pékin.",
+   "lien": "https://yenchingacademy.pku.edu.cn/ADMISSIONS.htm"
   },
   {
    "id": "berkeley-mcf",
@@ -141,8 +141,8 @@
    "financement": "Entièrement financée (frais + 1 400 €/mois)",
    "dateLimite": "2026-12-01",
    "publie": "2026-11-07",
-   "description": "Master conjoint de deux ans en politique publique dans plusieurs universités européennes. La demande de bourse fait partie du dossier d'admission. Date relevée sur des sites tiers : vérifiez-la sur le site officiel.",
-   "lien": "https://scholarshipsforafricans.com/scholarships/erasmus-mundus-mapp-public-policy"
+   "description": "Master conjoint de deux ans en politique publique dans plusieurs universités européennes. Pour obtenir la bourse Erasmus Mundus, il faut candidater avant le 1er décembre 2026 : l'intérêt pour la bourse se coche dans le formulaire, sans dossier séparé. Il faut une licence d'au moins trois ans et de bons résultats (moyenne équivalente à 3,17/4).",
+   "lien": "https://www.mundusmapp.org/how-to-apply/"
   },
   {
    "id": "ellison-graduate-2027",
@@ -271,8 +271,8 @@
    "financement": "Entièrement financée",
    "dateLimite": "2027-01-15",
    "publie": "2026-11-07",
-   "description": "Bourse pour un master à CMU-Africa. Il faut d'abord être admis dans un programme éligible. Date anticipée : 15 décembre 2026 ; date finale : 15 janvier 2027 (sources tierces, à confirmer).",
-   "lien": "https://scholarshipsforafricans.com/scholarships/mastercard-foundation-scholars-program-at-carnegie-mellon-university-africa"
+   "description": "Bourse Mastercard Foundation pour un master à CMU-Africa (Kigali), réservée aux citoyens africains issus de milieux défavorisés. Il faut d'abord être admis dans un programme de CMU-Africa. Le site officiel indique une date anticipée au 15 décembre et une date finale au 15 janvier, sans préciser l'année : confirmez-les pour 2027.",
+   "lien": "https://www.africa.engineering.cmu.edu/impact/mastercard-foundation-scholars.html"
   },
   {
    "id": "mcf-general",
@@ -326,6 +326,58 @@
    "publie": "2026-11-07",
    "description": "Programme gratuit d'environ 40 heures sur le marketing numérique, l'utilisation d'internet pour son activité et la recherche d'emploi. Accessible à tout moment, à son rythme.",
    "lien": "https://learndigital.withgoogle.com/digitalskillsafrica"
+  },
+  {
+   "id": "bad-shou-master-2027",
+   "type": "bourse",
+   "titre": "Bourse BAD – Shanghai Ocean University : master à temps plein (2027)",
+   "organisme": "Banque Africaine de Développement / Shanghai Ocean University",
+   "pays": "Chine",
+   "niveau": "Master",
+   "financement": "Bourse (voir conditions)",
+   "dateLimite": "2026-11-12",
+   "publie": "2026-11-09",
+   "description": "Programme de master de la BAD et de Shanghai Ocean University, notamment pour former des traducteurs et interprètes. Réservé aux ressortissants des pays membres régionaux de la BAD. Annonce publiée sur le site officiel de la BAD.",
+   "lien": "https://www.afdb.org/fr/poste-vacant/programme-bourses-detudes-shou-2027-programmes-98321"
+  },
+  {
+   "id": "bad-shou-master-doctorat-2027",
+   "type": "bourse",
+   "titre": "Bourse BAD – Shanghai Ocean University : master-doctorat (2027)",
+   "organisme": "Banque Africaine de Développement / Shanghai Ocean University",
+   "pays": "Chine",
+   "niveau": "Master / Doctorat",
+   "financement": "Bourse (voir conditions)",
+   "dateLimite": "2026-11-12",
+   "publie": "2026-11-09",
+   "description": "Parcours combiné master et doctorat à Shanghai Ocean University, financé dans le cadre du partenariat avec la BAD. Ouvert aux ressortissants des pays membres régionaux de la BAD. La bourse ne crée aucun lien d'emploi avec la Banque.",
+   "lien": "https://www.afdb.org/fr/poste-vacant/programme-bourses-detudes-master-doctorat2027-98316"
+  },
+  {
+   "id": "daad-in-region-afrique-2027",
+   "type": "bourse",
+   "titre": "Bourses DAAD In-Country/In-Region pour l'Afrique subsaharienne (rentrée 2027)",
+   "organisme": "DAAD (Office allemand d'échanges universitaires)",
+   "pays": "Universités partenaires en Afrique subsaharienne",
+   "niveau": "Master / Doctorat",
+   "financement": "Bourse DAAD",
+   "dateLimite": "2026-11-12",
+   "publie": "2026-11-09",
+   "description": "Le DAAD finance des masters et doctorats dans des universités africaines partenaires, dans votre pays ou un pays voisin, pour une rentrée entre août et décembre 2027. Chaque université partenaire a ses propres programmes : la base de données officielle du DAAD indique le 12 novembre 2026 comme date limite.",
+   "lien": "https://www2.daad.de/deutschland/stipendium/datenbank/en/21148-scholarship-database/?detail=10000486"
+  },
+  {
+   "id": "eiffel-2027",
+   "type": "bourse",
+   "titre": "Bourse d'excellence Eiffel (France), rentrée 2027",
+   "organisme": "Campus France / Ministère de l'Europe et des Affaires étrangères",
+   "pays": "France",
+   "niveau": "Master / Doctorat",
+   "financement": "Allocation mensuelle + frais annexes",
+   "dateLimite": "2027-01-06",
+   "publie": "2026-11-09",
+   "description": "Programme du gouvernement français pour attirer des étudiants internationaux en master et en doctorat. On ne postule pas soi-même : c'est l'université ou l'école française qui vous a admis qui présente votre dossier, avant le 6 janvier 2027. Contactez tôt l'établissement visé.",
+   "lien": "https://www.campusfrance.org/en/france-excellence-eiffel-scholarship-program"
   }
  ]
 }
