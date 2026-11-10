@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-09",
+ "maj": "2026-11-10",
  "offres": [
   {
    "id": "bad-shanghai-2027",
@@ -115,21 +115,8 @@
    "financement": "Entièrement financée",
    "dateLimite": "2026-12-01",
    "publie": "2026-11-06",
-   "description": "Couvre les frais de scolarité, le logement et le voyage pour des étudiants africains talentueux en situation de précarité.",
-   "lien": "https://mastercardfdn.org/"
-  },
-  {
-   "id": "kaust-fellowship",
-   "type": "bourse",
-   "titre": "KAUST Graduate Fellowship",
-   "organisme": "King Abdullah University of Science and Technology",
-   "pays": "Arabie saoudite",
-   "niveau": "Master / Doctorat",
-   "financement": "Entièrement financée + allocation",
-   "dateLimite": "2026-12-01",
-   "publie": "2026-11-06",
-   "description": "Bourse complète pour les programmes de master et doctorat en sciences et ingénierie.",
-   "lien": "https://www.kaust.edu.sa/"
+   "description": "Bourse complète pour un master de deux ans maximum à UC Berkeley, réservée à des étudiants africains. On ne postule pas directement : il faut d'abord candidater au master, puis le programme invite les candidats retenus. Pour le Master of Development Practice, les dossiers complets reçus avant le 1er décembre 2026 sont seuls pris en compte pour le financement.",
+   "lien": "https://mcfscholarsprogram.berkeley.edu/graduate-application-process"
   },
   {
    "id": "mundus-mapp-2027",
@@ -163,12 +150,12 @@
    "titre": "Sciences Po Mastercard Foundation Scholars Program",
    "organisme": "Sciences Po",
    "pays": "France",
-   "niveau": "Licence / Master",
+   "niveau": "Master",
    "financement": "Entièrement financée",
    "dateLimite": "2026-12-14",
    "publie": "2026-11-06",
-   "description": "Candidature avant le 23 novembre pour une décision d'admission le 11 février 2027 ; date limite finale le 14 décembre 2026.",
-   "lien": "https://www.sciencespo.fr/"
+   "description": "Bourse Mastercard Foundation pour un master à Sciences Po. Il faut déposer en même temps une demande de vérification d'éligibilité et une candidature au master, et avoir moins de 35 ans au 1er septembre. Candidatez avant le 23 novembre 2026 pour une réponse d'admission le 11 février, ou avant le 14 décembre 2026 pour une réponse le 1er avril.",
+   "lien": "https://www.sciencespo.fr/students/en/fees-funding/bursaries-financial-aid/mastercard-foundation-scholarships/graduate-study/"
   },
   {
    "id": "ens-selection",
@@ -180,8 +167,8 @@
    "financement": "Allocation mensuelle",
    "dateLimite": "2026-12-15",
    "publie": "2026-11-06",
-   "description": "Programme d'admission des étudiants internationaux avec bourse, sciences et lettres.",
-   "lien": "https://www.ens.psl.eu/"
+   "description": "Concours de l'ENS pour les étudiants étrangers, avec une allocation mensuelle pour les lauréats. Pour la filière Sciences, candidature en ligne sur la plateforme OnePSL avant le 15 décembre 2026 à 14 h (heure de Paris). Il faut avoir moins de 26 ans à l'ouverture des candidatures et au moins une année d'études supérieures à l'étranger.",
+   "lien": "https://www.ens.psl.eu/en/une-formation-d-exception/admissions/international/international-selection"
   },
   {
    "id": "unesco-priority-africa-intern",
@@ -206,8 +193,8 @@
    "financement": "Entièrement financée",
    "dateLimite": "2027-01-06",
    "publie": "2026-11-06",
-   "description": "Bourse complète pour un diplôme de troisième cycle à Cambridge. La date dépend du cursus choisi.",
-   "lien": "https://www.gatescambridge.org/"
+   "description": "Bourse complète pour un master d'un an, un MLitt ou un doctorat à Cambridge, réservée aux non-Britanniques. La candidature se fait en même temps que l'admission, sur le portail de l'université. Selon le cursus, la date limite est le 8 décembre 2026 ou le 6 janvier 2027 : vérifiez la date de votre cours dans le catalogue de l'université.",
+   "lien": "https://www.gatescambridge.org/apply/timeline/"
   },
   {
    "id": "clarendon",
