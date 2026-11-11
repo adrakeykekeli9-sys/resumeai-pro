@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-10",
+ "maj": "2026-11-11",
  "offres": [
   {
    "id": "bad-shanghai-2027",
@@ -82,15 +82,15 @@
   {
    "id": "onu-ypp-2026",
    "type": "emploi",
-   "titre": "Programme Jeunes Professionnels des Nations Unies (YPP) 2026",
+   "titre": "Programme Jeunes Professionnels de l'ONU (YPP) 2026 : examen « Développement et durabilité »",
    "organisme": "Nations Unies",
    "pays": "International",
    "niveau": "Jeune diplômé (Licence minimum)",
    "financement": "Poste rémunéré",
    "dateLimite": "2026-11-30",
    "publie": "2026-11-06",
-   "description": "Concours de recrutement des jeunes professionnels de l'ONU. Seuls les ressortissants des pays participants de l'année peuvent postuler : vérifiez la liste sur Inspira.",
-   "lien": "https://careers.un.org/"
+   "description": "Concours d'entrée de l'ONU pour les jeunes diplômés (poste P-2), cette année dans le domaine développement et durabilité. Seuls les ressortissants des pays participants de 2026 peuvent postuler : la liste figure sur l'annonce officielle. Candidature sur le portail Inspira avant le 30 novembre 2026.",
+   "lien": "https://careers.un.org/jobSearchDescription/285586"
   },
   {
    "id": "yenching-2027",
@@ -177,11 +177,11 @@
    "organisme": "UNESCO",
    "pays": "France (Paris)",
    "niveau": "Étudiant / Jeune diplômé",
-   "financement": "Stage (voir conditions sur la fiche)",
+   "financement": "Stage non rémunéré",
    "dateLimite": "2026-12-31",
    "publie": "2026-11-07",
-   "description": "Stage de 1 à 6 mois au sein du secteur Priorité Afrique et relations extérieures de l'UNESCO. Vérifiez les conditions sur le portail de recrutement officiel.",
-   "lien": "https://untalent.org/jobs/internship-priority-africa-and-external-relations-1"
+   "description": "Stage de 1 à 6 mois au secteur Priorité Afrique et relations extérieures de l'UNESCO : rédaction de notes, préparation de réunions, organisation d'événements. Il faut avoir au moins 20 ans, être en dernière année de licence, en master ou diplômé depuis moins de 12 mois, et parler couramment anglais ou français. L'UNESCO ne rémunère pas ses stagiaires : voyage, visa et assurance sont à la charge du stagiaire.",
+   "lien": "https://careers.unesco.org/job/Multiple-INTERNSHIP-Priority-Africa-and-External-Relations/1348535957/"
   },
   {
    "id": "gates-cambridge",
@@ -219,8 +219,8 @@
    "financement": "Entièrement financée",
    "dateLimite": "2027-01-10",
    "publie": "2026-11-06",
-   "description": "Master conjoint de deux ans dans plusieurs universités européennes. Clôture à 13 h, heure d'Europe centrale.",
-   "lien": "https://www.mundusjournalism.com/"
+   "description": "Master conjoint de deux ans en journalisme, médias et mondialisation, avec une première année à Aarhus (Danemark). Le programme prévoit 10 à 15 bourses Erasmus Mundus pour toutes les nationalités, sans dossier séparé. Il faut un niveau d'anglais C1. Candidature du 1er novembre 2026 au 10 janvier 2027 à 13 h (heure d'Europe centrale).",
+   "lien": "https://mundusjournalism.com/admissions/application-process"
   },
   {
    "id": "uva-merit",
@@ -232,8 +232,8 @@
    "financement": "Partielle ou complète",
    "dateLimite": "2027-01-15",
    "publie": "2026-11-06",
-   "description": "Bourse d'excellence pour les étudiants hors Union européenne admis en master.",
-   "lien": "https://www.uva.nl/"
+   "description": "Bourse de l'Université d'Amsterdam pour les étudiants hors Union européenne admis en master. Chaque faculté fixe sa propre date limite : souvent le 15 janvier 2027, mais le 15 février 2027 pour certaines. Vérifiez la page de votre faculté.",
+   "lien": "https://www.uva.nl/en/education/fees-and-funding/masters-scholarships-and-loans/amsterdam-merit-scholarship/amsterdam-merit-scholarship.html"
   },
   {
    "id": "kuleuven-africa",
@@ -242,11 +242,11 @@
    "organisme": "KU Leuven",
    "pays": "Belgique",
    "niveau": "Master",
-   "financement": "Entièrement financée",
+   "financement": "Exonération totale des frais (une seule bourse)",
    "dateLimite": "2027-01-15",
    "publie": "2026-11-06",
-   "description": "Bourse pour un étudiant africain brillant souhaitant faire un master ou master avancé à KU Leuven.",
-   "lien": "https://www.kuleuven.be/"
+   "description": "Bourse de KU Leuven pour un étudiant africain admis en master en 2027-2028 : exonération totale des frais de scolarité (il reste 140 € de frais administratifs). Une seule bourse est attribuée. Inscription de la candidature à la bourse avant le 15 janvier 2027 à 23 h 59.",
+   "lien": "https://www.kuleuven.be/scholarships/year/2027-2028/ku-leuven-scholarship-for-africa"
   },
   {
    "id": "cmu-africa-mcf-2027",
@@ -365,6 +365,19 @@
    "publie": "2026-11-09",
    "description": "Programme du gouvernement français pour attirer des étudiants internationaux en master et en doctorat. On ne postule pas soi-même : c'est l'université ou l'école française qui vous a admis qui présente votre dossier, avant le 6 janvier 2027. Contactez tôt l'établissement visé.",
    "lien": "https://www.campusfrance.org/en/france-excellence-eiffel-scholarship-program"
+  },
+  {
+   "id": "bad-mo-ibrahim-fellowship-2027",
+   "type": "emploi",
+   "titre": "Fellowship en leadership de la Fondation Mo Ibrahim à la BAD (Abidjan), 2027",
+   "organisme": "Banque Africaine de Développement / Fondation Mo Ibrahim",
+   "pays": "Côte d'Ivoire (Abidjan)",
+   "niveau": "Jeune professionnel (voir conditions)",
+   "financement": "Fellowship (voir conditions)",
+   "dateLimite": "2026-11-20",
+   "publie": "2026-11-11",
+   "description": "Programme de fellowship en leadership de la Fondation Mo Ibrahim, accueilli au siège de la Banque africaine de développement à Abidjan. Il s'adresse aux jeunes professionnels africains qui veulent travailler sur les politiques publiques et le développement du continent. Lisez les conditions d'éligibilité sur l'annonce officielle de la BAD.",
+   "lien": "https://www.afdb.org/en/vacancy/2027-mo-ibrahim-foundation-leadership-fellowship-program-96407"
   }
  ]
 }
