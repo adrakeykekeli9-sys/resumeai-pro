@@ -103,7 +103,7 @@ ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld).replace(
 </head>
 <body>
 <header class="site"><div class="wrap"><a class="logo" href="/">${LOGO} ${NAME}</a>
-<nav class="top" aria-label="Menu principal"><a href="/bourses/">Bourses</a><a href="/emplois/">Emplois</a><a href="/stages/">Stages</a><a href="/formations/">Formations</a><a href="/ong/">ONG</a><a href="/guides/">Conseils</a></nav></div></header>
+<nav class="top" aria-label="Menu principal"><a href="/bourses/">Bourses</a><a href="/emplois/">Emplois</a><a href="/stages/">Stages</a><a href="/formations/">Formations</a><a href="/ong/">ONG</a><a href="/guides/">Conseils</a><a href="/whatsapp/" class="wa-link">Message du jour</a></nav></div></header>
 ${body}
 <footer class="site"><div class="wrap">
 <nav aria-label="Pages du site"><a href="/a-propos/">À propos</a><a href="/contact/">Contact</a><a href="/confidentialite/">Confidentialité et cookies</a><a href="/mentions-legales/">Mentions légales</a><a href="/guides/">Conseils</a></nav>
@@ -130,7 +130,7 @@ const sideBar = (open) => {
 <div class="panel cta"><h2>Votre CV est-il prêt ?</h2><p style="margin:0 0 12px">Créez un CV et une lettre de motivation adaptés à chaque offre avec ResumeAI Pro. 3 essais gratuits par jour.</p><a class="btn" href="${RESUMEAI_URL}" target="_blank" rel="noopener">Créer mon CV</a></div>
 <div class="panel"><h2>Clôturent bientôt</h2>${soon.length ? `<ul>${soon.map((o) => `<li><a href="/offres/${o.id}/">${esc(o.titre)}</a>${badge(o)}</li>`).join("")}</ul>` : "<p>Aucune clôture dans les 14 prochains jours.</p>"}</div>
 <div class="panel warn"><h2>Attention aux arnaques</h2><ul><li>Une vraie offre ne demande jamais de frais par Mobile Money.</li><li>Postulez uniquement sur le site officiel.</li><li>Aucun visa n'est « garanti ».</li></ul><p style="margin:10px 0 0"><a href="/guides/eviter-arnaques-bourses-emplois/">Les 7 signes d'une fausse offre</a></p></div>
-<div class="panel"><h2>Recevez les offres chaque jour</h2><p style="margin:0">Partagez ce site avec vos amis et rejoignez nos groupes WhatsApp pour recevoir la sélection du jour.</p></div>
+<div class="panel"><h2>Partagez les offres du jour</h2><p style="margin:0 0 12px">Le message du jour est prêt : copiez-le ou envoyez-le directement dans vos groupes WhatsApp.</p><a class="btn primary" href="/whatsapp/">Message WhatsApp du jour</a></div>
 </aside>`;
 };
 
@@ -248,8 +248,24 @@ write("a-propos/index.html", simplePage("/a-propos/", "À propos", `${NAME} aide
 write("contact/index.html", simplePage("/contact/", "Contact", `Contacter l'équipe ${NAME}.`, `<p>Une question, une offre à signaler, une erreur dans une annonce ? Écrivez-nous :</p>${contactLines ? `<ul>${contactLines}</ul>` : "<p>Les coordonnées de contact seront bientôt publiées ici.</p>"}<p>Vous êtes un recruteur, une école ou une fondation ? Envoyez-nous votre offre avec le lien officiel : nous la publions gratuitement après vérification.</p>`));
 write("confidentialite/index.html", simplePage("/confidentialite/", "Politique de confidentialité et cookies", `Comment ${NAME} traite vos données et utilise les cookies.`, `<p>Dernière mise à jour : ${fmt(data.maj)}.</p><h2>Données que nous collectons</h2><p>${NAME} ne demande ni inscription ni dossier de candidature. Nous ne collectons pas vos nom, adresse ou CV. Si vous nous écrivez, nous utilisons votre message uniquement pour vous répondre.</p><h2>Publicité et cookies</h2><p>Ce site affiche des publicités fournies par Google AdSense. Google et ses partenaires utilisent des cookies pour diffuser des annonces en fonction de vos visites sur ce site et sur d'autres sites. Google utilise notamment le cookie DoubleClick pour proposer des annonces personnalisées.</p><p>Vous pouvez désactiver la publicité personnalisée dans les <a href="https://adssettings.google.com" target="_blank" rel="noopener">paramètres des annonces Google</a>, et en savoir plus sur <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">l'utilisation des données par Google</a>. Pour les visiteurs de l'Espace économique européen, du Royaume-Uni et de la Suisse, un bandeau de consentement vous permet d'accepter ou de refuser ces cookies.</p><h2>Liens externes</h2><p>Les offres renvoient vers des sites tiers (organismes, universités, sites d'annonces) qui ont leur propre politique de confidentialité.</p><h2>Vos droits</h2><p>Vous pouvez nous demander à tout moment l'accès ou la suppression des informations que vous nous avez transmises, via la page <a href="/contact/">Contact</a>.</p>`));
 write("mentions-legales/index.html", simplePage("/mentions-legales/", "Mentions légales", `Mentions légales du site ${NAME}.`, `<p><b>Éditeur :</b> KOSSI Kodjovi Soké (EDEM MEET), Togo.</p>${contactLines ? `<ul>${contactLines}</ul>` : ""}<p><b>Hébergement :</b> Render Services, Inc., San Francisco, États-Unis.</p><p><b>Contenu :</b> les offres sont résumées à partir de sources publiques citées sur chaque fiche. Les marques et noms d'organisations appartiennent à leurs propriétaires. Pour toute demande de retrait, contactez-nous.</p>`));
-write("whatsapp/index.html", simplePage("/whatsapp/", "Message WhatsApp du jour", "Message prêt à partager.", `<p>Copiez ce message et collez-le dans vos groupes WhatsApp.</p><p><button class="btn primary" type="button" id="copy">Copier le message</button> <span id="ok" aria-live="polite"></span></p><pre class="wa" id="msg">${esc(whatsappText(open))}</pre><script>document.getElementById('copy').onclick=function(){var t=document.getElementById('msg').textContent;var ok=document.getElementById('ok');(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){ok.textContent='Copié !'},function(){var r=document.createRange();r.selectNodeContents(document.getElementById('msg'));var s=getSelection();s.removeAllRanges();s.addRange(r);ok.textContent='Texte sélectionné : faites Copier.'});};</script>`, { noindex: true }));
-write("whatsapp.txt", whatsappText(open));
+const waText = whatsappText(open);
+write("whatsapp/index.html", simplePage("/whatsapp/", "Message WhatsApp du jour", "Message prêt à partager.", `<p>Deux façons de partager les offres du jour dans vos groupes :</p>
+<div class="share" style="margin:14px 0">
+<a class="btn primary" href="https://wa.me/?text=${encodeURIComponent(waText)}" target="_blank" rel="noopener" style="background:#1FA855;color:#fff;font-size:1.05rem;padding:12px 20px">Envoyer sur WhatsApp</a>
+<button class="btn ghost" type="button" id="copy" style="font-size:1.05rem;padding:12px 20px">Copier le message</button>
+</div>
+<p id="ok" aria-live="polite" style="font-weight:700;color:var(--brand);min-height:1.5em"></p>
+<p class="crumbs">« Envoyer sur WhatsApp » ouvre WhatsApp avec le message déjà écrit : choisissez le groupe puis envoyez. « Copier » met le texte dans le presse-papiers pour le coller où vous voulez.</p>
+<pre class="wa" id="msg">${esc(waText)}</pre>
+<script>
+document.getElementById('copy').addEventListener('click',function(){
+  var t=document.getElementById('msg').textContent, ok=document.getElementById('ok'), b=this;
+  function done(){ ok.textContent='Copié ! Collez-le maintenant dans WhatsApp.'; b.textContent='Copié ✓'; setTimeout(function(){b.textContent='Copier le message';},3000); }
+  function fallback(){ var ta=document.createElement('textarea'); ta.value=t; ta.setAttribute('readonly',''); ta.style.position='fixed'; ta.style.top='0'; ta.style.opacity='0'; document.body.appendChild(ta); ta.focus(); ta.select(); ta.setSelectionRange(0,t.length); var res=false; try{res=document.execCommand('copy');}catch(e){} document.body.removeChild(ta); if(res) done(); else ok.textContent='Copie automatique impossible : appuyez longuement sur le texte ci-dessous pour le copier.'; }
+  if(navigator.clipboard && window.isSecureContext){ navigator.clipboard.writeText(t).then(done,fallback); } else { fallback(); }
+});
+</script>`, { noindex: true }));
+write("whatsapp.txt", waText);
 write("404.html", simplePage("/404.html", "Page introuvable", "Page introuvable.", `<p>Cette offre a peut-être été clôturée et retirée. <a href="/">Voir les offres ouvertes</a>.</p>`, { noindex: true }));
 
 const urls = ["/", "/bourses/", "/emplois/", "/stages/", "/formations/", "/ong/", "/guides/", "/a-propos/", "/contact/", "/confidentialite/", "/mentions-legales/", ...all.map((o) => `/offres/${o.id}/`), ...articles.map((a) => `/guides/${a.slug}/`)];
