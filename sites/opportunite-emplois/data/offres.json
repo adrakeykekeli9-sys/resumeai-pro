@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-11",
+ "maj": "2026-11-12",
  "offres": [
   {
    "id": "bad-shanghai-2027",
@@ -76,7 +76,7 @@
    "financement": "Poste rémunéré",
    "dateLimite": "2026-11-19",
    "publie": "2026-11-06",
-   "description": "Poste national à durée déterminée pour développer, gérer et suivre le programme eau, assainissement et hygiène de l'UNICEF à Awasa. Réservé aux ressortissants éthiopiens. Référence 596841 sur le portail officiel ; date de clôture relevée sur un site qui reprend l'annonce.",
+   "description": "Poste national à durée déterminée pour développer, gérer et suivre le programme eau, assainissement et hygiène de l'UNICEF à Awasa. Réservé aux ressortissants éthiopiens. Date limite confirmée sur le portail de l'UNICEF : 19 novembre 2026 à 23 h 55 (réquisition 00137692).",
    "lien": "https://jobs.unicef.org/"
   },
   {
@@ -206,7 +206,7 @@
    "financement": "Entièrement financée",
    "dateLimite": "2027-01-06",
    "publie": "2026-11-06",
-   "description": "Aucune candidature séparée : vous êtes automatiquement considéré en postulant à un cursus d'Oxford avant sa date limite (décembre 2026 ou janvier 2027 selon le cursus).",
+   "description": "Bourse complète d'Oxford (frais de scolarité et allocation de vie) pour un master ou un doctorat, sans condition de nationalité. Aucun dossier séparé : vous êtes automatiquement considéré si vous candidatez à votre cursus avant sa date limite de janvier 2027, qui varie selon le département (par exemple 5 ou 7 janvier).",
    "lien": "https://www.ox.ac.uk/clarendon"
   },
   {
@@ -264,15 +264,15 @@
   {
    "id": "mcf-general",
    "type": "bourse",
-   "titre": "Bourses Mastercard Foundation 2026-2027 (universités partenaires)",
+   "titre": "Bourses Mastercard Foundation : liste officielle des universités partenaires",
    "organisme": "Mastercard Foundation",
    "pays": "Afrique, Europe, Amérique du Nord",
    "niveau": "Licence / Master",
    "financement": "Entièrement financée",
-   "dateLimite": "2027-01-31",
+   "dateLimite": null,
    "publie": "2026-11-06",
-   "description": "Candidatures ouvertes du 15 octobre 2026 au 31 janvier 2027 environ. Chaque université partenaire a sa propre date : vérifiez celle de l'établissement choisi.",
-   "lien": "https://mastercardfdn.org/"
+   "description": "On ne postule pas auprès de la Fondation : il faut candidater directement à l'une des universités partenaires, chacune avec ses propres dates limites. Âge maximum : 29 ans pour la licence, 35 ans pour le master ; pas de bourse pour le doctorat. Être admis dans l'université ne garantit pas d'obtenir la bourse.",
+   "lien": "https://mastercardfdn.org/en/what-we-do/our-programs/mastercard-foundation-scholars-program/where-to-apply/"
   },
   {
    "id": "msf-recrutement-afrique-ouest",
@@ -287,19 +287,6 @@
    "publie": "2026-11-07",
    "description": "MSF tient un portail de recrutement dédié à l'Afrique de l'Ouest et au Cameroun, pour des profils médicaux (médecins, infirmiers, sages-femmes) et non médicaux (logistique, administration, finances). Les candidatures sont reçues en continu.",
    "lien": "https://recrutement-ao.msf.org/"
-  },
-  {
-   "id": "alx-africa-programmes",
-   "type": "formation",
-   "titre": "ALX Africa : formations gratuites en génie logiciel, données et cloud",
-   "organisme": "ALX Africa",
-   "pays": "En ligne (Afrique)",
-   "niveau": "Jeunes 18-35 ans",
-   "financement": "Gratuite (sous conditions)",
-   "dateLimite": null,
-   "publie": "2026-11-07",
-   "description": "ALX propose des programmes intensifs en ligne en génie logiciel, science des données, cloud et compétences professionnelles, destinés aux jeunes Africains. Les inscriptions ouvrent par cohortes : consultez le site pour la prochaine session et les conditions de gratuité.",
-   "lien": "https://www.alxafrica.com/"
   },
   {
    "id": "google-digital-skills-africa",
