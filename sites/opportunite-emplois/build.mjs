@@ -268,8 +268,13 @@ document.getElementById('copy').addEventListener('click',function(){
 write("whatsapp.txt", waText);
 write("404.html", simplePage("/404.html", "Page introuvable", "Page introuvable.", `<p>Cette offre a peut-être été clôturée et retirée. <a href="/">Voir les offres ouvertes</a>.</p>`, { noindex: true }));
 
-const urls = ["/", "/bourses/", "/emplois/", "/stages/", "/formations/", "/ong/", "/guides/", "/a-propos/", "/contact/", "/confidentialite/", "/mentions-legales/", ...all.map((o) => `/offres/${o.id}/`), ...articles.map((a) => `/guides/${a.slug}/`)];
-write("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `<url><loc>${SITE}${u}</loc><lastmod>${data.maj}</lastmod></url>`).join("\n")}\n</urlset>\n`);
+const urls = [
+  ...["/", "/bourses/", "/emplois/", "/stages/", "/formations/", "/ong/", "/guides/"].map((u) => [u, data.maj]),
+  ...["/a-propos/", "/contact/", "/confidentialite/", "/mentions-legales/"].map((u) => [u, null]),
+  ...all.map((o) => [`/offres/${o.id}/`, o.publie]),
+  ...articles.map((a) => [`/guides/${a.slug}/`, a.date]),
+];
+write("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(([u, d]) => `<url><loc>${SITE}${u}</loc>${d ? `<lastmod>${d}</lastmod>` : ""}</url>`).join("\n")}\n</urlset>\n`);
 write("robots.txt", `User-agent: *\nAllow: /\nDisallow: /whatsapp/\nSitemap: ${SITE}/sitemap.xml\n`);
 if (ADSENSE) write("ads.txt", `google.com, ${ADSENSE.replace(/^ca-/, "")}, DIRECT, f08c47fec0942fa0\n`);
 
