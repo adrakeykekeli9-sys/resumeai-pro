@@ -161,6 +161,24 @@ ${sideBar(all.filter(isOpen))}</main>${filterScript}`;
   });
 }
 
+
+const ISO = { "RD Congo": "CD", "Sénégal": "SN", "Tchad": "TD", "Rwanda": "RW", "Niger": "NE", "Togo": "TG", "Mali": "ML", "Cameroun": "CM", "Burkina Faso": "BF", "Madagascar": "MG", "Bénin": "BJ", "Afrique du Sud": "ZA", "Éthiopie": "ET", "France": "FR", "Côte d'Ivoire": "CI", "Burundi": "BI", "Mauritanie": "MR", "République centrafricaine": "CF", "Guinée": "GN", "Gabon": "GA", "Congo": "CG", "Kenya": "KE", "Nigeria": "NG", "Ghana": "GH", "Maroc": "MA", "Tunisie": "TN", "Haïti": "HT", "Liban": "LB" };
+function jobPosting(o) {
+  if (!["emploi", "stage"].includes(o.type) || !o.dateLimite || !isOpen(o)) return null;
+  const cc = ISO[o.pays.split(" (")[0].split(",")[0].split(" /")[0].trim()];
+  if (!cc) return null;
+  const city = (o.pays.match(/\(([^)]+)\)/) || [])[1];
+  return {
+    "@context": "https://schema.org", "@type": "JobPosting",
+    title: o.titre, description: `<p>${esc(o.description)}</p><p>Niveau : ${esc(o.niveau)}. ${esc(o.financement || "")}</p>`,
+    datePosted: o.publie, validThrough: `${o.dateLimite}T23:59:00`,
+    employmentType: o.type === "stage" ? "INTERN" : undefined,
+    hiringOrganization: { "@type": "Organization", name: o.organisme },
+    jobLocation: { "@type": "Place", address: { "@type": "PostalAddress", addressCountry: cc, ...(city && !/,|ou | et |à définir|localités/.test(city) ? { addressLocality: city } : {}) } },
+    directApply: false, url: `${SITE}/offres/${o.id}/`,
+  };
+}
+
 function offerPage(o, all) {
   const n = daysLeft(o);
   const related = all.filter((x) => x.id !== o.id && isOpen(x) && x.type === o.type).slice(0, 4);
@@ -192,7 +210,7 @@ ${related.length ? `<h2 style="font-family:var(--display);margin:28px 0 12px">Au
     title: o.titre,
     description: `${TYPES[o.type]} – ${o.organisme}, ${o.pays}. Date limite : ${fmt(o.dateLimite)}. ${o.description}`.slice(0, 300),
     pathname: `/offres/${o.id}/`, body, ogType: "article",
-    jsonld: { "@context": "https://schema.org", "@type": "Article", headline: o.titre, datePublished: o.publie, dateModified: data.maj, inLanguage: "fr", publisher: { "@type": "Organization", name: NAME, url: SITE }, mainEntityOfPage: `${SITE}/offres/${o.id}/` },
+    jsonld: jobPosting(o) || { "@context": "https://schema.org", "@type": "Article", headline: o.titre, datePublished: o.publie, dateModified: data.maj, inLanguage: "fr", publisher: { "@type": "Organization", name: NAME, url: SITE }, mainEntityOfPage: `${SITE}/offres/${o.id}/` },
   });
 }
 
