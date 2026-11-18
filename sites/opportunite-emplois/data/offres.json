@@ -1,5 +1,5 @@
 {
-  "maj": "2026-11-17",
+  "maj": "2026-11-18",
   "offres": [
     {
       "id": "unicef-me-sa",
@@ -1410,6 +1410,100 @@
       "publie": "2026-11-17",
       "description": "Poste en CDD dans une entreprise d'entretien professionnel et de placement de personnel, pour des candidats habitant le secteur d'Agoè. Annonce relayée par EmploiTogo ; candidature par e-mail à l'adresse indiquée dans l'annonce.",
       "lien": "https://www.emploitogo.info/groupe-eddap-sarl-recrute-30-11-2026/"
+    },
+    {
+      "id": "fhi360-donnees-vih-senegal",
+      "type": "emploi",
+      "secteur": "ong",
+      "titre": "Responsable des données sur le VIH",
+      "organisme": "FHI 360",
+      "pays": "Sénégal (Bignona, Ziguinchor)",
+      "niveau": "Professionnel (gestion de données de santé)",
+      "financement": "Poste rémunéré",
+      "dateLimite": "2026-12-07",
+      "publie": "2026-11-18",
+      "description": "Gestion des données d'un programme VIH de FHI 360 en Casamance. Fiche en anglais. Lisez la fiche officielle pour le profil exact et la procédure de candidature.",
+      "lien": "https://fhi.wd1.myworkdayjobs.com/FHI_360_External_Career_Portal/job/Senegal-Any/HIV-Data-Officer_Requisition-2026201672"
+    },
+    {
+      "id": "unv-oms-communication-dakar",
+      "type": "emploi",
+      "titre": "Chargé(e) de communication, OMS (volontaire national)",
+      "organisme": "OMS / Volontaires des Nations Unies (VNU)",
+      "pays": "Sénégal (Dakar)",
+      "niveau": "Volontaire national (communication)",
+      "financement": "Volontariat indemnisé",
+      "dateLimite": "2026-11-25",
+      "publie": "2026-11-18",
+      "description": "Mission de volontariat national au bureau de l'OMS à Dakar, à temps plein, sur la communication.",
+      "lien": "https://app.unv.org/opportunities/1784888021273936"
+    },
+    {
+      "id": "unv-unicef-donateurs-conakry",
+      "type": "emploi",
+      "titre": "Spécialiste relations avec les donateurs et rapports, UNICEF (volontaire)",
+      "organisme": "UNICEF / Volontaires des Nations Unies (VNU)",
+      "pays": "Guinée (Conakry)",
+      "niveau": "Volontaire (rapports, partenariats)",
+      "financement": "Volontariat indemnisé",
+      "dateLimite": "2026-11-20",
+      "publie": "2026-11-18",
+      "description": "Mission de volontariat au bureau de l'UNICEF à Conakry, consacrée aux rapports destinés aux bailleurs et au suivi des partenariats.",
+      "lien": "https://app.unv.org/opportunities/1784888021273907"
+    },
+    {
+      "id": "wateraid-people-hub-lead",
+      "type": "emploi",
+      "secteur": "ong",
+      "titre": "People Hub Lead (Afrique)",
+      "organisme": "WaterAid",
+      "pays": "Rwanda (Kigali), Ghana ou autre bureau africain",
+      "niveau": "Cadre expérimenté (ressources humaines)",
+      "financement": "Poste rémunéré",
+      "dateLimite": "2026-11-30",
+      "publie": "2026-11-18",
+      "description": "Poste RH hybride de WaterAid, à baser dans l'un de ses bureaux africains, dont Kigali et Accra. Fiche en anglais. Lisez la fiche officielle pour le profil exact et la procédure de candidature.",
+      "lien": "https://apply.workable.com/wateraid/j/B0AF89A745/"
+    },
+    {
+      "id": "alafia-consultance-genre-togo",
+      "type": "emploi",
+      "secteur": "ong",
+      "titre": "Consultance : grille d'évaluation genre et inclusion des OSC",
+      "organisme": "ONG ALAFIA",
+      "pays": "Togo",
+      "niveau": "Consultant(e) en genre et renforcement des organisations",
+      "financement": "Consultance rémunérée",
+      "dateLimite": "2026-11-30",
+      "publie": "2026-11-18",
+      "description": "L'ONG togolaise ALAFIA cherche un(e) consultant(e) pour élaborer une grille d'évaluation et de progression sur le genre transformateur et l'inclusion, destinée à ses organisations partenaires. Annonce relayée par EmploiTogo ; le dossier se dépose par e-mail à l'adresse indiquée dans l'annonce.",
+      "lien": "https://www.emploitogo.info/long-alafia-recrute-30-11-2026/"
+    },
+    {
+      "id": "anpe-togo-logisticien",
+      "type": "emploi",
+      "titre": "Logisticien(ne)",
+      "organisme": "ANPE Togo",
+      "pays": "Togo",
+      "niveau": "BAC+3 en logistique ou transport",
+      "financement": "Poste rémunéré",
+      "dateLimite": "2026-11-23",
+      "publie": "2026-11-18",
+      "description": "Gestion des achats, des stocks, du matériel et du parc de véhicules de l'Agence nationale pour l'emploi. Annonce relayée par JobRelais ; candidature par e-mail à l'adresse de recrutement de l'ANPE indiquée dans l'annonce.",
+      "lien": "https://www.jobrelais.com/opportunities/jobs/6afc5d131f23c-anpe-togo-un-01-logisticien-hf"
+    },
+    {
+      "id": "rmo-chef-juridique-lome",
+      "type": "emploi",
+      "titre": "Chef(fe) du département juridique (CDI)",
+      "organisme": "RMO Togo (pour un client)",
+      "pays": "Togo (Lomé)",
+      "niveau": "Juriste expérimenté(e)",
+      "financement": "Poste rémunéré",
+      "dateLimite": "2026-11-20",
+      "publie": "2026-11-18",
+      "description": "Poste en CDI rattaché à la direction générale d'une entreprise de distribution, recruté par le cabinet RMO. Annonce relayée par JobRelais ; candidature par e-mail à l'adresse de RMO indiquée dans l'annonce.",
+      "lien": "https://www.jobrelais.com/opportunities/jobs/6afc5916ad18b-rmo-togo-recrute"
     }
   ]
 }
