@@ -16,7 +16,16 @@
             "Les candidats qui maîtrisent le français reçoivent des points supplémentaires et peuvent être invités dans des tirages réservés aux francophones.",
             "Une offre d'emploi au Canada peut augmenter le score."
           ],
-          "lien": "https://www.canada.ca/en/immigration-refugees-citizenship/campaigns/francophone-immigration-outside-quebec/francophone-immigration-express-entry.html"
+          "lien": "https://www.canada.ca/en/immigration-refugees-citizenship/campaigns/francophone-immigration-outside-quebec/francophone-immigration-express-entry.html",
+          "en": {
+            "nom": "Express Entry: French-language category",
+            "public": "Skilled workers who speak French",
+            "points": [
+              "Online permanent residence system run by the federal government.",
+              "Candidates who speak French get extra points and can be invited in draws reserved for French speakers.",
+              "A job offer in Canada can increase the score."
+            ]
+          }
         },
         {
           "nom": "Mobilité francophone (permis de travail)",
@@ -26,19 +35,37 @@
             "C'est l'employeur qui soumet l'offre en ligne ; le candidat demande ensuite son permis de travail.",
             "L'offre d'emploi obtenue peut aussi rapporter des points dans Entrée express."
           ],
-          "lien": "https://www.canada.ca/content/dam/ircc/documents/pdf/francais/campaigns/embauchez-immigrants/fiches-information/mobilite-francophone-fr.pdf"
+          "lien": "https://www.canada.ca/content/dam/ircc/documents/pdf/francais/campaigns/embauchez-immigrants/fiches-information/mobilite-francophone-fr.pdf",
+          "en": {
+            "nom": "Francophone Mobility (work permit)",
+            "public": "French speakers with a job offer from an employer outside Quebec",
+            "points": [
+              "The Canadian employer can hire a French-speaking worker without a Labour Market Impact Assessment (LMIA) for most skilled jobs.",
+              "The employer submits the offer online; the candidate then applies for the work permit.",
+              "The job offer can also earn points in Express Entry."
+            ]
+          }
         }
       ],
       "portails": [
         {
           "nom": "Guichet-Emplois : offres des employeurs qui recrutent des travailleurs étrangers",
           "lien": "https://www.guichetemplois.gc.ca/travailleurs-etrangers-temporaires",
-          "note": "Site officiel du gouvernement du Canada. Vérifiez dans chaque annonce la rubrique « Qui peut postuler » : seules certaines offres acceptent les candidats qui n'ont pas encore de permis de travail canadien."
+          "note": "Site officiel du gouvernement du Canada. Vérifiez dans chaque annonce la rubrique « Qui peut postuler » : seules certaines offres acceptent les candidats qui n'ont pas encore de permis de travail canadien.",
+          "en": {
+            "nom": "Job Bank: offers from employers recruiting foreign workers",
+            "note": "Official Government of Canada website. Check the \"Who can apply\" section of each posting: only some offers accept candidates who do not yet have a Canadian work permit."
+          }
         }
       ],
       "match": [
         "Canada"
-      ]
+      ],
+      "en": {
+        "nom": "Canada (outside Quebec)",
+        "de": "in Canada",
+        "intro": "Canada is actively looking for French-speaking workers for its provinces outside Quebec. Two official pathways are particularly useful for candidates from French-speaking Africa."
+      }
     },
     {
       "slug": "quebec",
@@ -55,17 +82,35 @@
             "Le Québec invite ensuite les meilleurs profils lors de tirages réguliers, par volets (compétences élevées, intermédiaires, professions réglementées, talents d'exception).",
             "La connaissance du français est un critère important ; certains tirages favorisent les personnes déjà installées au Québec."
           ],
-          "lien": "https://www.quebec.ca/en/immigration/permanent/skilled-workers/skilled-worker-selection-program/expression-of-interest"
+          "lien": "https://www.quebec.ca/en/immigration/permanent/skilled-workers/skilled-worker-selection-program/expression-of-interest",
+          "en": {
+            "nom": "Skilled Worker Selection Program (PSTQ) via Arrima",
+            "public": "Skilled workers, from manual trades to highly specialised jobs",
+            "points": [
+              "Start by filing a free expression of interest on the Arrima platform, valid for 12 months.",
+              "Quebec then invites the best profiles in regular draws, by stream (high skills, intermediate skills, regulated professions, exceptional talent).",
+              "French is an important criterion; some draws favour people already living in Quebec."
+            ]
+          }
         }
       ],
       "portails": [
         {
           "nom": "Guichet-Emplois Québec : offres pour travailleurs étrangers",
           "lien": "https://www.qc.guichetemplois.gc.ca/travailleurs-etrangers-temporaires",
-          "note": "Offres d'employeurs québécois qui ont demandé ou obtenu l'autorisation d'embaucher des travailleurs étrangers."
+          "note": "Offres d'employeurs québécois qui ont demandé ou obtenu l'autorisation d'embaucher des travailleurs étrangers.",
+          "en": {
+            "nom": "Job Bank Quebec: offers for foreign workers",
+            "note": "Offers from Quebec employers who have requested or obtained authorisation to hire foreign workers."
+          }
         }
       ],
-      "match": []
+      "match": [],
+      "en": {
+        "nom": "Quebec",
+        "de": "in Quebec",
+        "intro": "Quebec selects its own skilled workers, with its own programme and platform."
+      }
     },
     {
       "slug": "allemagne",
@@ -82,7 +127,16 @@
             "Pendant la recherche, on peut travailler à temps partiel (jusqu'à 20 heures par semaine) et faire des essais de deux semaines chez un employeur.",
             "Il faut un diplôme reconnu ou un système de points, des notions d'allemand (A1) ou un bon anglais (B2), et prouver des moyens financiers (compte bloqué)."
           ],
-          "lien": "https://www.make-it-in-germany.com/en/visa-recognition"
+          "lien": "https://www.make-it-in-germany.com/en/visa-recognition",
+          "en": {
+            "nom": "Opportunity Card (Chancenkarte)",
+            "public": "Skilled workers without a prior job offer",
+            "points": [
+              "Lets you enter Germany for up to one year to look for a skilled job on site.",
+              "While searching, you can work part-time (up to 20 hours a week) and do two-week trial jobs with an employer.",
+              "You need a recognised qualification or enough points, basic German (A1) or good English (B2), and proof of funds (blocked account)."
+            ]
+          }
         },
         {
           "nom": "Offres d'emploi et métiers en pénurie",
@@ -91,24 +145,45 @@
             "Le portail officiel publie des offres et la liste des métiers recherchés.",
             "Une fois un emploi trouvé, on demande un titre de séjour pour emploi qualifié."
           ],
-          "lien": "https://www.make-it-in-germany.com/en/working-in-germany/job-search-application"
+          "lien": "https://www.make-it-in-germany.com/en/working-in-germany/job-search-application",
+          "en": {
+            "nom": "Job offers and shortage occupations",
+            "public": "Engineers, care workers, IT specialists, skilled tradespeople…",
+            "points": [
+              "The official portal publishes job offers and the list of occupations in demand.",
+              "Once you find a job, you apply for a residence permit for skilled employment."
+            ]
+          }
         }
       ],
       "portails": [
         {
           "nom": "Make it in Germany : recherche d'emploi",
           "lien": "https://www.make-it-in-germany.com/en/working-in-germany/job-search-application",
-          "note": "Portail officiel du gouvernement allemand, avec des offres destinées aux candidats internationaux."
+          "note": "Portail officiel du gouvernement allemand, avec des offres destinées aux candidats internationaux.",
+          "en": {
+            "nom": "Make it in Germany: job search",
+            "note": "Official German government portal, with job offers aimed at international candidates."
+          }
         },
         {
           "nom": "EURES : offres d'emploi en Europe",
           "lien": "https://eures.europa.eu/jobseekers_en",
-          "note": "Portail européen des services publics de l'emploi."
+          "note": "Portail européen des services publics de l'emploi.",
+          "en": {
+            "nom": "EURES: job offers in Europe",
+            "note": "European portal of public employment services."
+          }
         }
       ],
       "match": [
         "Allemagne"
-      ]
+      ],
+      "en": {
+        "nom": "Germany",
+        "de": "in Germany",
+        "intro": "Germany is short of skilled workers and has created an official portal, Make it in Germany, to attract workers from abroad."
+      }
     },
     {
       "slug": "luxembourg",
@@ -125,19 +200,37 @@
             "La demande d'autorisation de séjour se fait avant l'arrivée, auprès de la Direction générale de l'immigration.",
             "Pas de test du marché du travail ; la carte est valable jusqu'à 4 ans."
           ],
-          "lien": "https://guichet.public.lu/en/citoyens/immigration/plus-3-mois/ressortissant-tiers/hautement-qualifie/salarie-hautement-qualifie.html"
+          "lien": "https://guichet.public.lu/en/citoyens/immigration/plus-3-mois/ressortissant-tiers/hautement-qualifie/salarie-hautement-qualifie.html",
+          "en": {
+            "nom": "EU Blue Card (highly qualified employee)",
+            "public": "Graduates or experienced professionals with a job offer in Luxembourg",
+            "points": [
+              "You need an employment contract of at least 6 months and a salary above the government threshold (check the current amount on Guichet.lu).",
+              "The residence authorisation is requested before arrival, from the Directorate of Immigration.",
+              "No labour market test; the card is valid for up to 4 years."
+            ]
+          }
         }
       ],
       "portails": [
         {
           "nom": "EURES : offres d'emploi en Europe, dont le Luxembourg",
           "lien": "https://eures.europa.eu/jobseekers_en",
-          "note": "Filtrez par pays « Luxembourg ». Les offres marquées EURES visent des candidats d'autres pays."
+          "note": "Filtrez par pays « Luxembourg ». Les offres marquées EURES visent des candidats d'autres pays.",
+          "en": {
+            "nom": "EURES: job offers in Europe, including Luxembourg",
+            "note": "Filter by country \"Luxembourg\". Offers marked EURES target candidates from other countries."
+          }
         }
       ],
       "match": [
         "Luxembourg"
-      ]
+      ],
+      "en": {
+        "nom": "Luxembourg",
+        "de": "in Luxembourg",
+        "intro": "Luxembourg, a French-speaking country at the heart of Europe, recruits highly qualified profiles through the EU Blue Card."
+      }
     },
     {
       "slug": "france",
@@ -154,19 +247,37 @@
             "Pour la catégorie salarié qualifié, il faut un contrat de plus de 3 mois et un salaire au moins égal au seuil de référence en vigueur.",
             "On obtient d'abord un visa long séjour, puis on demande le titre de séjour après l'arrivée."
           ],
-          "lien": "https://france-visas.gouv.fr/en/talents-internationaux-et-attractivite-economique"
+          "lien": "https://france-visas.gouv.fr/en/talents-internationaux-et-attractivite-economique",
+          "en": {
+            "nom": "Talent Passport (qualified employee and other categories)",
+            "public": "Qualified employees, researchers, business founders, EU Blue Card holders",
+            "points": [
+              "Residence permit valid for up to 4 years, renewable; the spouse can work in France.",
+              "For the qualified employee category, you need a contract of more than 3 months and a salary at least equal to the current reference threshold.",
+              "You first get a long-stay visa, then apply for the residence permit after arrival."
+            ]
+          }
         }
       ],
       "portails": [
         {
           "nom": "EURES : offres d'emploi en Europe, dont la France",
           "lien": "https://eures.europa.eu/jobseekers_en",
-          "note": "Filtrez par pays « France »."
+          "note": "Filtrez par pays « France ».",
+          "en": {
+            "nom": "EURES: job offers in Europe, including France",
+            "note": "Filter by country \"France\"."
+          }
         }
       ],
       "match": [
         "France"
-      ]
+      ],
+      "en": {
+        "nom": "France",
+        "de": "in France",
+        "intro": "France offers a multi-year residence permit to foreign talent, with several categories depending on the profile."
+      }
     },
     {
       "slug": "belgique",
@@ -183,19 +294,37 @@
             "La décision est prise en principe dans un délai de 4 mois.",
             "Après l'accord, le travailleur demande un visa D au consulat de Belgique, puis s'inscrit à la commune dans les 8 jours ouvrables suivant son arrivée."
           ],
-          "lien": "https://emploi.belgique.be/fr/themes/international/travailleurs-etrangers"
+          "lien": "https://emploi.belgique.be/fr/themes/international/travailleurs-etrangers",
+          "en": {
+            "nom": "Single permit (work + residence)",
+            "public": "Workers with a job offer from an employer based in Belgium, for more than 90 days",
+            "points": [
+              "The employer files the application with the competent Region (Brussels, Wallonia or Flanders).",
+              "A decision is normally made within 4 months.",
+              "Once approved, the worker applies for a D visa at the Belgian consulate, then registers with the municipality within 8 working days of arrival."
+            ]
+          }
         }
       ],
       "portails": [
         {
           "nom": "EURES : offres d'emploi en Europe, dont la Belgique",
           "lien": "https://eures.europa.eu/jobseekers_en",
-          "note": "Filtrez par pays « Belgique »."
+          "note": "Filtrez par pays « Belgique ».",
+          "en": {
+            "nom": "EURES: job offers in Europe, including Belgium",
+            "note": "Filter by country \"Belgium\"."
+          }
         }
       ],
       "match": [
         "Belgique"
-      ]
+      ],
+      "en": {
+        "nom": "Belgium",
+        "de": "in Belgium",
+        "intro": "Belgium, partly French-speaking, allows employers to recruit workers from outside the EU through the single permit, which combines work and residence authorisation."
+      }
     },
     {
       "slug": "royaume-uni",
@@ -212,24 +341,46 @@
             "Le poste doit figurer sur la liste des métiers éligibles et respecter un salaire minimum (seuil général indiqué sur GOV.UK).",
             "Un niveau d'anglais suffisant est exigé."
           ],
-          "lien": "https://www.gov.uk/skilled-worker-visa"
+          "lien": "https://www.gov.uk/skilled-worker-visa",
+          "en": {
+            "nom": "Skilled Worker visa",
+            "public": "People with a skilled job offer from an approved UK employer (sponsor)",
+            "points": [
+              "The employer must hold a sponsor licence and give you a certificate of sponsorship; you then have 3 months to apply for the visa.",
+              "The job must be on the list of eligible occupations and meet a minimum salary (general threshold shown on GOV.UK).",
+              "A sufficient level of English is required."
+            ]
+          }
         }
       ],
       "portails": [
         {
           "nom": "Find a job (service public britannique)",
           "lien": "https://www.gov.uk/find-a-job",
-          "note": "Service officiel de recherche d'emploi au Royaume-Uni."
+          "note": "Service officiel de recherche d'emploi au Royaume-Uni.",
+          "en": {
+            "nom": "Find a job (UK public service)",
+            "note": "Official UK job search service."
+          }
         },
         {
           "nom": "Liste officielle des employeurs agréés (sponsors)",
           "lien": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-          "note": "Vérifiez qu'un employeur figure sur cette liste avant de postuler depuis l'étranger."
+          "note": "Vérifiez qu'un employeur figure sur cette liste avant de postuler depuis l'étranger.",
+          "en": {
+            "nom": "Official register of licensed sponsors",
+            "note": "Check that an employer is on this list before applying from abroad."
+          }
         }
       ],
       "match": [
         "Royaume-Uni"
-      ]
+      ],
+      "en": {
+        "nom": "United Kingdom",
+        "de": "in the United Kingdom",
+        "intro": "The UK recruits from abroad through the Skilled Worker visa, provided you have an offer from a government-approved employer."
+      }
     },
     {
       "slug": "portugal",
@@ -246,19 +397,37 @@
             "Le nouveau visa de recherche d'emploi qualifié attend sa réglementation : suivez son ouverture sur le site officiel des visas.",
             "Méfiez-vous des intermédiaires qui prétendent pouvoir déposer ces demandes dès maintenant."
           ],
-          "lien": "https://vistos.mne.gov.pt/en/national-visas/necessary-documentation/job-seeker-visa"
+          "lien": "https://vistos.mne.gov.pt/en/national-visas/necessary-documentation/job-seeker-visa",
+          "en": {
+            "nom": "Skilled job seeker visa (not yet open)",
+            "public": "People with specialised technical skills",
+            "points": [
+              "Since 23 October 2025, consulates no longer accept applications for the old job seeker visa.",
+              "The new skilled job seeker visa is awaiting its regulations: follow its opening on the official visa website.",
+              "Beware of intermediaries who claim they can file these applications now."
+            ]
+          }
         }
       ],
       "portails": [
         {
           "nom": "EURES : offres d'emploi en Europe, dont le Portugal",
           "lien": "https://eures.europa.eu/jobseekers_en",
-          "note": "Filtrez par pays « Portugal »."
+          "note": "Filtrez par pays « Portugal ».",
+          "en": {
+            "nom": "EURES: job offers in Europe, including Portugal",
+            "note": "Filter by country \"Portugal\"."
+          }
         }
       ],
       "match": [
         "Portugal"
-      ]
+      ],
+      "en": {
+        "nom": "Portugal",
+        "de": "in Portugal",
+        "intro": "Portugal reformed its work visas in 2025. The job seeker visa has been replaced by a skilled job seeker visa that is not yet open to applications."
+      }
     }
   ]
 }

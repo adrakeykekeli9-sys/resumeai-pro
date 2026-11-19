@@ -24,3 +24,11 @@ Elle liste les offres hors Togo ouvertes aux candidats de toutes nationalités. 
 
 - **Canada** : `python3 -I scripts/canada_jobbank.py /chemin/sortie.json 10` lit le Guichet-Emplois (site officiel) et ne garde que les offres dont la rubrique « Qui peut postuler » accepte les « autres candidats, avec ou sans un permis de travail canadien valide ». Le serveur coupe parfois les connexions : relancer si besoin. Publier avec `"pays": "Canada (Ville, PROV)"`, `"international": true`, lien vers `https://www.guichetemplois.gc.ca/rechercheemplois/offredemploi/<id>`.
 - **Europe et Royaume-Uni** : ne publier une offre individuelle que si l'annonce officielle (EURES, Make it in Germany, employeur) indique clairement qu'elle est ouverte aux candidats hors UE, ou qu'un parrainage de visa est proposé.
+
+### Version anglaise (/en/)
+
+Le site est généré en français (racine) et en anglais (`/en/…`), avec un sélecteur FR | EN et les balises `hreflang`.
+- Textes de l'interface : directement dans `build.mjs` via `t("français", "English")`.
+- Offres : traductions dans `data/offres_en.json`, indexées par `id` : `{ "titre", "description", "niveau", "financement", "pays" (facultatif) }`. **Chaque nouvelle offre doit y être ajoutée** ; sinon la page anglaise affiche le texte français avec une mention.
+- Programmes à l'étranger : sous-objets `"en"` dans `data/programmes.json`.
+- Les guides et le message WhatsApp restent en français.

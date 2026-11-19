@@ -1,0 +1,827 @@
+{
+ "onu-ypp-2026": {
+  "titre": "UN Young Professionals Programme (YPP) 2026: \"Development and sustainability\" exam",
+  "description": "UN entry exam for young graduates (P-2 level), this year in development and sustainability. Only nationals of the 2026 participating countries may apply: the list is on the official posting. Apply on the Inspira portal before 30 November 2026.",
+  "niveau": "Young graduate (bachelor's minimum)",
+  "financement": "Paid position"
+ },
+ "yenching-2027": {
+  "titre": "Yenching Academy (Peking University): master's, 2027 intake",
+  "description": "Master's in China Studies at Peking University, open to international non-Chinese applicants. About 120 students admitted each year. The official deadline for the 2027 cohort is 30 November 2026 at 9 a.m. Beijing time.",
+  "niveau": "Master's",
+  "financement": "Scholarship",
+  "pays": "China"
+ },
+ "berkeley-mcf": {
+  "titre": "Mastercard Foundation Scholars Program at UC Berkeley",
+  "description": "Full scholarship for a master's of up to two years at UC Berkeley, reserved for African students. You do not apply directly: you first apply to the master's, then the programme invites selected candidates. For the Master of Development Practice, only complete applications received before 1 December 2026 are considered for funding.",
+  "niveau": "Master's",
+  "financement": "Fully funded",
+  "pays": "United States"
+ },
+ "mundus-mapp-2027": {
+  "titre": "Erasmus Mundus MAPP: master's in public policy (2027-2029)",
+  "description": "Two-year joint master's in public policy at several European universities. To get the Erasmus Mundus scholarship, apply before 1 December 2026: you tick the scholarship option in the form, with no separate application. You need a bachelor's of at least three years and good grades (equivalent to 3.17/4).",
+  "niveau": "Master's",
+  "financement": "Fully funded (fees + €1,400/month)",
+  "pays": "Netherlands, Germany, Hungary…"
+ },
+ "ellison-graduate-2027": {
+  "titre": "Ellison Scholars (PhD, University of Oxford), October 2027 entry",
+  "description": "Doctoral scholarship linked to some Oxford programmes (generative biology, foundations of AI, immunity). You must also apply to Oxford. The official FAQ gives 1 December 2026.",
+  "niveau": "PhD",
+  "financement": "Fully funded",
+  "pays": "United Kingdom"
+ },
+ "sciencespo-mcf": {
+  "titre": "Sciences Po Mastercard Foundation Scholars Program",
+  "description": "Mastercard Foundation scholarship for a master's at Sciences Po. Submit an eligibility check and a master's application at the same time, and be under 35 on 1 September. Apply before 23 November 2026 for an admission answer on 11 February, or before 14 December 2026 for an answer on 1 April.",
+  "niveau": "Master's",
+  "financement": "Fully funded"
+ },
+ "ens-selection": {
+  "titre": "ENS International Selection (Paris)",
+  "description": "ENS competition for foreign students, with a monthly allowance for successful candidates. For the Sciences track, apply online on the OnePSL platform before 15 December 2026 at 2 p.m. Paris time. You must be under 26 when applications open and have at least one year of higher education abroad.",
+  "niveau": "Master's",
+  "financement": "Monthly allowance"
+ },
+ "unesco-priority-africa-intern": {
+  "titre": "Priority Africa and External Relations internship (UNESCO)",
+  "description": "1- to 6-month internship in UNESCO's Priority Africa and External Relations sector: drafting notes, preparing meetings, organising events. You must be at least 20, in the final year of a bachelor's, in a master's or graduated less than 12 months ago, and fluent in English or French. UNESCO does not pay interns: travel, visa and insurance are at the intern's expense.",
+  "niveau": "Student / recent graduate",
+  "financement": "Unpaid internship"
+ },
+ "gates-cambridge": {
+  "titre": "Gates Cambridge Scholarship 2027-2028",
+  "description": "Full scholarship for a one-year master's, MLitt or PhD at Cambridge, for non-UK citizens. You apply together with your admission, on the university portal. Depending on the course, the deadline is 8 December 2026 or 6 January 2027: check your course date in the university catalogue.",
+  "niveau": "Master's / PhD",
+  "financement": "Fully funded",
+  "pays": "United Kingdom"
+ },
+ "clarendon": {
+  "titre": "Clarendon Scholarship (Oxford)",
+  "description": "Full Oxford scholarship (fees and living allowance) for a master's or PhD, with no nationality requirement. No separate application: you are automatically considered if you apply to your course before its January 2027 deadline, which varies by department (for example 5 or 7 January).",
+  "niveau": "Master's / PhD",
+  "financement": "Fully funded",
+  "pays": "United Kingdom"
+ },
+ "em-journalism": {
+  "titre": "Erasmus Mundus: Journalism, Media and Globalisation",
+  "description": "Two-year joint master's in journalism, media and globalisation, with a first year in Aarhus (Denmark). The programme offers 10 to 15 Erasmus Mundus scholarships for all nationalities, with no separate application. C1 English required. Applications from 1 November 2026 to 10 January 2027 at 1 p.m. Central European Time.",
+  "niveau": "Master's",
+  "financement": "Fully funded",
+  "pays": "Denmark, Netherlands, UK…"
+ },
+ "uva-merit": {
+  "titre": "Amsterdam Merit Scholarship",
+  "description": "University of Amsterdam scholarship for non-EU students admitted to a master's. Each faculty sets its own deadline: often 15 January 2027, but 15 February 2027 for some. Check your faculty's page.",
+  "niveau": "Master's",
+  "financement": "Partial or full",
+  "pays": "Netherlands"
+ },
+ "kuleuven-africa": {
+  "titre": "KU Leuven Scholarship for Africa",
+  "description": "KU Leuven scholarship for one African student admitted to a master's in 2027-2028: full tuition waiver (a €140 administrative fee remains). Only one scholarship is awarded. Register your scholarship application before 15 January 2027 at 11:59 p.m.",
+  "niveau": "Master's",
+  "financement": "Full tuition waiver (one scholarship)",
+  "pays": "Belgium"
+ },
+ "cmu-africa-mcf-2027": {
+  "titre": "Mastercard Foundation Scholars at Carnegie Mellon University Africa (Rwanda)",
+  "description": "Mastercard Foundation scholarship for a master's at CMU-Africa (Kigali), reserved for African citizens from disadvantaged backgrounds. You must first be admitted to a CMU-Africa programme. The official site gives an early date of 15 December and a final date of 15 January, without the year: confirm them for 2027.",
+  "niveau": "Master's",
+  "financement": "Fully funded"
+ },
+ "mcf-general": {
+  "titre": "Mastercard Foundation scholarships: official list of partner universities",
+  "description": "You do not apply to the Foundation: apply directly to one of the partner universities, each with its own deadlines. Maximum age: 29 for a bachelor's, 35 for a master's; no PhD scholarships. Being admitted to the university does not guarantee the scholarship.",
+  "niveau": "Bachelor's / Master's",
+  "financement": "Fully funded",
+  "pays": "Africa, Europe, North America"
+ },
+ "msf-recrutement-afrique-ouest": {
+  "titre": "Médecins Sans Frontières is recruiting in West Africa and Cameroon",
+  "description": "MSF runs a recruitment portal dedicated to West Africa and Cameroon, for medical profiles (doctors, nurses, midwives) and non-medical profiles (logistics, administration, finance). Applications are accepted on a rolling basis.",
+  "niveau": "All levels (medical and non-medical)",
+  "financement": "Paid positions",
+  "pays": "West Africa, Cameroon"
+ },
+ "google-digital-skills-africa": {
+  "titre": "Google Digital Skills for Africa: free digital skills",
+  "description": "Free programme of about 40 hours on digital marketing, using the internet for your business and job hunting. Available any time, at your own pace.",
+  "niveau": "All levels",
+  "financement": "Free",
+  "pays": "Online"
+ },
+ "eiffel-2027": {
+  "titre": "Eiffel Excellence Scholarship (France), 2027 intake",
+  "description": "French government programme to attract international master's and PhD students. You do not apply yourself: the French university or school that admitted you submits your file, before 6 January 2027. Contact the institution early.",
+  "niveau": "Master's / PhD",
+  "financement": "Monthly allowance + extra costs"
+ },
+ "bad-mo-ibrahim-fellowship-2027": {
+  "titre": "Mo Ibrahim Foundation Leadership Fellowship at the AfDB (Abidjan), 2027",
+  "description": "Mo Ibrahim Foundation leadership fellowship hosted at the African Development Bank headquarters in Abidjan. It is aimed at young African professionals who want to work on public policy and the continent's development. Read the eligibility conditions on the official AfDB posting.",
+  "niveau": "Young professional (see conditions)",
+  "financement": "Fellowship (see conditions)"
+ },
+ "commonwealth-shared-2027": {
+  "titre": "Commonwealth Shared Scholarships 2027-2028: one-year master's in the UK",
+  "description": "About 180 full scholarships for a one-year master's at a UK university, from September 2027. You must be a citizen and permanent resident of an eligible Commonwealth country, hold at least the equivalent of a 2:1, and also apply to the chosen master's. Closes 8 December 2026 at 4 p.m. GMT, references included.",
+  "niveau": "Master's",
+  "financement": "Fully funded",
+  "pays": "United Kingdom"
+ },
+ "msf-ocp-resp-cellule3-dakar": {
+  "titre": "Cell 3 Manager, Sahel / West Africa (based in Dakar)",
+  "description": "Role managing the operations of a cell covering MSF projects in the Sahel and West Africa, based in Dakar. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Senior (humanitarian operations management)",
+  "financement": "Paid position"
+ },
+ "msf-oca-promotion-sante-ebola-rdc": {
+  "titre": "Health Promotion and Community Engagement Manager, Ebola emergency pool",
+  "description": "Recruitment for MSF's Ebola emergency pool: coordinating health promotion and community engagement. Fluent French is mandatory. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Experienced professional (French mandatory)",
+  "financement": "Paid position"
+ },
+ "irc-sante-reproduction-mongo": {
+  "titre": "Reproductive Health Supervisor, Mongo",
+  "description": "Supervising IRC's reproductive health activities in the Mongo area. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Health professional",
+  "financement": "Paid position"
+ },
+ "irc-dir-adj-programmes-ouaga": {
+  "titre": "Deputy Director of Programs, Ouagadougou",
+  "description": "Deputy director role in charge of IRC's programmes in Burkina Faso. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Senior professional",
+  "financement": "Paid position"
+ },
+ "drc-protection-pays-goma-bunia": {
+  "titre": "Country Protection Manager, Goma / Bunia",
+  "description": "Leading the protection sector of the Danish Refugee Council in DR Congo. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Senior (protection)",
+  "financement": "Paid position",
+  "pays": "DR Congo (Goma or Bunia)"
+ },
+ "drc-dir-adj-finances-bunia": {
+  "titre": "Deputy Finance Director, Bunia",
+  "description": "Deputy finance director role at the Danish Refugee Council, based in Bunia. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Senior (finance)",
+  "financement": "Paid position"
+ },
+ "pui-administrateur-base-beni": {
+  "titre": "Base Administrator, Beni",
+  "description": "Administrative, financial and HR management of Première Urgence Internationale's base in Beni. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Professional (administration, HR, finance)",
+  "financement": "Paid position"
+ },
+ "mercy-corps-risques-sanitaires-bunia": {
+  "titre": "Health Risk Management and Staff Duty of Care Expert, Bunia",
+  "description": "Role covering health security and duty of care for staff, based in Bunia. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Experienced professional",
+  "financement": "Paid position"
+ },
+ "imc-senior-me-guard-rdc": {
+  "titre": "Senior Monitoring and Evaluation (M&E) Specialist, GUARD project",
+  "description": "M&E role for International Medical Corps' GUARD project, linked to the Ebola response in DR Congo. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Experienced professional (M&E)",
+  "financement": "Paid position"
+ },
+ "imc-manager-pci-mokolo": {
+  "titre": "Infection Prevention and Control (IPC) Manager, Mokolo",
+  "description": "IPC manager role at International Medical Corps' Mokolo office. The closing date is not shown at the top of the posting: apply quickly. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Experienced health professional",
+  "financement": "Paid position"
+ },
+ "imc-officer-me-mokolo": {
+  "titre": "Monitoring and Evaluation (M&E) Officer, Mokolo",
+  "description": "M&E officer role at International Medical Corps' Mokolo office. The closing date is not shown at the top of the posting: apply quickly. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Professional (M&E)",
+  "financement": "Paid position"
+ },
+ "wv-suivi-bien-etre-enfant-rdc": {
+  "titre": "Child Well-being Tracking Officer, Kinshasa / Ngandu",
+  "description": "Tracking child well-being indicators in World Vision's programmes in DR Congo. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Professional",
+  "financement": "Paid position"
+ },
+ "nrc-responsable-zone-niger": {
+  "titre": "Area Manager, Maradi / Tillabéri",
+  "description": "Managing NRC operations in an intervention area in Niger (Maradi or Tillabéri). Read the official posting for the exact profile and how to apply.",
+  "niveau": "Senior professional",
+  "financement": "Paid position"
+ },
+ "oim-pdsu-bujumbura": {
+  "titre": "Project Development Support Unit (PDSU) Coordinator",
+  "description": "Coordinating the unit that supports the design and development of IOM projects in Burundi. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Experienced professional",
+  "financement": "Paid position"
+ },
+ "pam-gestion-info-nouakchott": {
+  "titre": "Operational Information Management and Performance Reporting Officer (national post)",
+  "description": "National post at the WFP office in Nouakchott, focused on operational information management and performance reporting. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Professional (Mauritanian nationals)",
+  "financement": "Paid position"
+ },
+ "onu-conducteur-yaounde": {
+  "titre": "Driver-Messenger, Yaoundé",
+  "description": "Driver-messenger position at the OHCHR office in Yaoundé, published on the UN recruitment portal. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Driving licence, driving experience",
+  "financement": "Paid position"
+ },
+ "care-benin-togo-caravan-5-postes": {
+  "titre": "CARE Benin/Togo is hiring for 5 positions (CARAVAN project)",
+  "description": "Five positions for the CARAVAN project: deputy director of finance and operations, logistics and administration coordinator, grants and finance manager, grants and sub-awards manager, accounting analyst. Women are strongly encouraged to apply. Ad relayed by EmploiTogo; apply by email to the CARE address given in the ad.",
+  "niveau": "Finance, logistics, grants and accounting professionals",
+  "financement": "Paid position",
+  "pays": "Togo / Benin"
+ },
+ "chaine-espoir-vivier-chauffeurs-lome": {
+  "titre": "Driver pool, La Chaîne de l'Espoir Togo",
+  "description": "Building a pool of drivers for occasional or permanent needs. Ad relayed by EmploiTogo and JobRelais; apply by email to the HR address of La Chaîne de l'Espoir Togo given in the ad.",
+  "niveau": "Category B licence, primary school certificate, 2 years' experience, age 25-45, Togolese nationality",
+  "financement": "Paid position"
+ },
+ "bidc-charge-communication-anglais": {
+  "titre": "English Communications Officer (P3)",
+  "description": "English-language communication for the ECOWAS Bank for Investment and Development (EBID): content, media relations and brand image. Ad relayed by JobRelais; apply to the EBID recruitment address given in the ad.",
+  "niveau": "Experienced professional, ECOWAS national",
+  "financement": "Paid position"
+ },
+ "drc-subventions-partenariats-tchad": {
+  "titre": "Grants and Partnerships Officer",
+  "description": "Managing donor grants and partnerships for the Danish Refugee Council in Chad. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Professional (grants management)",
+  "financement": "Paid position"
+ },
+ "drc-chef-projet-protection-rdc": {
+  "titre": "Protection Project Manager",
+  "description": "Managing a protection project of the Danish Refugee Council in DR Congo. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Experienced professional (protection)",
+  "financement": "Paid position"
+ },
+ "pnud-medecin-chef-clinique-niamey": {
+  "titre": "Chief Medical Officer, UN Clinic, Niamey",
+  "description": "Medical director of the clinic that treats UN staff in Niamey. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Experienced doctor",
+  "financement": "Paid position"
+ },
+ "pam-services-gestion-fort-dauphin": {
+  "titre": "Management Services Officer (national post, NOA)",
+  "description": "One-year renewable national post at the WFP area office in Fort-Dauphin, in charge of administrative and management services. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Professional (Malagasy nationals)",
+  "financement": "Paid position"
+ },
+ "alima-communication-dakar": {
+  "titre": "Operations and Campaigns Communication Officer (HQ), Dakar",
+  "description": "Communication on ALIMA's medical operations and campaigns, at the Dakar headquarters. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Professional (communication)",
+  "financement": "Paid position"
+ },
+ "alima-recherche-clinique-ebola": {
+  "titre": "Clinical Research Lead, EBO-PEP project (Ebola Bundibugyo)",
+  "description": "Supporting a clinical research project on Ebola Bundibugyo, with missions in DR Congo. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Experienced researcher or health professional",
+  "financement": "Paid position",
+  "pays": "DR Congo (location to be confirmed, travel in DRC)"
+ },
+ "si-coordinateur-logistique-goma": {
+  "titre": "Head of Logistics Department (Logistics Coordinator), Goma",
+  "description": "Coordinating Solidarités International's logistics in DR Congo, on a 12-month fixed-term contract starting mid-December. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Senior (logistics)",
+  "financement": "Paid position"
+ },
+ "pui-coordinateur-zone-ansongo": {
+  "titre": "Area Coordinator, Ansongo-Kidal",
+  "description": "Coordinating Première Urgence Internationale's activities in the Ansongo-Kidal area. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Senior professional",
+  "financement": "Paid position"
+ },
+ "wv-assistant-sante-bunia": {
+  "titre": "Health Assistant (Ebola response), Bunia",
+  "description": "Supporting World Vision's health activities in the Ebola response in Bunia. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Health professional",
+  "financement": "Paid position"
+ },
+ "crs-responsable-administratif-kinshasa": {
+  "titre": "Administrative Manager, Kinshasa",
+  "description": "Administrative management of the CRS office in Kinshasa. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Professional (administration)",
+  "financement": "Paid position"
+ },
+ "oim-communication-multimedia-tchad": {
+  "titre": "Senior Communications Officer (Multimedia)",
+  "description": "Producing multimedia content and communications for IOM in Chad. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Experienced professional (communication)",
+  "financement": "Paid position"
+ },
+ "oim-projet-paix-tchad": {
+  "titre": "Peace and Reconstruction Project Officer",
+  "description": "Implementing an IOM project on peace and reconstruction in Chad. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Professional",
+  "financement": "Paid position"
+ },
+ "unesco-assistant-admin-dakar": {
+  "titre": "Senior Administrative Assistant, Dakar",
+  "description": "Administrative support role at the UNESCO office in Dakar. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Professional (administration)",
+  "financement": "Paid position"
+ },
+ "msf-assistant-mouvements-dakar": {
+  "titre": "Movements Administrative Assistant, Dakar",
+  "description": "Administrative management of MSF staff travel from Dakar. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Professional (administration, travel)",
+  "financement": "Paid position"
+ },
+ "acf-directeur-pays-mali": {
+  "titre": "Country Director, Bamako",
+  "description": "Leading Action Against Hunger's mission in Mali. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Senior executive",
+  "financement": "Paid position"
+ },
+ "hi-protection-genre-inclusion-madagascar": {
+  "titre": "Protection, Gender and Inclusion Specialist",
+  "description": "12-month contract based in Antananarivo with a short mission to Mozambique. Applications are reviewed on a rolling basis: apply early. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Experienced professional, international contract",
+  "financement": "Paid position"
+ },
+ "icone-groupe-7-postes-lome": {
+  "titre": "ICÔNE GROUPE SARL is hiring for 7 positions",
+  "description": "Positions: community manager, accounting assistant, cashier, shop managers and delivery staff. Paper applications to be dropped off at the company's head office in Agbalépédo. Ad relayed by EmploiTogo.",
+  "niveau": "High school diploma to 2 years of higher education, Togolese nationality",
+  "financement": "Paid position"
+ },
+ "ficr-preparation-catastrophes-kinshasa": {
+  "titre": "Disaster Preparedness and Response Officer",
+  "description": "Based in Kinshasa, with frequent deployments to support the region's National Red Cross Societies on emergency preparedness and response. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Professional (disaster management)",
+  "financement": "Paid position"
+ },
+ "irc-directeur-pays-tchad": {
+  "titre": "Country Director, N'Djamena",
+  "description": "Leading IRC's country programme in Chad; accompanied post based in N'Djamena. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Senior executive",
+  "financement": "Paid position"
+ },
+ "unv-unicef-mobilisateurs-rca": {
+  "titre": "20 Community Mobilisers, UN National Volunteers",
+  "description": "Twenty national volunteers for six months to raise community awareness of the Ebola risk and support community surveillance, in places such as Mobaye, Bangassou, Obo and Zemio. Paid assignment.",
+  "niveau": "Age 18+, nationals, residents or refugees in the Central African Republic",
+  "financement": "Volunteer assignment with allowance",
+  "pays": "Central African Republic (8 locations)"
+ },
+ "unv-assistant-relation-client-benin": {
+  "titre": "Customer Relations Assistant (national volunteer)",
+  "description": "UN national volunteer assignment in Benin as a customer relations assistant. Read the official posting for the exact profile and how to apply.",
+  "niveau": "National volunteer",
+  "financement": "Volunteer assignment with allowance"
+ },
+ "unfpa-stage-tic-yaounde": {
+  "titre": "ICT Intern, UNFPA Yaoundé",
+  "description": "Internship at the UNFPA office in Yaoundé, supporting the adolescents and youth team on digital tools. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Student or recent graduate in IT",
+  "financement": "Internship (check the allowance on the posting)"
+ },
+ "corus-chauffeur-mweka": {
+  "titre": "Driver, PMNS project (Mweka)",
+  "description": "Driver for a Corus International health project in Mweka, on site Monday to Friday. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Driving licence, driving experience",
+  "financement": "Paid position"
+ },
+ "tdh-conseiller-securite-dakar": {
+  "titre": "Regional Safety and Security Advisor",
+  "description": "Based at the Dakar regional office, with regular visits to the region's countries, to oversee the security of Terre des hommes teams. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Senior (humanitarian security)",
+  "financement": "Paid position"
+ },
+ "expertise-france-raf-rwanda": {
+  "titre": "Administrative and Financial Manager, PIU",
+  "description": "Administrative and financial management of an Expertise France project unit in Kigali. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Senior (finance), international post",
+  "financement": "Paid position"
+ },
+ "oim-coordonnateur-protection-kigali": {
+  "titre": "Protection Coordinator (P-3)",
+  "description": "IOM professional-category post in Kigali, focused on migrant protection. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Experienced professional (protection)",
+  "financement": "Paid position"
+ },
+ "oim-sante-mentale-kigali": {
+  "titre": "Mental Health and Psychosocial Support Officer (voluntary return)",
+  "description": "Psychosocial support for migrants in IOM's assisted voluntary return programme in Rwanda. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Professional (mental health, psychosocial)",
+  "financement": "Paid position"
+ },
+ "cbm-directeur-pays-rwanda": {
+  "titre": "Country Director, Rwanda",
+  "description": "Leading the country programme of CBM, an NGO specialised in disability and eye health. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Senior executive",
+  "financement": "Paid position"
+ },
+ "one-acre-superviseur-district-rwanda": {
+  "titre": "Senior District Supervisor",
+  "description": "Two-year contract supervising the field teams of One Acre Fund, which supports smallholder farmers. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Professional",
+  "financement": "Paid position",
+  "pays": "Rwanda (Bugesera, Rwamagana or Karongi)"
+ },
+ "one-acre-comptable-junior-kigali": {
+  "titre": "Junior Accountant, Accounts Receivable",
+  "description": "Junior accountant at One Acre Fund's Rwanda headquarters, with health insurance. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Recent accounting graduate",
+  "financement": "Paid position"
+ },
+ "wv-assistant-wash-bunia": {
+  "titre": "WASH Assistant, Bunia",
+  "description": "Local fixed-term contract supporting World Vision's water, sanitation and hygiene activities in Ituri. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Water, sanitation and hygiene technician",
+  "financement": "Paid position"
+ },
+ "wv-coordinateur-rh-bunia": {
+  "titre": "People & Culture (HR) Coordinator, Bunia",
+  "description": "Local fixed-term contract coordinating World Vision's human resources management in Ituri. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Experienced professional (HR)",
+  "financement": "Paid position"
+ },
+ "action-education-directeur-niger": {
+  "titre": "Country Director, Niger",
+  "description": "Leading the Niger office of Action Education, an NGO specialised in access to education. Posted by the organization on ReliefWeb; apply as instructed in the posting.",
+  "niveau": "Senior executive",
+  "financement": "Paid position"
+ },
+ "hi-area-manager-ouaddai": {
+  "titre": "Area Manager, Ouaddaï",
+  "description": "Managing Humanity & Inclusion's activities and teams in the Ouaddaï area, eastern Chad. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Senior (programme management)",
+  "financement": "Paid position"
+ },
+ "drc-plaidoyer-communication-dakar": {
+  "titre": "Advocacy and Communications Advisor (West Africa)",
+  "description": "Regional Danish Refugee Council post covering West Africa, North Africa and the Americas, representing DRC in inter-NGO advocacy groups. Read the official posting for the exact profile and how to apply. Posting in English.",
+  "niveau": "Experienced professional (advocacy, communication)",
+  "financement": "Paid position",
+  "pays": "Senegal (Dakar, regional hub)"
+ },
+ "alima-action-environnementale-senegal": {
+  "titre": "Environmental Action Lead",
+  "description": "Role in charge of reducing the environmental impact of ALIMA's medical and logistics activities. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Experienced professional (5 to 9 years)",
+  "financement": "Paid position"
+ },
+ "alima-logistique-cte-nord-kivu": {
+  "titre": "Ebola Treatment Centre (ETC) Logistics Manager, North Kivu",
+  "description": "Managing logistics for an ALIMA Ebola treatment centre in North Kivu. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Experienced professional (logistics)",
+  "financement": "Paid position",
+  "pays": "DR Congo (North Kivu)"
+ },
+ "dca-directeur-pays-mali": {
+  "titre": "Country Director, Mali",
+  "description": "Leading DanChurchAid's programme in Mali. Read the official posting for the exact profile and how to apply. Posting in English.",
+  "niveau": "Senior executive",
+  "financement": "Paid position"
+ },
+ "arche-nova-chef-mission-mali": {
+  "titre": "Head of Mission, Mali",
+  "description": "Leading the mission of German NGO arche noVa in Mali (water, sanitation, humanitarian aid). Posted by the organization on ReliefWeb; apply as instructed in the posting. Posting in English.",
+  "niveau": "Senior executive",
+  "financement": "Paid position"
+ },
+ "mdmb-evaluation-dgd-benin": {
+  "titre": "Consultancy: evaluation of the five-year DGD programme, Benin",
+  "description": "Consultancy to evaluate a five-year programme of Médecins du Monde Belgium funded by Belgian cooperation (DGD). Posted by the organization on ReliefWeb; apply as instructed in the posting.",
+  "niveau": "Evaluation consultant",
+  "financement": "Paid consultancy"
+ },
+ "mdmb-evaluation-dgd-niger": {
+  "titre": "Consultancy: evaluation of the five-year DGD programme (SRHR), Niger",
+  "description": "Evaluation of a sexual and reproductive health programme of Médecins du Monde Belgium in Niger. Posted by the organization on ReliefWeb; apply as instructed in the posting.",
+  "niveau": "Evaluation consultant",
+  "financement": "Paid consultancy"
+ },
+ "mdm-espagne-coordinateur-burkina": {
+  "titre": "Programme Coordinator, Burkina Faso",
+  "description": "Coordinating the health programmes of Médecins du Monde Spain in Burkina Faso. Posted by the organization on ReliefWeb; apply as instructed in the posting. Posting in Spanish.",
+  "niveau": "Senior (programme management)",
+  "financement": "Paid position"
+ },
+ "memisa-responsable-pays-niger": {
+  "titre": "Country Manager, Niger",
+  "description": "Representing and managing the health programme of Belgian NGO Memisa in Niger. Posted by the organization on ReliefWeb; apply as instructed in the posting.",
+  "niveau": "Senior professional",
+  "financement": "Paid position"
+ },
+ "croix-rouge-espagnole-mali": {
+  "titre": "Head of Delegation, Mali",
+  "description": "Leading the Spanish Red Cross delegation in Mali. Read the official posting for the exact profile and how to apply. Posting in Spanish.",
+  "niveau": "Senior professional",
+  "financement": "Paid position"
+ },
+ "luxdev-qualiso-lome": {
+  "titre": "Chief Technical Advisor, Qualiso project",
+  "description": "60-month contract from January 2027 to provide technical leadership for a LuxDev project on the quality and safety of healthcare in Togo. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Senior (health, quality of care)",
+  "financement": "Paid position"
+ },
+ "expertise-france-moyens-generaux-togo": {
+  "titre": "General Services and Logistics Assistant",
+  "description": "Field post based in Lomé, with travel in the country and to Benin, managing logistics and general services for an Expertise France project. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Professional (logistics, administration)",
+  "financement": "Paid position"
+ },
+ "oim-securite-togo": {
+  "titre": "Senior Security Associate (Lomé / Dapaong)",
+  "description": "IOM security post based in Lomé, with direct supervision in Dapaong, northern Togo. Read the official posting for the exact profile and how to apply. Posting in English.",
+  "niveau": "Professional (security)",
+  "financement": "Paid position"
+ },
+ "oim-securite-benin": {
+  "titre": "Senior Security Associate (Cotonou / Natitingou)",
+  "description": "IOM security post based in Cotonou, with direct supervision in Natitingou, northern Benin. Read the official posting for the exact profile and how to apply. Posting in English.",
+  "niveau": "Professional (security)",
+  "financement": "Paid position"
+ },
+ "unicef-representant-adjoint-abidjan": {
+  "titre": "Deputy Representative, Programmes (P-5)",
+  "description": "Programme leadership post at the UNICEF office in Côte d'Ivoire, fixed-term. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Senior executive (P-5)",
+  "financement": "Paid position"
+ },
+ "irc-partenariats-niamey": {
+  "titre": "Senior Partnerships Manager",
+  "description": "Leading IRC's partnerships with local organizations in Niger. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Senior (partnerships)",
+  "financement": "Paid position"
+ },
+ "irc-grant-manager-ebola-bunia": {
+  "titre": "Senior Grant Manager, Ebola response",
+  "description": "Managing funding for IRC's Ebola response, based in Bunia with travel to intervention sites. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Senior (grants management)",
+  "financement": "Paid position"
+ },
+ "fhi360-rtt-surge-bunia": {
+  "titre": "Rapid Response Teams Coordinator (RTT/Surge)",
+  "description": "Coordinating FHI 360's rapid response teams in Bunia. The posting shows the salary range. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Experienced professional (public health, emergencies)",
+  "financement": "Paid position"
+ },
+ "african-parks-rh-tchad": {
+  "titre": "HR Manager, national park",
+  "description": "Human resources management for a national park managed by African Parks in south-eastern Chad. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Experienced professional (human resources)",
+  "financement": "Paid position"
+ },
+ "drc-gestion-fonds-srf-ouaga": {
+  "titre": "Fund Management Unit Manager (SRF)",
+  "description": "Managing a unit of the regional fund run by the Danish Refugee Council, based in Ouagadougou. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Senior (fund management)",
+  "financement": "Paid position"
+ },
+ "drc-protection-migration-abeche": {
+  "titre": "Protection and Migration Team Leader",
+  "description": "Leading a protection and migration team of the Danish Refugee Council in eastern and northern Chad. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Experienced professional (protection), national contract",
+  "financement": "Paid position"
+ },
+ "acf-rh-diffa": {
+  "titre": "Human Resources Officer, Diffa base",
+  "description": "6-month contract from January managing human resources at Action Against Hunger's Diffa base. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Professional (human resources)",
+  "financement": "Paid position"
+ },
+ "oim-protection-migrants-bangui": {
+  "titre": "Migrant Protection Officer (assisted voluntary return)",
+  "description": "Protection and case management for migrants in IOM's assisted voluntary return programme in the Central African Republic. Read the official posting for the exact profile and how to apply. Posting in English.",
+  "niveau": "International professional (P)",
+  "financement": "Paid position"
+ },
+ "wv-cluster-manager-kenge": {
+  "titre": "Cluster Manager, Kenge",
+  "description": "Managing World Vision's programmes in the Kenge cluster. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Senior professional",
+  "financement": "Paid position"
+ },
+ "wv-protection-enfance-kinshasa": {
+  "titre": "Child Protection and Safeguarding Coordinator",
+  "description": "Coordinating child protection and safeguarding rules for World Vision in DR Congo. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Experienced professional (child protection)",
+  "financement": "Paid position"
+ },
+ "wv-stage-tic-nouakchott": {
+  "titre": "ICT Intern, Nouakchott",
+  "description": "Internship at the World Vision office in Nouakchott, supporting the information technology team. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Student or recent graduate in IT",
+  "financement": "Internship (check the allowance on the posting)"
+ },
+ "eddap-secretaire-commerciale-lome": {
+  "titre": "Sales Secretary",
+  "description": "Fixed-term position in a cleaning and staffing company, for candidates living in the Agoè area. Ad relayed by EmploiTogo; apply by email to the address given in the ad.",
+  "niveau": "Sales and administrative profile",
+  "financement": "Paid position"
+ },
+ "fhi360-donnees-vih-senegal": {
+  "titre": "HIV Data Officer",
+  "description": "Data management for an FHI 360 HIV programme in Casamance. Read the official posting for the exact profile and how to apply. Posting in English.",
+  "niveau": "Professional (health data management)",
+  "financement": "Paid position"
+ },
+ "unv-oms-communication-dakar": {
+  "titre": "Communications Officer, WHO (national volunteer)",
+  "description": "Full-time national volunteer assignment in communications at the WHO office in Dakar.",
+  "niveau": "National volunteer (communication)",
+  "financement": "Volunteer assignment with allowance"
+ },
+ "unv-unicef-donateurs-conakry": {
+  "titre": "Donor Relations and Reporting Specialist, UNICEF (volunteer)",
+  "description": "Volunteer assignment at the UNICEF office in Conakry, focused on donor reporting and partnership follow-up.",
+  "niveau": "Volunteer (reporting, partnerships)",
+  "financement": "Volunteer assignment with allowance"
+ },
+ "wateraid-people-hub-lead": {
+  "titre": "People Hub Lead (Africa)",
+  "description": "Hybrid HR role at WaterAid, based in one of its African offices, including Kigali and Accra. Read the official posting for the exact profile and how to apply. Posting in English.",
+  "niveau": "Senior (human resources)",
+  "financement": "Paid position",
+  "pays": "Rwanda (Kigali), Ghana or another African office"
+ },
+ "alafia-consultance-genre-togo": {
+  "titre": "Consultancy: gender and inclusion assessment framework for CSOs",
+  "description": "Togolese NGO ALAFIA is looking for a consultant to develop an assessment and progress framework on gender-transformative approaches and inclusion for its partner organizations. Ad relayed by EmploiTogo; submit your file by email to the address given in the ad.",
+  "niveau": "Consultant in gender and organizational strengthening",
+  "financement": "Paid consultancy"
+ },
+ "anpe-togo-logisticien": {
+  "titre": "Logistician",
+  "description": "Managing purchasing, stock, equipment and the vehicle fleet of Togo's National Employment Agency (ANPE). Ad relayed by JobRelais; apply by email to the ANPE recruitment address given in the ad.",
+  "niveau": "Bachelor's in logistics or transport",
+  "financement": "Paid position"
+ },
+ "rmo-chef-juridique-lome": {
+  "titre": "Head of Legal Department (permanent contract)",
+  "description": "Permanent role reporting to the general management of a distribution company, recruited by the RMO firm. Ad relayed by JobRelais; apply by email to the RMO address given in the ad.",
+  "niveau": "Experienced lawyer",
+  "financement": "Paid position"
+ },
+ "unicef-urgence-cotonou": {
+  "titre": "Emergency Officer (NO-2, 10-month temporary)",
+  "description": "10-month temporary appointment at the UNICEF office in Cotonou to support emergency preparedness and response. Open to Beninese nationals only. Read the official posting for the exact profile and how to apply.",
+  "niveau": "National professional (NO-2)",
+  "financement": "Paid position"
+ },
+ "unicef-approvisionnement-kinshasa": {
+  "titre": "Procurement Services Manager (P-4)",
+  "description": "Leading procurement and supply for the UNICEF office in DR Congo. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Senior (procurement, P-4)",
+  "financement": "Paid position"
+ },
+ "unicef-protection-enfance-kinshasa": {
+  "titre": "Child Protection Officer (NO-2)",
+  "description": "National child protection post at the UNICEF office in Kinshasa. Read the official posting for the exact profile and how to apply.",
+  "niveau": "National professional (NO-2)",
+  "financement": "Paid position"
+ },
+ "msf-oca-sante-mentale-ebola": {
+  "titre": "Mental Health Activity Manager, Ebola emergency pool",
+  "description": "Recruitment for MSF's Ebola emergency pool: managing mental health activities. French is required. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Experienced professional (mental health), French speaker",
+  "financement": "Paid position"
+ },
+ "msf-oca-sage-femme-ebola": {
+  "titre": "Midwife Activity Manager, Ebola emergency pool",
+  "description": "Recruitment for MSF's Ebola emergency pool: supervising maternal health activities. Fluent French is mandatory. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Experienced midwife, French mandatory",
+  "financement": "Paid position"
+ },
+ "irc-specialiste-protection-ndjamena": {
+  "titre": "Protection Specialist",
+  "description": "Technical support to IRC's protection programmes in Chad, based in N'Djamena with regular field visits. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Experienced professional (protection)",
+  "financement": "Paid position"
+ },
+ "irc-medecin-consultant-mongo": {
+  "titre": "Consultant Doctor",
+  "description": "Medical consultations and support to IRC's nutrition units in the Mongo area. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Doctor",
+  "financement": "Paid position"
+ },
+ "wv-wash-ndjamena": {
+  "titre": "Senior WASH Manager",
+  "description": "Leading World Vision's water, sanitation and hygiene programmes in Chad, from the N'Djamena head office. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Senior (water, sanitation, hygiene)",
+  "financement": "Paid position"
+ },
+ "wv-supply-chain-bangui": {
+  "titre": "Supply Chain and Contracts Coordinator",
+  "description": "Coordinating procurement, supply chain and contracts for World Vision in the Central African Republic. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Experienced professional (logistics, procurement)",
+  "financement": "Paid position"
+ },
+ "si-adjoint-finance-goma": {
+  "titre": "Deputy Head of Finance Department",
+  "description": "Supporting the financial management of Solidarités International's mission in DR Congo, based in Goma. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Experienced professional (finance)",
+  "financement": "Paid position"
+ },
+ "tgh-projet-eha-amdjarass": {
+  "titre": "WASH Project Manager",
+  "description": "Managing a TGH water, sanitation and hygiene project in Ennedi Est, with frequent travel. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Experienced professional (water, sanitation, hygiene)",
+  "financement": "Paid position"
+ },
+ "inso-analyste-regional-dakar": {
+  "titre": "Regional Analyst, West and Central Africa",
+  "description": "12-month renewable contract analysing the security situation for NGOs in the region. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Experienced professional (security analysis)",
+  "financement": "Paid position"
+ },
+ "enabel-projets-evenements-abidjan": {
+  "titre": "Project and Events Officer, CALAO programme",
+  "description": "National post managing projects and events for the CALAO programme and Enabel's office in Côte d'Ivoire. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Professional (national contract)",
+  "financement": "Paid position"
+ },
+ "expertise-france-adaptaction-mauritanie": {
+  "titre": "National Expert, AdaptAction programme",
+  "description": "Supporting the rollout of the AdaptAction climate adaptation programme, with regular presence in a partner government department. Read the official posting for the exact profile and how to apply.",
+  "niveau": "National expert (climate, public policy)",
+  "financement": "Paid position"
+ },
+ "drc-stage-finance-yaounde": {
+  "titre": "Finance Intern",
+  "description": "National internship in the Danish Refugee Council finance team in Yaoundé. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Student or recent graduate in finance",
+  "financement": "Internship (check the allowance on the posting)"
+ },
+ "nrc-stage-rh-iriba": {
+  "titre": "Human Resources and Administration Intern",
+  "description": "Internship at NRC's Iriba sub-office in eastern Chad, supporting the HR and administration teams. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Student or recent graduate (HR, administration), local recruitment",
+  "financement": "Internship (check the allowance on the posting)"
+ },
+ "sightsavers-me-ntd-ouaga": {
+  "titre": "M&E Programme Officer, Neglected Tropical Diseases",
+  "description": "Monitoring and evaluation of Sightsavers' neglected tropical disease programmes in Burkina Faso. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Professional (M&E)",
+  "financement": "Paid position"
+ },
+ "ipas-rh-kinshasa": {
+  "titre": "Human Resources and Administration Advisor",
+  "description": "Managing human resources and administration for the Ipas office in DR Congo. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Experienced professional (HR)",
+  "financement": "Paid position"
+ },
+ "pam-assistant-gestion-kankan": {
+  "titre": "Management Services Assistant, Kankan",
+  "description": "Administrative support at the WFP field office in Kankan. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Professional (administration), local recruitment",
+  "financement": "Paid position"
+ },
+ "technoserve-office-manager-cotonou": {
+  "titre": "Bilingual Office Manager",
+  "description": "Administrative management of the TechnoServe office in Cotonou, in French and English. Read the official posting for the exact profile and how to apply.",
+  "niveau": "Professional (administration), bilingual French-English",
+  "financement": "Paid position"
+ },
+ "canada-jobbank-50714041": {
+  "titre": "Daycare Assistant Educator, Saint-Laurent (Quebec)",
+  "description": "Working language: French. Posted by the employer on the Government of Canada Job Bank, which also accepts applicants without a Canadian work permit. The employer has applied for a Labour Market Impact Assessment (LMIA) to hire a foreign worker; the work permit must be obtained after hiring.",
+  "niveau": "Early childhood experience",
+  "financement": "Salary: 20 $ CAD per hour"
+ },
+ "canada-jobbank-50702182": {
+  "titre": "Restaurant Cook, Drummondville (Quebec)",
+  "description": "Working language: French. Posted by the employer on the Government of Canada Job Bank, which also accepts applicants without a Canadian work permit. The employer has applied for a Labour Market Impact Assessment (LMIA) to hire a foreign worker; the work permit must be obtained after hiring.",
+  "niveau": "Cooking experience",
+  "financement": "Salary: 18 $ CAD per hour"
+ },
+ "canada-jobbank-50760149": {
+  "titre": "Fruit Orchard Worker, Osoyoos",
+  "description": "Working language: English. Posted by the employer on the Government of Canada Job Bank, which also accepts applicants without a Canadian work permit. The employer has applied for a Labour Market Impact Assessment (LMIA) to hire a foreign worker; the work permit must be obtained after hiring.",
+  "niveau": "Farm work",
+  "financement": "Salary: 18.25 $ CAD per hour"
+ },
+ "canada-jobbank-50730827": {
+  "titre": "Long-haul Truck Driver",
+  "description": "Working language: English. Posted by the employer on the Government of Canada Job Bank, which also accepts applicants without a Canadian work permit. The employer has applied for a Labour Market Impact Assessment (LMIA) to hire a foreign worker; the work permit must be obtained after hiring.",
+  "niveau": "Heavy vehicle licence and experience",
+  "financement": "Salary: 37 $ CAD per hour"
+ },
+ "canada-jobbank-50723029": {
+  "titre": "Construction Labourer, Edmonton",
+  "description": "Working language: English. Posted by the employer on the Government of Canada Job Bank, which also accepts applicants without a Canadian work permit. The employer has applied for a Labour Market Impact Assessment (LMIA) to hire a foreign worker; the work permit must be obtained after hiring.",
+  "niveau": "Manual work",
+  "financement": "Salary: 28 $ CAD per hour"
+ },
+ "canada-jobbank-50711760": {
+  "titre": "Bakery-Pastry Chef, Saanichton",
+  "description": "Working language: English. Posted by the employer on the Government of Canada Job Bank, which also accepts applicants without a Canadian work permit. The employer has applied for a Labour Market Impact Assessment (LMIA) to hire a foreign worker; the work permit must be obtained after hiring.",
+  "niveau": "Bakery-pastry experience",
+  "financement": "Salary: 21 $ CAD per hour"
+ },
+ "canada-jobbank-50681312": {
+  "titre": "Cabinetmaker, Mississauga",
+  "description": "Posted by the employer on the Government of Canada Job Bank, which also accepts applicants without a Canadian work permit. The employer has applied for a Labour Market Impact Assessment (LMIA) to hire a foreign worker; the work permit must be obtained after hiring.",
+  "niveau": "Cabinetmaking experience",
+  "financement": "Paid position"
+ }
+}
