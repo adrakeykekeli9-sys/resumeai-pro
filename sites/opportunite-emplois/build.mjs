@@ -12,6 +12,7 @@ const NAME = "Opportunité d'Emplois";
 const OUT = "dist";
 
 const data = JSON.parse(fs.readFileSync("data/offres.json", "utf8"));
+const PROG = fs.existsSync("data/programmes.json") ? JSON.parse(fs.readFileSync("data/programmes.json", "utf8")).destinations : [];
 const today = new Date(new Date().toISOString().slice(0, 10) + "T00:00:00Z");
 const MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
 const TYPES = { bourse: "Bourse d'études", emploi: "Emploi", stage: "Stage", formation: "Formation" };
@@ -91,7 +92,13 @@ pre.wa{white-space:pre-wrap;background:var(--bg);border:1px solid var(--line);bo
 .pays a b{background:rgba(255,255,255,.25);border-radius:999px;padding:0 8px;font-size:.82rem}
 .pays a[aria-current=page]{outline:3px solid var(--fg);outline-offset:2px}
 .pays .c0{background:#C2410C}.pays .c1{background:#0F766E}.pays .c2{background:#1D4ED8}.pays .c3{background:#7E22CE}.pays .c4{background:#B91C1C}.pays .c5{background:#15803D}.pays .c6{background:#A16207}.pays .c7{background:#0369A1}.pays .c8{background:#BE185D}.pays .c9{background:#4D7C0F}
-.pays .intl{background:#F2B734;color:#1b1200}.pays .intl b{background:rgba(0,0,0,.12)}
+.pays .intl{background:#F2B734;color:#1b1200}
+.pays h2.second{margin-top:14px}.pays .abroad{background:#fff;color:#13211D;border:2px solid #13211D}
+nav.top a.cv-link{background:#F2B734;color:#1b1200;padding:2px 10px;border-radius:999px;opacity:1}
+.prog{background:var(--surface);border:1px solid var(--line);border-left:5px solid #F2B734;border-radius:14px;padding:16px 18px;margin:14px 0}.prog h3{font-family:var(--display);margin:0 0 4px;font-size:1.15rem}.prog p.pub{margin:0 0 8px;color:var(--muted)}
+.dest-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin:16px 0}.dest-grid a{display:block;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;text-decoration:none;color:var(--fg)}.dest-grid a:hover{border-color:var(--brand)}.dest-grid .flag{font-size:2rem;display:block}.dest-grid b{font-family:var(--display);font-size:1.1rem}
+.cv-hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:18px 0}.cv-box{border-radius:14px;padding:18px 20px}.cv-box.cand{background:var(--emploi-soft)}.cv-box.rh{background:var(--bourse-soft)}.cv-box h2{margin-top:0}
+.cvband{background:linear-gradient(90deg,#F2B734,#FFD873);color:#1b1200}.cvband .wrap{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding-block:12px;font-weight:700}.cvband a{background:#0B2A24;color:#fff;padding:8px 14px;border-radius:10px;text-decoration:none}.pays .intl b{background:rgba(0,0,0,.12)}
 `;
 
 const LOGO = `<svg width="30" height="30" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="9" fill="#F2B734"/><path d="M9 22V14h16v8a2 2 0 0 1-2 2H11a2 2 0 0 1-2-2Z" fill="#0B2A24"/><path d="M13 14v-2.5A1.5 1.5 0 0 1 14.5 10h5a1.5 1.5 0 0 1 1.5 1.5V14" stroke="#0B2A24" stroke-width="2" fill="none"/></svg>`;
@@ -120,7 +127,7 @@ ${(Array.isArray(jsonld) ? jsonld : jsonld ? [jsonld] : []).map((j) => `<script 
 </head>
 <body>
 <header class="site"><div class="wrap"><a class="logo" href="/">${LOGO} ${NAME}</a>
-<nav class="top" aria-label="Menu principal"><a href="/bourses/">Bourses</a><a href="/emplois/">Emplois</a><a href="/stages/">Stages</a><a href="/formations/">Formations</a><a href="/ong/">ONG</a><a href="/international/">International</a><a href="/guides/">Conseils</a><a href="/whatsapp/" class="wa-link">Message du jour</a></nav></div></header>
+<nav class="top" aria-label="Menu principal"><a href="/bourses/">Bourses</a><a href="/emplois/">Emplois</a><a href="/stages/">Stages</a><a href="/formations/">Formations</a><a href="/ong/">ONG</a><a href="/international/">International</a><a href="/etranger/">Travailler à l'étranger</a><a href="/outil-cv/" class="cv-link">Outil CV</a><a href="/guides/">Conseils</a><a href="/whatsapp/" class="wa-link">Message du jour</a></nav></div></header>
 ${body}
 <footer class="site"><div class="wrap">
 <nav aria-label="Pages du site"><a href="/a-propos/">À propos</a><a href="/contact/">Contact</a><a href="/confidentialite/">Confidentialité et cookies</a><a href="/mentions-legales/">Mentions légales</a><a href="/guides/">Conseils</a></nav>
@@ -145,7 +152,7 @@ function offerCard(o, h = "h2") {
 const sideBar = (open) => {
   const soon = open.filter((o) => { const n = daysLeft(o); return n !== null && n <= 14; }).slice(0, 8);
   return `<aside>
-<div class="panel cta"><h2>Votre CV est-il prêt ?</h2><p style="margin:0 0 12px">Créez un CV et une lettre de motivation adaptés à chaque offre avec ResumeAI Pro. 3 essais gratuits par jour.</p><a class="btn" href="${RESUMEAI_URL}" target="_blank" rel="noopener">Créer mon CV</a></div>
+<div class="panel cta"><h2>Votre CV est-il prêt ?</h2><p style="margin:0 0 12px">Créez un CV et une lettre de motivation adaptés à chaque offre avec ResumeAI Pro. Recruteurs : classez vos candidatures automatiquement. 3 essais gratuits par jour.</p><a class="btn" href="/outil-cv/">Découvrir l'outil CV</a></div>
 <div class="panel"><h2>Clôturent bientôt</h2>${soon.length ? `<ul>${soon.map((o) => `<li><a href="/offres/${o.id}/">${esc(o.titre)}</a>${badge(o)}</li>`).join("")}</ul>` : "<p>Aucune clôture dans les 14 prochains jours.</p>"}</div>
 <div class="panel warn"><h2>Attention aux arnaques</h2><ul><li>Une vraie offre ne demande jamais de frais par Mobile Money.</li><li>Postulez uniquement sur le site officiel.</li><li>Aucun visa n'est « garanti ».</li></ul><p style="margin:10px 0 0"><a href="/guides/eviter-arnaques-bourses-emplois/">Les 7 signes d'une fausse offre</a></p></div>
 ${COUNTRY_PAGES.length ? `<div class="panel"><h2>Offres par pays</h2><ul>${COUNTRY_PAGES.map((c) => `<li><a href="/pays/${c.slug}/">${esc(c.name)}</a> (${c.count})</li>`).join("")}</ul></div>` : ""}
@@ -167,6 +174,7 @@ function listPage({ pathname, title, h1, lede, items, all, showTabs, extraLd = [
 <div class="stats"><div><b>${all.filter(isOpen).length}</b>offres ouvertes</div><div><b>${all.filter((o) => isOpen(o) && o.type === "bourse").length}</b>bourses</div><div><b>${all.filter((o) => isOpen(o) && o.type !== "bourse").length}</b>emplois et stages</div><div><b>${fmt(data.maj)}</b>dernière mise à jour</div></div>
 </div></section>
 ${countryBar(pathname)}
+<div class="cvband"><div class="wrap"><span>📄 Candidats : un CV adapté à chaque offre. 👔 Recruteurs : triez vos candidatures avec l'IA.</span><a href="/outil-cv/">Découvrir l'outil CV</a></div></div>
 <div class="tools"><div class="wrap">
 ${showTabs ? `<div role="group" aria-label="Type d'offre" style="display:flex;gap:6px;flex-wrap:wrap">${["tout", ...ALL_TYPES].filter((k) => k === "tout" || counts[k] > 0).map((k) => `<button class="tab" type="button" data-t="${k}" aria-pressed="${k === "tout"}">${k === "tout" ? "Tout" : TYPES_PL[k]} (${counts[k]})</button>`).join("")}</div>` : ""}
 <input type="search" id="q" placeholder="Rechercher : pays, organisme, niveau…" aria-label="Rechercher une offre">
@@ -189,7 +197,9 @@ function countryBar(current) {
   return `<nav class="pays" aria-label="Offres par pays"><div class="wrap"><h2>🌍 Choisissez votre pays</h2><ul>
 ${link("/international/", "intl", "🌐 International", nIntl)}
 ${COUNTRY_PAGES.map((c, i) => link(`/pays/${c.slug}/`, `c${i % 10}`, esc(c.name), c.count)).join("\n")}
-</ul></div></nav>`;
+</ul>
+${PROG.length ? `<h2 class="second">✈️ Travailler à l'étranger : programmes officiels de recrutement</h2><ul>${PROG.map((p) => `<li><a class="abroad" href="/etranger/${p.slug}/"${`/etranger/${p.slug}/` === current ? ' aria-current="page"' : ""}>${p.drapeau} ${esc(p.nom)}</a></li>`).join("")}</ul>` : ""}
+</div></nav>`;
 }
 
 function breadcrumbLd(trail) {
@@ -293,6 +303,42 @@ write("index.html", listPage({ pathname: "/", title: `${NAME} – Emplois, stage
   { "@context": "https://schema.org", "@type": "Organization", name: NAME, url: SITE + "/", logo: SITE + "/og.png", ...(CONTACT_EMAIL ? { email: CONTACT_EMAIL } : {}) }] }));
 const intl = open.filter(isInternational);
 write("international/index.html", listPage({ pathname: "/international/", title: `Emplois à l'international et bourses à l'étranger (${MOIS_MAJ()})`, h1: `Emplois, stages et bourses <em>à l'international</em>`, lede: `${intl.length} offres ouvertes aux candidats de toutes nationalités, y compris du Togo et de toute l'Afrique francophone : postes internationaux des Nations Unies et des ONG, missions dans d'autres pays, bourses d'études à l'étranger. Les postes réservés aux nationaux d'un autre pays et les recrutements locaux sont exclus. Vérifiez toujours les conditions de nationalité sur la fiche officielle.`, items: intl, all, showTabs: true, extraLd: [breadcrumbLd([["Accueil", "/"], ["International", "/international/"]])] }));
+// ─── Travailler à l'étranger ───
+const progCard = (g) => `<div class="prog"><h3>${esc(g.nom)}</h3><p class="pub">Pour qui : ${esc(g.public)}</p><ul>${g.points.map((x) => `<li>${esc(x)}</li>`).join("")}</ul><p><a class="btn primary" href="${esc(g.lien)}" target="_blank" rel="noopener">Site officiel</a></p></div>`;
+const abroadWarn = `<p class="notice">Ces programmes sont gratuits ou à frais officiels fixés par l'État. Méfiez-vous des agences qui « garantissent » un visa ou un emploi contre paiement. Les conditions changent souvent : vérifiez-les toujours sur le site officiel.</p>`;
+if (PROG.length) {
+  write("etranger/index.html", layout({ title: `Travailler à l'étranger : Canada, Québec, Allemagne, Luxembourg, France (${MOIS_MAJ()})`, description: "Programmes officiels de recrutement international ouverts aux candidats d'Afrique francophone : Canada, Québec, Allemagne, Luxembourg et France, avec les liens vers les sites gouvernementaux.", pathname: "/etranger/",
+    jsonld: [breadcrumbLd([["Accueil", "/"], ["Travailler à l'étranger", "/etranger/"]])],
+    body: `<section class="hero"><div class="wrap"><h1>Travailler <em>à l'étranger</em></h1><p class="lede">Plusieurs pays recrutent officiellement des travailleurs qualifiés d'Afrique francophone. Voici leurs programmes, expliqués simplement, avec le lien vers le site du gouvernement.</p></div></section>${countryBar("/etranger/")}<main class="wrap layout"><div><article class="page"><h2>Choisissez une destination</h2><div class="dest-grid">${PROG.map((p) => `<a href="/etranger/${p.slug}/"><span class="flag">${p.drapeau}</span><b>${esc(p.nom)}</b><br><span style="color:var(--muted)">${p.programmes.length} programme${p.programmes.length > 1 ? "s" : ""}</span></a>`).join("")}</div>${abroadWarn}<h2>Préparer son dossier</h2><ul><li>Un CV au format du pays visé (souvent 2 pages, sans photo au Canada).</li><li>Des diplômes traduits et, selon le pays, une reconnaissance officielle de vos qualifications.</li><li>Un test de langue reconnu (français ou anglais, parfois allemand).</li></ul><p>Préparez votre CV avec notre <a href="/outil-cv/">outil CV</a> et consultez les <a href="/international/">offres d'emploi à l'international</a>.</p></article></div>${sideBar(open)}</main>` }));
+  for (const p of PROG) {
+    write(`etranger/${p.slug}/index.html`, layout({ title: `Travailler ${p.de} depuis l'Afrique : programmes officiels (${MOIS_MAJ()})`, description: `${p.intro} Conditions principales et lien vers le site officiel.`.slice(0, 300), pathname: `/etranger/${p.slug}/`, ogType: "article",
+      jsonld: [breadcrumbLd([["Accueil", "/"], ["Travailler à l'étranger", "/etranger/"], [p.nom, `/etranger/${p.slug}/`]])],
+      body: `<section class="hero"><div class="wrap"><h1>${p.drapeau} Travailler <em>${esc(p.de)}</em></h1><p class="lede">${esc(p.intro)}</p></div></section>${countryBar(`/etranger/${p.slug}/`)}<main class="wrap layout"><div><nav class="crumbs"><a href="/">Accueil</a> › <a href="/etranger/">Travailler à l'étranger</a> › ${esc(p.nom)}</nav>${p.programmes.map(progCard).join("")}${abroadWarn}<p>Voir aussi les <a href="/international/">offres d'emploi ouvertes à toutes les nationalités</a> et préparez un CV adapté avec notre <a href="/outil-cv/">outil CV</a>.</p></div>${sideBar(open)}</main>` }));
+  }
+}
+
+// ─── Outil CV ───
+write("outil-cv/index.html", layout({ title: "Outil CV avec IA pour candidats et recruteurs (ResumeAI Pro)", description: "Créez un CV et une lettre de motivation adaptés à chaque offre, simulez un entretien, ou classez automatiquement les candidatures reçues : ResumeAI Pro, 3 essais gratuits par jour.", pathname: "/outil-cv/",
+  jsonld: [{ "@context": "https://schema.org", "@type": "SoftwareApplication", name: "ResumeAI Pro", applicationCategory: "BusinessApplication", operatingSystem: "Web", url: RESUMEAI_URL, inLanguage: "fr", offers: { "@type": "Offer", price: "0", priceCurrency: "XOF", description: "3 actions IA gratuites par jour ; Pass payant pour un usage intensif." } }],
+  body: `<section class="hero"><div class="wrap"><h1>Un CV qui passe les filtres, <em>des recrutements plus rapides</em></h1><p class="lede">ResumeAI Pro utilise l'intelligence artificielle pour aider les candidats à postuler mieux, et les recruteurs à trier plus vite. 3 actions gratuites par jour, sans inscription.</p><p><a class="btn" style="background:#F2B734;color:#1b1200" href="${RESUMEAI_URL}" target="_blank" rel="noopener">Ouvrir ResumeAI Pro</a></p></div></section>
+<main class="wrap" style="padding-block:24px 50px"><div class="cv-hero">
+<div class="cv-box cand"><h2>📄 Pour les demandeurs d'emploi</h2><ul>
+<li><b>Importez votre CV</b> : l'outil le lit et le remet en forme proprement.</li>
+<li><b>Analyse d'une offre</b> : collez le lien ou le texte d'une annonce, l'outil repère les compétences et mots-clés demandés.</li>
+<li><b>Résumé et expériences améliorés</b> pour coller à l'offre et passer les logiciels de tri (ATS).</li>
+<li><b>Lettre de motivation</b> rédigée pour l'offre visée.</li>
+<li><b>Simulation d'entretien</b> avec les questions probables.</li>
+<li><b>Traduction du CV</b> pour les candidatures à l'international.</li>
+</ul><p><a class="btn primary" href="${RESUMEAI_URL}" target="_blank" rel="noopener">Créer mon CV</a></p></div>
+<div class="cv-box rh"><h2>👔 Pour les recruteurs et services RH</h2><ul>
+<li><b>Analyse de la fiche de poste</b> : compétences clés et critères extraits automatiquement.</li>
+<li><b>Classement des candidatures</b> : chaque CV reçoit un score de correspondance avec le poste et une recommandation.</li>
+<li><b>Gain de temps</b> sur la présélection quand vous recevez des dizaines de dossiers.</li>
+<li>Gardez la décision finale : l'outil vous aide à trier, il ne remplace pas l'entretien.</li>
+</ul><p><a class="btn primary" href="${RESUMEAI_URL}" target="_blank" rel="noopener">Essayer pour mon recrutement</a></p></div>
+</div>
+<article class="page" style="max-width:none"><h2>Tarifs</h2><p>3 actions IA gratuites par jour. Pour un usage intensif (candidat très actif, cabinet de recrutement, ONG, entreprise), un Pass à petit prix est disponible directement dans l'application.</p><h2>Honnêteté et confidentialité</h2><p>L'outil n'invente pas d'expériences : il reformule ce que vous avez réellement fait. Les recruteurs restent responsables de leurs décisions et doivent traiter les candidats de façon équitable.</p></article></main>` }));
+
 for (const c of COUNTRY_PAGES) {
   const items = open.filter((o) => countryOf(o) === c.name);
   write(`pays/${c.slug}/index.html`, listPage({ pathname: `/pays/${c.slug}/`, title: `Offres d'emploi ${c.de} : emplois, stages et ONG (${MOIS_MAJ()})`, h1: `Offres d'emploi et stages <em>${esc(c.de)}</em>`, lede: `${items.length} offres ouvertes ${c.de} : emplois dans les ONG et les agences des Nations Unies, stages et opportunités locales, avec le lien vers l'annonce officielle. Mis à jour chaque jour. Voir aussi les <a href=\"/international/\" style=\"color:#F2B734\">offres à l'international</a>.`, items, all, showTabs: true, extraLd: [breadcrumbLd([["Accueil", "/"], [`Offres ${c.de}`, `/pays/${c.slug}/`]])] }));
@@ -341,6 +387,8 @@ const urls = [
   ...all.map((o) => [`/offres/${o.id}/`, o.publie]),
   ...articles.map((a) => [`/guides/${a.slug}/`, a.date]),
   ["/international/", data.maj],
+  ["/outil-cv/", data.maj],
+  ...(PROG.length ? [["/etranger/", data.maj], ...PROG.map((p) => [`/etranger/${p.slug}/`, data.maj])] : []),
   ...COUNTRY_PAGES.map((c) => [`/pays/${c.slug}/`, data.maj]),
 ];
 write("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(([u, d]) => `<url><loc>${SITE}${u}</loc>${d ? `<lastmod>${d}</lastmod>` : ""}</url>`).join("\n")}\n</urlset>\n`);

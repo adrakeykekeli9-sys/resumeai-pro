@@ -15,3 +15,7 @@ Règle de vérification : une offre n'est publiée que si l'annonce précise est
 ### Page « International » (/international/)
 
 Elle liste les offres hors Togo ouvertes aux candidats de toutes nationalités. Le classement est automatique : bourses, et postes qui ne sont ni nationaux (NO, G, « ressortissants », « recrutement local »…) ni des postes d'appui (assistant, stagiaire, agent…). Pour forcer le classement d'une offre, ajoutez `"international": true` ou `"international": false`.
+
+### Travailler à l'étranger (/etranger/)
+
+`data/programmes.json` liste les programmes officiels de recrutement international par destination (Canada, Québec, Allemagne, Luxembourg, France…). Chaque programme doit pointer vers un site gouvernemental. Vérifiez les conditions au moins une fois par mois.

@@ -1,0 +1,42 @@
+{
+  "maj": "2026-11-19",
+  "destinations": [
+    {
+      "slug": "canada", "nom": "Canada (hors Québec)", "drapeau": "🇨🇦", "de": "au Canada",
+      "intro": "Le Canada cherche activement des travailleurs francophones pour ses provinces hors Québec. Deux voies officielles sont particulièrement utiles aux candidats d'Afrique francophone.",
+      "programmes": [
+        { "nom": "Entrée express : catégorie francophone", "public": "Travailleurs qualifiés qui parlent français", "points": ["Système de résidence permanente géré en ligne par le gouvernement fédéral.", "Les candidats qui maîtrisent le français reçoivent des points supplémentaires et peuvent être invités dans des tirages réservés aux francophones.", "Une offre d'emploi au Canada peut augmenter le score."], "lien": "https://www.canada.ca/en/immigration-refugees-citizenship/campaigns/francophone-immigration-outside-quebec/francophone-immigration-express-entry.html" },
+        { "nom": "Mobilité francophone (permis de travail)", "public": "Francophones ayant une offre d'emploi d'un employeur hors Québec", "points": ["L'employeur canadien peut embaucher un travailleur francophone sans étude d'impact sur le marché du travail (EIMT) pour la plupart des emplois qualifiés.", "C'est l'employeur qui soumet l'offre en ligne ; le candidat demande ensuite son permis de travail.", "L'offre d'emploi obtenue peut aussi rapporter des points dans Entrée express."], "lien": "https://www.canada.ca/content/dam/ircc/documents/pdf/francais/campaigns/embauchez-immigrants/fiches-information/mobilite-francophone-fr.pdf" }
+      ]
+    },
+    {
+      "slug": "quebec", "nom": "Québec", "drapeau": "⚜️", "de": "au Québec",
+      "intro": "Le Québec sélectionne lui-même ses travailleurs qualifiés, avec un programme et une plateforme qui lui sont propres.",
+      "programmes": [
+        { "nom": "Programme de sélection des travailleurs qualifiés (PSTQ) via Arrima", "public": "Travailleurs qualifiés, du métier manuel au métier hautement spécialisé", "points": ["On commence par déposer gratuitement une déclaration d'intérêt sur la plateforme Arrima, valable 12 mois.", "Le Québec invite ensuite les meilleurs profils lors de tirages réguliers, par volets (compétences élevées, intermédiaires, professions réglementées, talents d'exception).", "La connaissance du français est un critère important ; certains tirages favorisent les personnes déjà installées au Québec."], "lien": "https://www.quebec.ca/en/immigration/permanent/skilled-workers/skilled-worker-selection-program/expression-of-interest" }
+      ]
+    },
+    {
+      "slug": "allemagne", "nom": "Allemagne", "drapeau": "🇩🇪", "de": "en Allemagne",
+      "intro": "L'Allemagne manque de main-d'œuvre qualifiée et a créé un portail officiel, Make it in Germany, pour attirer les travailleurs étrangers.",
+      "programmes": [
+        { "nom": "Carte des opportunités (Chancenkarte)", "public": "Travailleurs qualifiés sans offre d'emploi préalable", "points": ["Permet d'entrer en Allemagne jusqu'à un an pour chercher un emploi qualifié sur place.", "Pendant la recherche, on peut travailler à temps partiel (jusqu'à 20 heures par semaine) et faire des essais de deux semaines chez un employeur.", "Il faut un diplôme reconnu ou un système de points, des notions d'allemand (A1) ou un bon anglais (B2), et prouver des moyens financiers (compte bloqué)."], "lien": "https://www.make-it-in-germany.com/en/visa-recognition" },
+        { "nom": "Offres d'emploi et métiers en pénurie", "public": "Ingénieurs, soignants, informaticiens, artisans qualifiés…", "points": ["Le portail officiel publie des offres et la liste des métiers recherchés.", "Une fois un emploi trouvé, on demande un titre de séjour pour emploi qualifié."], "lien": "https://www.make-it-in-germany.com/en/working-in-germany/job-search-application" }
+      ]
+    },
+    {
+      "slug": "luxembourg", "nom": "Luxembourg", "drapeau": "🇱🇺", "de": "au Luxembourg",
+      "intro": "Le Luxembourg, pays francophone au cœur de l'Europe, recrute des profils très qualifiés grâce à la carte bleue européenne.",
+      "programmes": [
+        { "nom": "Carte bleue européenne (salarié hautement qualifié)", "public": "Diplômés ou professionnels expérimentés avec une offre d'emploi au Luxembourg", "points": ["Il faut un contrat de travail d'au moins 6 mois et un salaire supérieur au seuil fixé par l'État (vérifiez le montant en vigueur sur Guichet.lu).", "La demande d'autorisation de séjour se fait avant l'arrivée, auprès de la Direction générale de l'immigration.", "Pas de test du marché du travail ; la carte est valable jusqu'à 4 ans."], "lien": "https://guichet.public.lu/en/citoyens/immigration/plus-3-mois/ressortissant-tiers/hautement-qualifie/salarie-hautement-qualifie.html" }
+      ]
+    },
+    {
+      "slug": "france", "nom": "France", "drapeau": "🇫🇷", "de": "en France",
+      "intro": "La France propose un titre de séjour pluriannuel aux talents étrangers, avec plusieurs catégories selon le profil.",
+      "programmes": [
+        { "nom": "Passeport talent (salarié qualifié et autres catégories)", "public": "Salariés qualifiés, chercheurs, créateurs d'entreprise, titulaires de la carte bleue européenne", "points": ["Titre de séjour valable jusqu'à 4 ans, renouvelable ; le conjoint peut travailler en France.", "Pour la catégorie salarié qualifié, il faut un contrat de plus de 3 mois et un salaire au moins égal au seuil de référence en vigueur.", "On obtient d'abord un visa long séjour, puis on demande le titre de séjour après l'arrivée."], "lien": "https://france-visas.gouv.fr/en/talents-internationaux-et-attractivite-economique" }
+      ]
+    }
+  ]
+}
