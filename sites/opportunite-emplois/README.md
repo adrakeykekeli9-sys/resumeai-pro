@@ -19,3 +19,8 @@ Elle liste les offres hors Togo ouvertes aux candidats de toutes nationalités. 
 ### Travailler à l'étranger (/etranger/)
 
 `data/programmes.json` liste les programmes officiels de recrutement international par destination (Canada, Québec, Allemagne, Luxembourg, France…). Chaque programme doit pointer vers un site gouvernemental. Vérifiez les conditions au moins une fois par mois.
+
+### Offres d'emploi à l'étranger ouvertes aux candidats d'Afrique
+
+- **Canada** : `python3 -I scripts/canada_jobbank.py /chemin/sortie.json 10` lit le Guichet-Emplois (site officiel) et ne garde que les offres dont la rubrique « Qui peut postuler » accepte les « autres candidats, avec ou sans un permis de travail canadien valide ». Le serveur coupe parfois les connexions : relancer si besoin. Publier avec `"pays": "Canada (Ville, PROV)"`, `"international": true`, lien vers `https://www.guichetemplois.gc.ca/rechercheemplois/offredemploi/<id>`.
+- **Europe et Royaume-Uni** : ne publier une offre individuelle que si l'annonce officielle (EURES, Make it in Germany, employeur) indique clairement qu'elle est ouverte aux candidats hors UE, ou qu'un parrainage de visa est proposé.

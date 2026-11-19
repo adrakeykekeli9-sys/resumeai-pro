@@ -207,7 +207,7 @@ function breadcrumbLd(trail) {
 }
 
 
-const ISO = { "RD Congo": "CD", "Sénégal": "SN", "Tchad": "TD", "Rwanda": "RW", "Niger": "NE", "Togo": "TG", "Mali": "ML", "Cameroun": "CM", "Burkina Faso": "BF", "Madagascar": "MG", "Bénin": "BJ", "Afrique du Sud": "ZA", "Éthiopie": "ET", "France": "FR", "Côte d'Ivoire": "CI", "Burundi": "BI", "Mauritanie": "MR", "République centrafricaine": "CF", "Guinée": "GN", "Gabon": "GA", "Congo": "CG", "Kenya": "KE", "Nigeria": "NG", "Ghana": "GH", "Maroc": "MA", "Tunisie": "TN", "Haïti": "HT", "Liban": "LB" };
+const ISO = { "RD Congo": "CD", "Sénégal": "SN", "Tchad": "TD", "Rwanda": "RW", "Niger": "NE", "Togo": "TG", "Mali": "ML", "Cameroun": "CM", "Burkina Faso": "BF", "Madagascar": "MG", "Bénin": "BJ", "Afrique du Sud": "ZA", "Éthiopie": "ET", "France": "FR", "Côte d'Ivoire": "CI", "Burundi": "BI", "Mauritanie": "MR", "République centrafricaine": "CF", "Guinée": "GN", "Gabon": "GA", "Congo": "CG", "Kenya": "KE", "Nigeria": "NG", "Ghana": "GH", "Maroc": "MA", "Tunisie": "TN", "Haïti": "HT", "Liban": "LB", "Canada": "CA", "Allemagne": "DE", "Luxembourg": "LU", "Belgique": "BE", "Royaume-Uni": "GB", "Portugal": "PT" };
 function jobPosting(o) {
   if (!["emploi", "stage"].includes(o.type) || !o.dateLimite || !isOpen(o)) return null;
   const cc = ISO[countryOf(o)];
@@ -313,7 +313,9 @@ if (PROG.length) {
   for (const p of PROG) {
     write(`etranger/${p.slug}/index.html`, layout({ title: `Travailler ${p.de} depuis l'Afrique : programmes officiels (${MOIS_MAJ()})`, description: `${p.intro} Conditions principales et lien vers le site officiel.`.slice(0, 300), pathname: `/etranger/${p.slug}/`, ogType: "article",
       jsonld: [breadcrumbLd([["Accueil", "/"], ["Travailler à l'étranger", "/etranger/"], [p.nom, `/etranger/${p.slug}/`]])],
-      body: `<section class="hero"><div class="wrap"><h1>${p.drapeau} Travailler <em>${esc(p.de)}</em></h1><p class="lede">${esc(p.intro)}</p></div></section>${countryBar(`/etranger/${p.slug}/`)}<main class="wrap layout"><div><nav class="crumbs"><a href="/">Accueil</a> › <a href="/etranger/">Travailler à l'étranger</a> › ${esc(p.nom)}</nav>${p.programmes.map(progCard).join("")}${abroadWarn}<p>Voir aussi les <a href="/international/">offres d'emploi ouvertes à toutes les nationalités</a> et préparez un CV adapté avec notre <a href="/outil-cv/">outil CV</a>.</p></div>${sideBar(open)}</main>` }));
+      body: `<section class="hero"><div class="wrap"><h1>${p.drapeau} Travailler <em>${esc(p.de)}</em></h1><p class="lede">${esc(p.intro)}</p></div></section>${countryBar(`/etranger/${p.slug}/`)}<main class="wrap layout"><div><nav class="crumbs"><a href="/">Accueil</a> › <a href="/etranger/">Travailler à l'étranger</a> › ${esc(p.nom)}</nav>${(() => { const jobs = open.filter((o) => p.slug === "quebec" ? countryOf(o) === "Canada" && /\bQC\)/.test(o.pays) : (p.match || []).includes(countryOf(o))); return jobs.length ? `<h2 style="font-family:var(--display);margin:18px 0 10px">💼 Offres d'emploi ${esc(p.de)} ouvertes aux candidats de l'étranger (${jobs.length})</h2><div class="list">${jobs.map((o) => offerCard(o, "h3")).join("")}</div>` : ""; })()}
+<h2 style="font-family:var(--display);margin:22px 0 10px">📋 Programmes officiels d'immigration</h2>${p.programmes.map(progCard).join("")}
+${p.portails ? `<h2 style="font-family:var(--display);margin:22px 0 10px">🔎 Où trouver d'autres offres officielles ${esc(p.de)}</h2>${p.portails.map((x) => `<div class="prog" style="border-left-color:var(--brand)"><h3>${esc(x.nom)}</h3><p class="pub">${esc(x.note)}</p><p><a class="btn ghost" href="${esc(x.lien)}" target="_blank" rel="noopener">Ouvrir le portail officiel</a></p></div>`).join("")}` : ""}${abroadWarn}<p>Voir aussi les <a href="/international/">offres d'emploi ouvertes à toutes les nationalités</a> et préparez un CV adapté avec notre <a href="/outil-cv/">outil CV</a>.</p></div>${sideBar(open)}</main>` }));
   }
 }
 
