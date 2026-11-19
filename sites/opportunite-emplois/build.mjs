@@ -83,6 +83,15 @@ dl.facts{display:grid;grid-template-columns:max-content 1fr;gap:6px 18px;margin:
 footer.site{border-top:1px solid var(--line);background:var(--surface);color:var(--muted);font-size:.9rem}footer.site .wrap{padding-block:24px;display:grid;gap:10px}footer.site nav{display:flex;gap:16px;flex-wrap:wrap}footer.site a{color:var(--muted)}
 pre.wa{white-space:pre-wrap;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:14px;font:15px/1.5 var(--body);max-height:60vh;overflow:auto}
 :focus-visible{outline:3px solid #F2B734;outline-offset:2px}
+.pays{background:var(--surface);border-bottom:1px solid var(--line)}.pays .wrap{padding-block:14px}
+.pays h2{font:800 1rem var(--display);margin:0 0 10px;color:var(--fg)}
+.pays ul{list-style:none;margin:0;padding:0;display:flex;gap:8px;flex-wrap:wrap}
+.pays a{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;font:700 .95rem var(--body);text-decoration:none;color:#fff;box-shadow:0 1px 2px rgba(0,0,0,.15);transition:transform .1s}
+.pays a:hover{transform:translateY(-1px);text-decoration:underline}
+.pays a b{background:rgba(255,255,255,.25);border-radius:999px;padding:0 8px;font-size:.82rem}
+.pays a[aria-current=page]{outline:3px solid var(--fg);outline-offset:2px}
+.pays .c0{background:#C2410C}.pays .c1{background:#0F766E}.pays .c2{background:#1D4ED8}.pays .c3{background:#7E22CE}.pays .c4{background:#B91C1C}.pays .c5{background:#15803D}.pays .c6{background:#A16207}.pays .c7{background:#0369A1}.pays .c8{background:#BE185D}.pays .c9{background:#4D7C0F}
+.pays .intl{background:#F2B734;color:#1b1200}.pays .intl b{background:rgba(0,0,0,.12)}
 `;
 
 const LOGO = `<svg width="30" height="30" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="9" fill="#F2B734"/><path d="M9 22V14h16v8a2 2 0 0 1-2 2H11a2 2 0 0 1-2-2Z" fill="#0B2A24"/><path d="M13 14v-2.5A1.5 1.5 0 0 1 14.5 10h5a1.5 1.5 0 0 1 1.5 1.5V14" stroke="#0B2A24" stroke-width="2" fill="none"/></svg>`;
@@ -157,6 +166,7 @@ function listPage({ pathname, title, h1, lede, items, all, showTabs, extraLd = [
 <h1>${h1}</h1><p class="lede">${lede}</p>
 <div class="stats"><div><b>${all.filter(isOpen).length}</b>offres ouvertes</div><div><b>${all.filter((o) => isOpen(o) && o.type === "bourse").length}</b>bourses</div><div><b>${all.filter((o) => isOpen(o) && o.type !== "bourse").length}</b>emplois et stages</div><div><b>${fmt(data.maj)}</b>dernière mise à jour</div></div>
 </div></section>
+${countryBar(pathname)}
 <div class="tools"><div class="wrap">
 ${showTabs ? `<div role="group" aria-label="Type d'offre" style="display:flex;gap:6px;flex-wrap:wrap">${["tout", ...ALL_TYPES].filter((k) => k === "tout" || counts[k] > 0).map((k) => `<button class="tab" type="button" data-t="${k}" aria-pressed="${k === "tout"}">${k === "tout" ? "Tout" : TYPES_PL[k]} (${counts[k]})</button>`).join("")}</div>` : ""}
 <input type="search" id="q" placeholder="Rechercher : pays, organisme, niveau…" aria-label="Rechercher une offre">
@@ -170,6 +180,16 @@ ${sideBar(all.filter(isOpen))}</main>${filterScript}`;
     jsonld: [{ "@context": "https://schema.org", "@type": "CollectionPage", name: title, url: SITE + pathname, inLanguage: "fr", dateModified: data.maj,
       mainEntity: { "@type": "ItemList", numberOfItems: items.length, itemListElement: items.slice(0, 50).map((o, i) => ({ "@type": "ListItem", position: i + 1, url: `${SITE}/offres/${o.id}/`, name: o.titre })) } }, ...extraLd],
   });
+}
+
+function countryBar(current) {
+  if (!COUNTRY_PAGES.length) return "";
+  const nIntl = all.filter(isOpen).filter(isInternational).length;
+  const link = (href, cls, label, n) => `<li><a class="${cls}" href="${href}"${href === current ? ' aria-current="page"' : ""}>${label} <b>${n}</b></a></li>`;
+  return `<nav class="pays" aria-label="Offres par pays"><div class="wrap"><h2>🌍 Choisissez votre pays</h2><ul>
+${link("/international/", "intl", "🌐 International", nIntl)}
+${COUNTRY_PAGES.map((c, i) => link(`/pays/${c.slug}/`, `c${i % 10}`, esc(c.name), c.count)).join("\n")}
+</ul></div></nav>`;
 }
 
 function breadcrumbLd(trail) {
@@ -262,7 +282,7 @@ const articles = readArticles();
 const DE = { "Togo": "au Togo", "Bénin": "au Bénin", "Sénégal": "au Sénégal", "Niger": "au Niger", "Mali": "au Mali", "Tchad": "au Tchad", "Cameroun": "au Cameroun", "Burkina Faso": "au Burkina Faso", "Burundi": "au Burundi", "Rwanda": "au Rwanda", "Gabon": "au Gabon", "Congo": "au Congo", "Kenya": "au Kenya", "Nigeria": "au Nigeria", "Ghana": "au Ghana", "Maroc": "au Maroc", "Liban": "au Liban", "RD Congo": "en RD Congo", "Côte d'Ivoire": "en Côte d'Ivoire", "Guinée": "en Guinée", "Mauritanie": "en Mauritanie", "République centrafricaine": "en Centrafrique", "Madagascar": "à Madagascar", "Haïti": "en Haïti", "Tunisie": "en Tunisie", "Éthiopie": "en Éthiopie", "Afrique du Sud": "en Afrique du Sud" };
 const countryCounts = {};
 open.forEach((o) => { const c = countryOf(o); if (DE[c]) countryCounts[c] = (countryCounts[c] || 0) + 1; });
-const COUNTRY_PAGES = Object.entries(countryCounts).filter(([, n]) => n >= 2).sort((a, b) => b[1] - a[1]).map(([name, count]) => ({ name, count, slug: slug(name), de: DE[name] }));
+const COUNTRY_PAGES = Object.entries(countryCounts).filter(([, n]) => n >= 2).sort((a, b) => (b[0] === "Togo") - (a[0] === "Togo") || b[1] - a[1]).map(([name, count]) => ({ name, count, slug: slug(name), de: DE[name] }));
 const countryPage = (o) => COUNTRY_PAGES.find((c) => c.name === countryOf(o));
 
 write("style.css", CSS);
