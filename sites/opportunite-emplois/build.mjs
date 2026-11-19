@@ -309,15 +309,31 @@ function simplePage(pathname, title, description, inner, opts = {}) {
   return layout({ title, description, pathname, noindex: opts.noindex, enAvailable: opts.enAvailable !== false, body: `<main class="wrap" style="padding-block:28px 50px"><article class="page"><h1>${esc(title)}</h1>${inner}</article></main>` });
 }
 
-function whatsappText(open) {
+// Code court et stable pour chaque offre (liens /o/<code>/ plus courts dans WhatsApp).
+const shortCode = (id) => { let h = 2166136261; for (const ch of id) { h ^= ch.charCodeAt(0); h = Math.imul(h, 16777619) >>> 0; } return h.toString(36).padStart(7, "0").slice(-7); };
+const shortUrl = (o) => `${SITE}/o/${shortCode(o.id)}/`;
+// Message WhatsApp du jour, découpé en parties courtes (8 offres max) pour que tous les liens restent cliquables.
+const WA_PER_PART = 8;
+function whatsappParts(open) {
   const fresh = open.filter((o) => o.publie === data.maj);
   const soon = open.filter((o) => { const n = daysLeft(o); return n !== null && n <= 3 && o.publie !== data.maj; }).sort((a, b) => daysLeft(a) - daysLeft(b)).slice(0, 8);
-  const line = (o) => `▪️ *${o.titre}*\n   ${o.pays} · Date limite : ${fmt(o.dateLimite)}\n   👉 ${SITE}/offres/${o.id}/`;
-  let t = `🎓💼 *OPPORTUNITÉ D'EMPLOIS – ${fmt(data.maj).toUpperCase()}*\n\n`;
-  if (fresh.length) t += `🆕 *Nouvelles offres du jour*\n\n${fresh.map(line).join("\n\n")}\n\n`;
-  if (soon.length) t += `⏰ *Dernière chance (clôture dans 3 jours ou moins)*\n\n${soon.map(line).join("\n\n")}\n\n`;
-  t += `📋 Toutes les offres ouvertes (${open.length}) : ${SITE}\n\n⚠️ Postuler est toujours GRATUIT. Ne payez jamais de « frais de dossier ».\n📲 Partagez ce message à vos amis !`;
-  return t;
+  const line = (o) => `▪️ *${o.titre}*\n${o.pays} · Date limite : ${fmt(o.dateLimite)}\n${shortUrl(o)}`;
+  const blocks = [...fresh.map((o) => ["🆕 *Nouvelles offres du jour*", o]), ...soon.map((o) => ["⏰ *Dernière chance (clôture dans 3 jours ou moins)*", o])];
+  const chunks = [];
+  for (let i = 0; i < blocks.length; i += WA_PER_PART) chunks.push(blocks.slice(i, i + WA_PER_PART));
+  if (!chunks.length) chunks.push([]);
+  const total = chunks.length;
+  return chunks.map((chunk, k) => {
+    let t = `🎓💼 *OPPORTUNITÉ D'EMPLOIS – ${fmt(data.maj).toUpperCase()}*${total > 1 ? ` (${k + 1}/${total})` : ""}\n`;
+    let section = "";
+    for (const [title, o] of chunk) {
+      if (title !== section) { t += `\n${title}\n`; section = title; }
+      t += `\n${line(o)}\n`;
+    }
+    if (k === total - 1) t += `\n📋 Toutes les offres ouvertes (${open.length}) :\n${SITE}\n\n⚠️ Postuler est toujours GRATUIT. Ne payez jamais de « frais de dossier ».\n📲 Partagez ce message à vos amis !`;
+    else t += `\n➡️ Suite dans le message ${k + 2}/${total}`;
+    return t;
+  });
 }
 
 // ─── Construction ───
@@ -422,24 +438,27 @@ ${p.portails ? `<h2 style="font-family:var(--display);margin:22px 0 10px">🔎 $
 for (LANG of ["fr", "en"]) buildLang();
 LANG = "fr";
 
-const waText = whatsappText(open);
-write("whatsapp/index.html", simplePage("/whatsapp/", "Message WhatsApp du jour", "Message prêt à partager.", `<p>Deux façons de partager les offres du jour dans vos groupes :</p>
-<div class="share" style="margin:14px 0">
-<a class="btn primary" href="https://wa.me/?text=${encodeURIComponent(waText)}" target="_blank" rel="noopener" style="background:#1FA855;color:#fff;font-size:1.05rem;padding:12px 20px">Envoyer sur WhatsApp</a>
-<button class="btn ghost" type="button" id="copy" style="font-size:1.05rem;padding:12px 20px">Copier le message</button>
+const waParts = whatsappParts(open);
+// Pages de redirection courtes /o/<code>/ → fiche de l'offre.
+for (const o of all) write(`o/${shortCode(o.id)}/index.html`, `<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>${esc(o.titre)}</title><meta name="robots" content="noindex"><link rel="canonical" href="${SITE}/offres/${o.id}/"><meta http-equiv="refresh" content="0;url=/offres/${o.id}/"><meta property="og:title" content="${esc(o.titre)}"><meta property="og:description" content="${esc(`${o.organisme} · ${o.pays} · Date limite : ${fmt(o.dateLimite)}`)}"><meta property="og:image" content="${SITE}/og.png"></head><body><p><a href="/offres/${o.id}/">Voir l'offre</a></p><script>location.replace("/offres/${o.id}/")</script></body></html>`);
+write("whatsapp/index.html", simplePage("/whatsapp/", "Message WhatsApp du jour", "Message prêt à partager.", `<p>${waParts.length > 1 ? `Le message du jour est découpé en <b>${waParts.length} parties</b> pour que tous les liens restent cliquables dans WhatsApp. Envoyez-les <b>l'une après l'autre</b>, dans l'ordre.` : "Le message du jour est prêt à partager dans vos groupes."}</p>
+<p class="crumbs">« Envoyer sur WhatsApp » ouvre WhatsApp avec la partie déjà écrite : choisissez le groupe puis envoyez. « Copier » met le texte dans le presse-papiers.</p>
+${waParts.map((txt, i) => `<h2>Partie ${i + 1} / ${waParts.length}</h2>
+<div class="share" style="margin:10px 0">
+<a class="btn primary" href="https://wa.me/?text=${encodeURIComponent(txt)}" target="_blank" rel="noopener" style="background:#1FA855;color:#fff;font-size:1.05rem;padding:12px 20px">Envoyer la partie ${i + 1} sur WhatsApp</a>
+<button class="btn ghost copy" type="button" data-i="${i}" style="font-size:1.05rem;padding:12px 20px">Copier la partie ${i + 1}</button>
 </div>
-<p id="ok" aria-live="polite" style="font-weight:700;color:var(--brand);min-height:1.5em"></p>
-<p class="crumbs">« Envoyer sur WhatsApp » ouvre WhatsApp avec le message déjà écrit : choisissez le groupe puis envoyez. « Copier » met le texte dans le presse-papiers pour le coller où vous voulez.</p>
-<pre class="wa" id="msg">${esc(waText)}</pre>
+<p class="ok" id="ok${i}" aria-live="polite" style="font-weight:700;color:var(--brand);min-height:1.5em"></p>
+<pre class="wa" id="msg${i}">${esc(txt)}</pre>`).join("\n")}
 <script>
-document.getElementById('copy').addEventListener('click',function(){
-  var t=document.getElementById('msg').textContent, ok=document.getElementById('ok'), b=this;
-  function done(){ ok.textContent='Copié ! Collez-le maintenant dans WhatsApp.'; b.textContent='Copié ✓'; setTimeout(function(){b.textContent='Copier le message';},3000); }
-  function fallback(){ var ta=document.createElement('textarea'); ta.value=t; ta.setAttribute('readonly',''); ta.style.position='fixed'; ta.style.top='0'; ta.style.opacity='0'; document.body.appendChild(ta); ta.focus(); ta.select(); ta.setSelectionRange(0,t.length); var res=false; try{res=document.execCommand('copy');}catch(e){} document.body.removeChild(ta); if(res) done(); else ok.textContent='Copie automatique impossible : appuyez longuement sur le texte ci-dessous pour le copier.'; }
+[].forEach.call(document.querySelectorAll('button.copy'),function(b){b.addEventListener('click',function(){
+  var i=b.getAttribute('data-i'), t=document.getElementById('msg'+i).textContent, ok=document.getElementById('ok'+i), label=b.textContent;
+  function done(){ ok.textContent='Copié ! Collez-le maintenant dans WhatsApp.'; b.textContent='Copié ✓'; setTimeout(function(){b.textContent=label;},3000); }
+  function fallback(){ var ta=document.createElement('textarea'); ta.value=t; ta.setAttribute('readonly',''); ta.style.position='fixed'; ta.style.top='0'; ta.style.opacity='0'; document.body.appendChild(ta); ta.focus(); ta.select(); ta.setSelectionRange(0,t.length); var res=false; try{res=document.execCommand('copy');}catch(e){} document.body.removeChild(ta); if(res) done(); else ok.textContent='Copie automatique impossible : appuyez longuement sur le texte pour le copier.'; }
   if(navigator.clipboard && window.isSecureContext){ navigator.clipboard.writeText(t).then(done,fallback); } else { fallback(); }
-});
+});});
 </script>`, { noindex: true, enAvailable: false }));
-write("whatsapp.txt", waText);
+write("whatsapp.txt", waParts.join("\n\n━━━━━━━━━━ partie suivante ━━━━━━━━━━\n\n"));
 
 const urls = [
   ...["/", "/bourses/", "/emplois/", "/stages/", "/formations/", "/ong/", "/guides/"].map((u) => [u, data.maj, true]),
@@ -457,7 +476,7 @@ const entries = urls.flatMap(([u, dt, both]) => {
   return both ? [`<url><loc>${SITE}${u}</loc>${lm}${alts(u)}</url>`, `<url><loc>${SITE}${enPath(u)}</loc>${lm}${alts(u)}</url>`] : [`<url><loc>${SITE}${u}</loc>${lm}</url>`];
 });
 write("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${entries.join("\n")}\n</urlset>\n`);
-write("robots.txt", `User-agent: *\nAllow: /\nDisallow: /whatsapp/\nSitemap: ${SITE}/sitemap.xml\n`);
+write("robots.txt", `User-agent: *\nAllow: /\nDisallow: /whatsapp/\nDisallow: /o/\nSitemap: ${SITE}/sitemap.xml\n`);
 if (ADSENSE) write("ads.txt", `google.com, ${ADSENSE.replace(/^ca-/, "")}, DIRECT, f08c47fec0942fa0\n`);
 
 const nEn = open.filter(hasEN).length;
