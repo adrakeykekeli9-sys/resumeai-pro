@@ -172,7 +172,7 @@ function jobPosting(o) {
     "@context": "https://schema.org", "@type": "JobPosting",
     title: o.titre, description: `<p>${esc(o.description)}</p><p>Niveau : ${esc(o.niveau)}. ${esc(o.financement || "")}</p>`,
     datePosted: o.publie, validThrough: `${o.dateLimite}T23:59:00`,
-    employmentType: o.type === "stage" ? "INTERN" : undefined,
+    employmentType: o.type === "stage" ? "INTERN" : /volontariat/i.test(o.financement || "") ? "VOLUNTEER" : /consultance/i.test(o.financement || "") ? "CONTRACTOR" : undefined,
     hiringOrganization: { "@type": "Organization", name: o.organisme },
     jobLocation: { "@type": "Place", address: { "@type": "PostalAddress", addressCountry: cc, ...(city && !/,|ou | et |à définir|localités/.test(city) ? { addressLocality: city } : {}) } },
     directApply: false, url: `${SITE}/offres/${o.id}/`,
