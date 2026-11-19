@@ -228,11 +228,11 @@ function simplePage(pathname, title, description, inner, opts = {}) {
 
 function whatsappText(open) {
   const fresh = open.filter((o) => o.publie === data.maj);
-  const soon = open.filter((o) => { const n = daysLeft(o); return n !== null && n <= 7 && o.publie !== data.maj; });
+  const soon = open.filter((o) => { const n = daysLeft(o); return n !== null && n <= 3 && o.publie !== data.maj; }).sort((a, b) => daysLeft(a) - daysLeft(b)).slice(0, 8);
   const line = (o) => `▪️ *${o.titre}*\n   ${o.pays} · Date limite : ${fmt(o.dateLimite)}\n   👉 ${SITE}/offres/${o.id}/`;
   let t = `🎓💼 *OPPORTUNITÉ D'EMPLOIS – ${fmt(data.maj).toUpperCase()}*\n\n`;
   if (fresh.length) t += `🆕 *Nouvelles offres du jour*\n\n${fresh.map(line).join("\n\n")}\n\n`;
-  if (soon.length) t += `⏰ *Dernière chance (moins de 7 jours)*\n\n${soon.map(line).join("\n\n")}\n\n`;
+  if (soon.length) t += `⏰ *Dernière chance (clôture dans 3 jours ou moins)*\n\n${soon.map(line).join("\n\n")}\n\n`;
   t += `📋 Toutes les offres ouvertes (${open.length}) : ${SITE}\n\n⚠️ Postuler est toujours GRATUIT. Ne payez jamais de « frais de dossier ».\n📲 Partagez ce message à vos amis !`;
   return t;
 }
