@@ -247,7 +247,8 @@
       "dateLimite": null,
       "publie": "2026-11-07",
       "description": "MSF tient un portail de recrutement dédié à l'Afrique de l'Ouest et au Cameroun, pour des profils médicaux (médecins, infirmiers, sages-femmes) et non médicaux (logistique, administration, finances). Les candidatures sont reçues en continu.",
-      "lien": "https://recrutement-ao.msf.org/"
+      "lien": "https://recrutement-ao.msf.org/",
+      "international": false
     },
     {
       "id": "google-digital-skills-africa",

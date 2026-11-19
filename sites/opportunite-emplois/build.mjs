@@ -26,6 +26,11 @@ const daysLeft = (o) => { const x = d(o.dateLimite); return x ? Math.round((x - 
 const isOpen = (o) => { const n = daysLeft(o); return n === null || n >= 0; };
 const MOIS_MAJ = () => { const x = d(data.maj); return `${MOIS[x.getUTCMonth()]} ${x.getUTCFullYear()}`; };
 const countryOf = (o) => String(o.pays || "").split(" (")[0].split(",")[0].split(" /")[0].trim();
+const NATIONAL_ONLY = /(poste national|\bNO-\d|\(NO|nationa(l|ux)\b|ressortissant|recrutement local|locaux|\blocal\b|local uniquement|nationalité|contrat (local|national)|réservé|\bG-\d|chauffeur|conducteur|mobilisateur|journalier|habitants)/i;
+// Postes d'appui généralement recrutés sur place : exclus de la page International sauf "international": true.
+const LOCAL_ROLE = /\b(assistant|stagiaire|agent|superviseur|associate|comptable junior|gestionnaire de bureau)/i;
+// "international": true/false dans offres.json force le classement ; sinon on déduit du texte.
+const isInternational = (o) => countryOf(o) !== "Togo" && (typeof o.international === "boolean" ? o.international : o.type === "bourse" || (!NATIONAL_ONLY.test([o.titre, o.niveau, o.financement, o.description].join(" ")) && !LOCAL_ROLE.test(o.titre)));
 const slug = (s) => String(s).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
 function badge(o) {
@@ -106,7 +111,7 @@ ${(Array.isArray(jsonld) ? jsonld : jsonld ? [jsonld] : []).map((j) => `<script 
 </head>
 <body>
 <header class="site"><div class="wrap"><a class="logo" href="/">${LOGO} ${NAME}</a>
-<nav class="top" aria-label="Menu principal"><a href="/bourses/">Bourses</a><a href="/emplois/">Emplois</a><a href="/stages/">Stages</a><a href="/formations/">Formations</a><a href="/ong/">ONG</a><a href="/guides/">Conseils</a><a href="/whatsapp/" class="wa-link">Message du jour</a></nav></div></header>
+<nav class="top" aria-label="Menu principal"><a href="/bourses/">Bourses</a><a href="/emplois/">Emplois</a><a href="/stages/">Stages</a><a href="/formations/">Formations</a><a href="/ong/">ONG</a><a href="/international/">International</a><a href="/guides/">Conseils</a><a href="/whatsapp/" class="wa-link">Message du jour</a></nav></div></header>
 ${body}
 <footer class="site"><div class="wrap">
 <nav aria-label="Pages du site"><a href="/a-propos/">À propos</a><a href="/contact/">Contact</a><a href="/confidentialite/">Confidentialité et cookies</a><a href="/mentions-legales/">Mentions légales</a><a href="/guides/">Conseils</a></nav>
@@ -266,9 +271,11 @@ write("favicon.svg", LOGO.replace('width="30" height="30" ', 'xmlns="http://www.
 write("index.html", listPage({ pathname: "/", title: `${NAME} – Emplois, stages et bourses d'études en Afrique (${MOIS_MAJ()})`, h1: "Emplois, stages et <em>bourses d'études</em>, mis à jour chaque jour.", lede: "Les offres ouvertes aux jeunes et aux professionnels d'Afrique francophone, avec un lien vers la source officielle. Service gratuit, sans inscription.", items: open, all, showTabs: true, extraLd: [
   { "@context": "https://schema.org", "@type": "WebSite", name: NAME, url: SITE + "/", inLanguage: "fr" },
   { "@context": "https://schema.org", "@type": "Organization", name: NAME, url: SITE + "/", logo: SITE + "/og.png", ...(CONTACT_EMAIL ? { email: CONTACT_EMAIL } : {}) }] }));
+const intl = open.filter(isInternational);
+write("international/index.html", listPage({ pathname: "/international/", title: `Emplois à l'international et bourses à l'étranger (${MOIS_MAJ()})`, h1: `Emplois, stages et bourses <em>à l'international</em>`, lede: `${intl.length} offres ouvertes aux candidats de toutes nationalités, y compris du Togo et de toute l'Afrique francophone : postes internationaux des Nations Unies et des ONG, missions dans d'autres pays, bourses d'études à l'étranger. Les postes réservés aux nationaux d'un autre pays et les recrutements locaux sont exclus. Vérifiez toujours les conditions de nationalité sur la fiche officielle.`, items: intl, all, showTabs: true, extraLd: [breadcrumbLd([["Accueil", "/"], ["International", "/international/"]])] }));
 for (const c of COUNTRY_PAGES) {
   const items = open.filter((o) => countryOf(o) === c.name);
-  write(`pays/${c.slug}/index.html`, listPage({ pathname: `/pays/${c.slug}/`, title: `Offres d'emploi ${c.de} : emplois, stages et ONG (${MOIS_MAJ()})`, h1: `Offres d'emploi et stages <em>${esc(c.de)}</em>`, lede: `${items.length} offres ouvertes ${c.de} : emplois dans les ONG et les agences des Nations Unies, stages et opportunités locales, avec le lien vers l'annonce officielle. Mis à jour chaque jour.`, items, all, showTabs: true, extraLd: [breadcrumbLd([["Accueil", "/"], [`Offres ${c.de}`, `/pays/${c.slug}/`]])] }));
+  write(`pays/${c.slug}/index.html`, listPage({ pathname: `/pays/${c.slug}/`, title: `Offres d'emploi ${c.de} : emplois, stages et ONG (${MOIS_MAJ()})`, h1: `Offres d'emploi et stages <em>${esc(c.de)}</em>`, lede: `${items.length} offres ouvertes ${c.de} : emplois dans les ONG et les agences des Nations Unies, stages et opportunités locales, avec le lien vers l'annonce officielle. Mis à jour chaque jour. Voir aussi les <a href=\"/international/\" style=\"color:#F2B734\">offres à l'international</a>.`, items, all, showTabs: true, extraLd: [breadcrumbLd([["Accueil", "/"], [`Offres ${c.de}`, `/pays/${c.slug}/`]])] }));
 }
 for (const [type, p] of [["bourse", "/bourses/"], ["emploi", "/emplois/"], ["stage", "/stages/"], ["formation", "/formations/"]]) {
   write(`${p.slice(1)}index.html`, listPage({ pathname: p, title: `${{ bourse: "Bourses d'études ouvertes", emploi: "Offres d'emploi en Afrique", stage: "Offres de stage en Afrique", formation: "Formations gratuites et financées" }[type]} (${MOIS_MAJ()})`, h1: { bourse: "Bourses d'études ouvertes", emploi: "Offres d'emploi ouvertes", stage: "Offres de stage ouvertes", formation: "Formations ouvertes" }[type], lede: { bourse: "Bourses d'études de licence, master et doctorat accessibles aux étudiants africains, classées par date limite.", emploi: "Offres d'emploi en Afrique et dans les organisations internationales, classées par date limite.", stage: "Stages pour étudiants et jeunes diplômés, classés par date limite.", formation: "Formations gratuites ou financées, en ligne et en présentiel, pour développer vos compétences.", }[type], items: open.filter((o) => o.type === type), all, showTabs: false }));
@@ -313,6 +320,7 @@ const urls = [
   ...["/a-propos/", "/contact/", "/confidentialite/", "/mentions-legales/"].map((u) => [u, null]),
   ...all.map((o) => [`/offres/${o.id}/`, o.publie]),
   ...articles.map((a) => [`/guides/${a.slug}/`, a.date]),
+  ["/international/", data.maj],
   ...COUNTRY_PAGES.map((c) => [`/pays/${c.slug}/`, data.maj]),
 ];
 write("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(([u, d]) => `<url><loc>${SITE}${u}</loc>${d ? `<lastmod>${d}</lastmod>` : ""}</url>`).join("\n")}\n</urlset>\n`);
