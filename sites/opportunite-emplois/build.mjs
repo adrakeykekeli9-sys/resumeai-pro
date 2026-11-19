@@ -24,6 +24,8 @@ const d = (iso) => (iso ? new Date(iso + "T00:00:00Z") : null);
 const fmt = (iso) => { const x = d(iso); return x ? `${x.getUTCDate()} ${MOIS[x.getUTCMonth()]} ${x.getUTCFullYear()}` : "non précisée"; };
 const daysLeft = (o) => { const x = d(o.dateLimite); return x ? Math.round((x - today) / 864e5) : null; };
 const isOpen = (o) => { const n = daysLeft(o); return n === null || n >= 0; };
+const MOIS_MAJ = () => { const x = d(data.maj); return `${MOIS[x.getUTCMonth()]} ${x.getUTCFullYear()}`; };
+const countryOf = (o) => String(o.pays || "").split(" (")[0].split(",")[0].split(" /")[0].trim();
 const slug = (s) => String(s).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
 function badge(o) {
@@ -92,14 +94,15 @@ function layout({ title, description, pathname, body, jsonld, noindex = false, o
 <meta name="description" content="${esc(description)}">
 <link rel="canonical" href="${url}">
 ${noindex ? '<meta name="robots" content="noindex">' : ""}
-<meta property="og:type" content="${ogType}"><meta property="og:title" content="${esc(fullTitle)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${url}"><meta property="og:site_name" content="${NAME}"><meta property="og:locale" content="fr_FR">
+<meta property="og:type" content="${ogType}"><meta property="og:title" content="${esc(fullTitle)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${url}"><meta property="og:site_name" content="${NAME}"><meta property="og:locale" content="fr_FR"><meta property="og:image" content="${SITE}/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="${NAME} : emplois, stages et bourses d'études en Afrique francophone">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(fullTitle)}"><meta name="twitter:description" content="${esc(description)}"><meta name="twitter:image" content="${SITE}/og.png">
 <meta name="theme-color" content="#0B2A24">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Source+Sans+3:wght@400;600;700&display=swap">
 <link rel="stylesheet" href="/style.css">
 ${ADSENSE ? `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${esc(ADSENSE)}" crossorigin="anonymous"></script>` : ""}
-${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld).replace(/</g, "\\u003c")}</script>` : ""}
+${(Array.isArray(jsonld) ? jsonld : jsonld ? [jsonld] : []).map((j) => `<script type="application/ld+json">${JSON.stringify(j).replace(/</g, "\\u003c")}</script>`).join("\n")}
 </head>
 <body>
 <header class="site"><div class="wrap"><a class="logo" href="/">${LOGO} ${NAME}</a>
@@ -107,6 +110,7 @@ ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld).replace(
 ${body}
 <footer class="site"><div class="wrap">
 <nav aria-label="Pages du site"><a href="/a-propos/">À propos</a><a href="/contact/">Contact</a><a href="/confidentialite/">Confidentialité et cookies</a><a href="/mentions-legales/">Mentions légales</a><a href="/guides/">Conseils</a></nav>
+${COUNTRY_PAGES.length ? `<nav aria-label="Offres par pays">Offres par pays : ${COUNTRY_PAGES.map((c) => `<a href="/pays/${c.slug}/">${esc(c.name)}</a>`).join("")}</nav>` : ""}
 <div><b>${NAME}</b> recense chaque jour des offres d'emploi, de stage et des bourses d'études ouvertes aux jeunes et aux professionnels d'Afrique francophone. Service gratuit : postuler ne doit jamais coûter d'argent.</div>
 <div>Les informations sont relayées à titre indicatif. Vérifiez toujours les dates et les conditions sur le site officiel avant de postuler. Dernière mise à jour : ${fmt(data.maj)}.</div>
 </div></footer>
@@ -130,6 +134,7 @@ const sideBar = (open) => {
 <div class="panel cta"><h2>Votre CV est-il prêt ?</h2><p style="margin:0 0 12px">Créez un CV et une lettre de motivation adaptés à chaque offre avec ResumeAI Pro. 3 essais gratuits par jour.</p><a class="btn" href="${RESUMEAI_URL}" target="_blank" rel="noopener">Créer mon CV</a></div>
 <div class="panel"><h2>Clôturent bientôt</h2>${soon.length ? `<ul>${soon.map((o) => `<li><a href="/offres/${o.id}/">${esc(o.titre)}</a>${badge(o)}</li>`).join("")}</ul>` : "<p>Aucune clôture dans les 14 prochains jours.</p>"}</div>
 <div class="panel warn"><h2>Attention aux arnaques</h2><ul><li>Une vraie offre ne demande jamais de frais par Mobile Money.</li><li>Postulez uniquement sur le site officiel.</li><li>Aucun visa n'est « garanti ».</li></ul><p style="margin:10px 0 0"><a href="/guides/eviter-arnaques-bourses-emplois/">Les 7 signes d'une fausse offre</a></p></div>
+${COUNTRY_PAGES.length ? `<div class="panel"><h2>Offres par pays</h2><ul>${COUNTRY_PAGES.map((c) => `<li><a href="/pays/${c.slug}/">${esc(c.name)}</a> (${c.count})</li>`).join("")}</ul></div>` : ""}
 <div class="panel"><h2>Partagez les offres du jour</h2><p style="margin:0 0 12px">Le message du jour est prêt : copiez-le ou envoyez-le directement dans vos groupes WhatsApp.</p><a class="btn primary" href="/whatsapp/">Message WhatsApp du jour</a></div>
 </aside>`;
 };
@@ -140,7 +145,7 @@ function apply(){var s=(q&&q.value||'').toLowerCase().trim();var n=0;cards.forEa
 tabs.forEach(function(b){b.addEventListener('click',function(){t=b.dataset.t;tabs.forEach(function(x){x.setAttribute('aria-pressed',x===b)});apply();});});if(q)q.addEventListener('input',apply);})();
 </script>`;
 
-function listPage({ pathname, title, h1, lede, items, all, showTabs }) {
+function listPage({ pathname, title, h1, lede, items, all, showTabs, extraLd = [] }) {
   const counts = { tout: items.length, bourse: 0, emploi: 0, stage: 0, formation: 0 };
   items.forEach((o) => counts[o.type]++);
   const body = `<section class="hero"><div class="wrap">
@@ -157,15 +162,20 @@ ${items.map((o) => offerCard(o)).join("\n")}
 ${sideBar(all.filter(isOpen))}</main>${filterScript}`;
   return layout({
     title, description: lede.replace(/<[^>]+>/g, ""), pathname, body,
-    jsonld: { "@context": "https://schema.org", "@type": "CollectionPage", name: title, url: SITE + pathname, inLanguage: "fr" },
+    jsonld: [{ "@context": "https://schema.org", "@type": "CollectionPage", name: title, url: SITE + pathname, inLanguage: "fr", dateModified: data.maj,
+      mainEntity: { "@type": "ItemList", numberOfItems: items.length, itemListElement: items.slice(0, 50).map((o, i) => ({ "@type": "ListItem", position: i + 1, url: `${SITE}/offres/${o.id}/`, name: o.titre })) } }, ...extraLd],
   });
+}
+
+function breadcrumbLd(trail) {
+  return { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: trail.map(([name, u], i) => ({ "@type": "ListItem", position: i + 1, name, item: SITE + u })) };
 }
 
 
 const ISO = { "RD Congo": "CD", "Sénégal": "SN", "Tchad": "TD", "Rwanda": "RW", "Niger": "NE", "Togo": "TG", "Mali": "ML", "Cameroun": "CM", "Burkina Faso": "BF", "Madagascar": "MG", "Bénin": "BJ", "Afrique du Sud": "ZA", "Éthiopie": "ET", "France": "FR", "Côte d'Ivoire": "CI", "Burundi": "BI", "Mauritanie": "MR", "République centrafricaine": "CF", "Guinée": "GN", "Gabon": "GA", "Congo": "CG", "Kenya": "KE", "Nigeria": "NG", "Ghana": "GH", "Maroc": "MA", "Tunisie": "TN", "Haïti": "HT", "Liban": "LB" };
 function jobPosting(o) {
   if (!["emploi", "stage"].includes(o.type) || !o.dateLimite || !isOpen(o)) return null;
-  const cc = ISO[o.pays.split(" (")[0].split(",")[0].split(" /")[0].trim()];
+  const cc = ISO[countryOf(o)];
   if (!cc) return null;
   const city = (o.pays.match(/\(([^)]+)\)/) || [])[1];
   return {
@@ -191,7 +201,7 @@ function offerPage(o, all) {
     stage: ["Vérifiez la durée, la rémunération et le niveau d'études demandé.", "Joignez une lettre courte qui explique ce que vous voulez apprendre.", "Demandez une lettre de recommandation à un enseignant ou un ancien encadrant."],
   }[o.type];
   const body = `<main class="wrap layout"><div>
-<nav class="crumbs" aria-label="Fil d'Ariane"><a href="/">Accueil</a> › <a href="${typeLink}">${TYPES_PL[o.type]}</a> › ${esc(o.organisme)}</nav>
+<nav class="crumbs" aria-label="Fil d'Ariane"><a href="/">Accueil</a> › <a href="${typeLink}">${TYPES_PL[o.type]}</a>${countryPage(o) ? ` › <a href="/pays/${countryPage(o).slug}/">${esc(countryPage(o).name)}</a>` : ""} › ${esc(o.organisme)}</nav>
 <article class="page">
 <div class="chips"><span class="chip ${o.type}">${TYPES[o.type]}</span>${isOng(o) ? '<span class="chip ong">ONG</span>' : ""}${o.financement ? `<span class="chip full">${esc(o.financement)}</span>` : ""}</div>
 <h1>${esc(o.titre)}</h1>
@@ -207,10 +217,10 @@ ${n !== null && n < 0 ? `<p class="notice">Cette offre est clôturée depuis le 
 ${related.length ? `<h2 style="font-family:var(--display);margin:28px 0 12px">Autres ${TYPES_PL[o.type].toLowerCase()} ouvertes</h2><div class="list">${related.map((x) => offerCard(x, "h3")).join("")}</div>` : ""}
 </div>${sideBar(all.filter(isOpen))}</main>`;
   return layout({
-    title: o.titre,
+    title: `${o.titre} – ${o.organisme}`.slice(0, 95),
     description: `${TYPES[o.type]} – ${o.organisme}, ${o.pays}. Date limite : ${fmt(o.dateLimite)}. ${o.description}`.slice(0, 300),
     pathname: `/offres/${o.id}/`, body, ogType: "article",
-    jsonld: jobPosting(o) || { "@context": "https://schema.org", "@type": "Article", headline: o.titre, datePublished: o.publie, dateModified: data.maj, inLanguage: "fr", publisher: { "@type": "Organization", name: NAME, url: SITE }, mainEntityOfPage: `${SITE}/offres/${o.id}/` },
+    jsonld: [breadcrumbLd([["Accueil", "/"], [TYPES_PL[o.type], typeLink], ...(countryPage(o) ? [[countryPage(o).name, `/pays/${countryPage(o).slug}/`]] : []), [o.titre, `/offres/${o.id}/`]]), jobPosting(o) || { "@context": "https://schema.org", "@type": "Article", headline: o.titre, datePublished: o.publie, dateModified: data.maj, inLanguage: "fr", publisher: { "@type": "Organization", name: NAME, url: SITE }, mainEntityOfPage: `${SITE}/offres/${o.id}/` }],
   });
 }
 
@@ -244,14 +254,26 @@ const write = (p, content) => { const f = path.join(OUT, p); fs.mkdirSync(path.d
 const all = [...data.offres].sort((a, b) => (a.dateLimite || "9999").localeCompare(b.dateLimite || "9999"));
 const open = all.filter(isOpen);
 const articles = readArticles();
+const DE = { "Togo": "au Togo", "Bénin": "au Bénin", "Sénégal": "au Sénégal", "Niger": "au Niger", "Mali": "au Mali", "Tchad": "au Tchad", "Cameroun": "au Cameroun", "Burkina Faso": "au Burkina Faso", "Burundi": "au Burundi", "Rwanda": "au Rwanda", "Gabon": "au Gabon", "Congo": "au Congo", "Kenya": "au Kenya", "Nigeria": "au Nigeria", "Ghana": "au Ghana", "Maroc": "au Maroc", "Liban": "au Liban", "RD Congo": "en RD Congo", "Côte d'Ivoire": "en Côte d'Ivoire", "Guinée": "en Guinée", "Mauritanie": "en Mauritanie", "République centrafricaine": "en Centrafrique", "Madagascar": "à Madagascar", "Haïti": "en Haïti", "Tunisie": "en Tunisie", "Éthiopie": "en Éthiopie", "Afrique du Sud": "en Afrique du Sud" };
+const countryCounts = {};
+open.forEach((o) => { const c = countryOf(o); if (DE[c]) countryCounts[c] = (countryCounts[c] || 0) + 1; });
+const COUNTRY_PAGES = Object.entries(countryCounts).filter(([, n]) => n >= 2).sort((a, b) => b[1] - a[1]).map(([name, count]) => ({ name, count, slug: slug(name), de: DE[name] }));
+const countryPage = (o) => COUNTRY_PAGES.find((c) => c.name === countryOf(o));
 
 write("style.css", CSS);
+if (fs.existsSync("static")) for (const f of fs.readdirSync("static")) fs.copyFileSync(path.join("static", f), path.join(OUT, f));
 write("favicon.svg", LOGO.replace('width="30" height="30" ', 'xmlns="http://www.w3.org/2000/svg" '));
-write("index.html", listPage({ pathname: "/", title: `${NAME} – Emplois, stages et bourses d'études en Afrique`, h1: "Emplois, stages et <em>bourses d'études</em>, mis à jour chaque jour.", lede: "Les offres ouvertes aux jeunes et aux professionnels d'Afrique francophone, avec un lien vers la source officielle. Service gratuit, sans inscription.", items: open, all, showTabs: true }));
-for (const [type, p] of [["bourse", "/bourses/"], ["emploi", "/emplois/"], ["stage", "/stages/"], ["formation", "/formations/"]]) {
-  write(`${p.slice(1)}index.html`, listPage({ pathname: p, title: `${TYPES_PL[type]} ouvertes`, h1: `${TYPES_PL[type]} ouvertes`, lede: { bourse: "Bourses d'études de licence, master et doctorat accessibles aux étudiants africains, classées par date limite.", emploi: "Offres d'emploi en Afrique et dans les organisations internationales, classées par date limite.", stage: "Stages pour étudiants et jeunes diplômés, classés par date limite.", formation: "Formations gratuites ou financées, en ligne et en présentiel, pour développer vos compétences.", }[type], items: open.filter((o) => o.type === type), all, showTabs: false }));
+write("index.html", listPage({ pathname: "/", title: `${NAME} – Emplois, stages et bourses d'études en Afrique (${MOIS_MAJ()})`, h1: "Emplois, stages et <em>bourses d'études</em>, mis à jour chaque jour.", lede: "Les offres ouvertes aux jeunes et aux professionnels d'Afrique francophone, avec un lien vers la source officielle. Service gratuit, sans inscription.", items: open, all, showTabs: true, extraLd: [
+  { "@context": "https://schema.org", "@type": "WebSite", name: NAME, url: SITE + "/", inLanguage: "fr" },
+  { "@context": "https://schema.org", "@type": "Organization", name: NAME, url: SITE + "/", logo: SITE + "/og.png", ...(CONTACT_EMAIL ? { email: CONTACT_EMAIL } : {}) }] }));
+for (const c of COUNTRY_PAGES) {
+  const items = open.filter((o) => countryOf(o) === c.name);
+  write(`pays/${c.slug}/index.html`, listPage({ pathname: `/pays/${c.slug}/`, title: `Offres d'emploi ${c.de} : emplois, stages et ONG (${MOIS_MAJ()})`, h1: `Offres d'emploi et stages <em>${esc(c.de)}</em>`, lede: `${items.length} offres ouvertes ${c.de} : emplois dans les ONG et les agences des Nations Unies, stages et opportunités locales, avec le lien vers l'annonce officielle. Mis à jour chaque jour.`, items, all, showTabs: true, extraLd: [breadcrumbLd([["Accueil", "/"], [`Offres ${c.de}`, `/pays/${c.slug}/`]])] }));
 }
-write("ong/index.html", listPage({ pathname: "/ong/", title: "Offres d'emploi et stages dans les ONG en Afrique", h1: "Emplois et stages dans les <em>ONG</em>", lede: "Offres des ONG et associations humanitaires et de développement qui travaillent en Afrique : santé, éducation, protection, agriculture, eau et assainissement.", items: open.filter(isOng), all, showTabs: true }));
+for (const [type, p] of [["bourse", "/bourses/"], ["emploi", "/emplois/"], ["stage", "/stages/"], ["formation", "/formations/"]]) {
+  write(`${p.slice(1)}index.html`, listPage({ pathname: p, title: `${{ bourse: "Bourses d'études ouvertes", emploi: "Offres d'emploi en Afrique", stage: "Offres de stage en Afrique", formation: "Formations gratuites et financées" }[type]} (${MOIS_MAJ()})`, h1: { bourse: "Bourses d'études ouvertes", emploi: "Offres d'emploi ouvertes", stage: "Offres de stage ouvertes", formation: "Formations ouvertes" }[type], lede: { bourse: "Bourses d'études de licence, master et doctorat accessibles aux étudiants africains, classées par date limite.", emploi: "Offres d'emploi en Afrique et dans les organisations internationales, classées par date limite.", stage: "Stages pour étudiants et jeunes diplômés, classés par date limite.", formation: "Formations gratuites ou financées, en ligne et en présentiel, pour développer vos compétences.", }[type], items: open.filter((o) => o.type === type), all, showTabs: false }));
+}
+write("ong/index.html", listPage({ pathname: "/ong/", title: `Offres d'emploi et stages dans les ONG en Afrique (${MOIS_MAJ()})`, h1: "Emplois et stages dans les <em>ONG</em>", lede: "Offres des ONG et associations humanitaires et de développement qui travaillent en Afrique : santé, éducation, protection, agriculture, eau et assainissement.", items: open.filter(isOng), all, showTabs: true }));
 for (const o of all) write(`offres/${o.id}/index.html`, offerPage(o, all));
 
 write("guides/index.html", simplePage("/guides/", "Conseils pour réussir vos candidatures", "Guides pratiques pour postuler aux bourses, stages et emplois et éviter les arnaques.", `<p>Des guides pratiques, rédigés par l'équipe ${NAME}, pour préparer vos candidatures.</p><div class="list">${articles.map((a) => `<div class="card"><h2><a href="/guides/${a.slug}/">${esc(a.titre)}</a></h2><p style="margin:0">${esc(a.resume)}</p></div>`).join("")}</div>`));
@@ -291,6 +313,7 @@ const urls = [
   ...["/a-propos/", "/contact/", "/confidentialite/", "/mentions-legales/"].map((u) => [u, null]),
   ...all.map((o) => [`/offres/${o.id}/`, o.publie]),
   ...articles.map((a) => [`/guides/${a.slug}/`, a.date]),
+  ...COUNTRY_PAGES.map((c) => [`/pays/${c.slug}/`, data.maj]),
 ];
 write("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(([u, d]) => `<url><loc>${SITE}${u}</loc>${d ? `<lastmod>${d}</lastmod>` : ""}</url>`).join("\n")}\n</urlset>\n`);
 write("robots.txt", `User-agent: *\nAllow: /\nDisallow: /whatsapp/\nSitemap: ${SITE}/sitemap.xml\n`);
