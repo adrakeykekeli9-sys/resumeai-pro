@@ -823,5 +823,201 @@
   "description": "Posted by the employer on the Government of Canada Job Bank, which also accepts applicants without a Canadian work permit. The employer has applied for a Labour Market Impact Assessment (LMIA) to hire a foreign worker; the work permit must be obtained after hiring.",
   "niveau": "Cabinetmaking experience",
   "financement": "Paid position"
+ },
+ "irc-assistante-psychosociale-birao": {
+  "titre": "Psychosocial Assistant (Birao, Tiringoulou, Sikikédé)",
+  "description": "IRC is hiring a psychosocial assistant to support women and children around Birao. Apply only through the official IRC careers portal (job JR00006116).",
+  "niveau": "Degree in psychology, social work or equivalent",
+  "financement": "Paid position",
+  "pays": "Central African Republic (Birao)"
+ },
+ "irc-assistante-psychosociale-amdafock": {
+  "titre": "Psychosocial Assistant (Amdafock)",
+  "description": "Second IRC psychosocial assistant post, based in Amdafock (attached to Birao). Apply through the official IRC portal (job JR00006118).",
+  "niveau": "Degree in psychology, social work or equivalent",
+  "financement": "Paid position",
+  "pays": "Central African Republic (Amdafock)"
+ },
+ "unfpa-rdc-conseiller-provincial-rgph2": {
+  "titre": "Provincial Technical Adviser – 2nd Population and Housing Census (RGPH2), DRC",
+  "description": "UNFPA is seeking a provincial-level technical adviser to support the DRC's second General Population and Housing Census. Apply on the official UNFPA portal (job 38129).",
+  "niveau": "Experience in statistics and census operations",
+  "financement": "Paid consultancy",
+  "pays": "DR Congo (Lubumbashi or Beni)"
+ },
+ "unfpa-rdc-consultant-capi-it-rgph2": {
+  "titre": "International CAPI Consultant, IT Coordinator – RGPH2 census (DRC)",
+  "description": "International consultancy to coordinate IT and tablet-based data collection (CAPI) for the DRC's second census. Apply on the official UNFPA portal (job 38130).",
+  "niveau": "IT, CAPI tablet data collection, data management",
+  "financement": "Paid consultancy",
+  "pays": "DR Congo (Lubumbashi or Beni)"
+ },
+ "pam-rdc-charge-programme-beni-kalemie": {
+  "titre": "Programme Policy Officer – Head of Programme (2 posts)",
+  "description": "WFP is hiring two heads of programme, one in Beni (North Kivu) and one in Kalemie (Tanganyika). Apply on the official WFP portal (job JR128417).",
+  "niveau": "Experience managing humanitarian programmes",
+  "financement": "Paid position",
+  "pays": "DR Congo (Beni and Kalemie)"
+ },
+ "unicef-rdc-gestionnaire-programme-p4-bunia": {
+  "titre": "Programme Manager P-4 (Ebola response), 6 months",
+  "description": "Temporary 6-month international post leading UNICEF's Ebola response in Ituri. Apply on UNICEF's official recruitment site (post 139073).",
+  "niveau": "Master's degree and at least 8 years of programme management experience",
+  "financement": "Paid international post",
+  "pays": "DR Congo (Bunia)"
+ },
+ "unicef-rdc-consultant-financement-vert": {
+  "titre": "Green Financing Consultant (6 months, remote possible)",
+  "description": "UNICEF DRC is recruiting a consultant to mobilise climate and green finance, working remotely with missions to Kinshasa. Apply on UNICEF's official site.",
+  "niveau": "Expertise in climate finance and green fund mobilisation",
+  "financement": "Paid consultancy",
+  "pays": "DR Congo (Kinshasa, remote)"
+ },
+ "unicef-benin-charge-partenariats-p2": {
+  "titre": "Partnerships Officer P-2 (364 days)",
+  "description": "Temporary international post at the UNICEF office in Cotonou to develop partnerships and resource mobilisation. Apply on UNICEF's official site (post 00139061).",
+  "niveau": "Master's degree and at least 2 years of partnerships experience",
+  "financement": "Paid international post",
+  "pays": "Benin (Cotonou)"
+ },
+ "imc-cameroun-consultant-inventaire-actifs": {
+  "titre": "Consultant: electronic asset inventory",
+  "description": "IMC Cameroon is looking for a consultant to carry out an electronic inventory of its equipment and assets. Apply on the official International Medical Corps portal.",
+  "niveau": "Experience in asset management and digital inventories",
+  "financement": "Paid consultancy",
+  "pays": "Cameroon (Yaoundé)"
+ },
+ "ficr-rdc-assistant-finance-beni-butembo": {
+  "titre": "Finance and Administration Assistant (Beni/Butembo)",
+  "description": "IFRC is scaling up its Ebola response and hiring a finance and administration assistant in Beni/Butembo. Apply on the official IFRC careers portal.",
+  "niveau": "Background in accounting or finance",
+  "financement": "Paid position (national contract)",
+  "pays": "DR Congo (Beni/Butembo)"
+ },
+ "ficr-rdc-assistant-finance-mongbwalu": {
+  "titre": "Finance and Administration Assistant (Mongbwalu)",
+  "description": "Finance and administration assistant post for IFRC's Ebola response in Mongbwalu (Ituri). Apply on the official IFRC portal (S19333).",
+  "niveau": "Background in accounting or finance",
+  "financement": "Paid position (national contract)",
+  "pays": "DR Congo (Mongbwalu)"
+ },
+ "ficr-rdc-officier-finance-kisangani": {
+  "titre": "Finance and Administration Officer (Kisangani)",
+  "description": "IFRC is hiring a finance and administration officer in Kisangani as part of its Ebola response. Apply on the official IFRC portal (S19336).",
+  "niveau": "Degree in finance or management, NGO experience",
+  "financement": "Paid position (national contract)",
+  "pays": "DR Congo (Kisangani)"
+ },
+ "drc-senegal-developpeur-power-platform": {
+  "titre": "Power Platform Developer Specialist – Sahel Regional Fund",
+  "description": "DRC is hiring a Power Platform developer in Dakar to digitise the management of the Sahel Regional Fund. Apply on the official DRC site (job 177240).",
+  "niveau": "Proficiency in Microsoft Power Apps, Power Automate and Power BI",
+  "financement": "Paid position",
+  "pays": "Senegal (Dakar)"
+ },
+ "drc-cameroun-chef-projet-nwsw": {
+  "titre": "Project Manager NWSW (North-West and South-West)",
+  "description": "DRC is hiring a project manager based in Bamenda for its work in the North-West and South-West regions. Apply on the official DRC portal (project 177228).",
+  "niveau": "Experience managing humanitarian projects",
+  "financement": "Paid position",
+  "pays": "Cameroon (Bamenda)"
+ },
+ "stc-rdc-gestionnaire-wash-bunia": {
+  "titre": "WASH Manager (Ebola response)",
+  "description": "Save the Children is hiring a WASH manager in Bunia for its Ebola response in Ituri. Apply on the official Save the Children portal (ref. 17628).",
+  "niveau": "Background in water, sanitation and hygiene",
+  "financement": "Paid position",
+  "pays": "DR Congo (Bunia)"
+ },
+ "stc-rdc-caissier-kinshasa": {
+  "titre": "Cashier",
+  "description": "Cashier post in the Finance department of Save the Children in Kinshasa. Apply on the official Save the Children portal (ref. 18213).",
+  "niveau": "Accounting background, cash-handling experience",
+  "financement": "Paid position",
+  "pays": "DR Congo (Kinshasa)"
+ },
+ "wv-tchad-specialiste-education-protection": {
+  "titre": "Education and Child Protection Specialist",
+  "description": "World Vision Chad is hiring an education and child protection specialist at its N'Djamena head office. Apply on the official World Vision portal (JR54125).",
+  "niveau": "Experience in education and child protection",
+  "financement": "Paid position",
+  "pays": "Chad (N'Djamena)"
+ },
+ "wv-rdc-coordonnateur-protection-goma": {
+  "titre": "Protection Coordinator",
+  "description": "World Vision DRC is hiring a protection coordinator based in Kirumba (North Kivu). Apply on the official World Vision portal (JR54128).",
+  "niveau": "Experience in humanitarian protection",
+  "financement": "Paid position",
+  "pays": "DR Congo (Goma, based in Kirumba)"
+ },
+ "wv-mali-stagiaire-admin-logistique": {
+  "titre": "Administration and Logistics Intern",
+  "description": "World Vision Mali offers an administration and logistics internship in Sévaré. Apply on the official World Vision portal (JR54053).",
+  "niveau": "Recent graduate in administration, management or logistics",
+  "financement": "Internship",
+  "pays": "Mali (Sévaré)"
+ },
+ "nrc-niger-acces-humanitaire-securite": {
+  "titre": "Humanitarian Access and Security Officer",
+  "description": "NRC is hiring a humanitarian access and security officer in Maradi. Apply on the official NRC portal (job 21848).",
+  "niveau": "Experience in security and humanitarian access",
+  "financement": "Paid position",
+  "pays": "Niger (Maradi)"
+ },
+ "helvetas-burkina-mobilisation-ressources": {
+  "titre": "Programme Adviser – Resource Mobilisation",
+  "description": "Helvetas Burkina Faso is hiring a resource mobilisation adviser based in Ouagadougou. Apply on the official Helvetas site.",
+  "niveau": "Experience in proposal writing and donor relations",
+  "financement": "Paid position",
+  "pays": "Burkina Faso (Ouagadougou)"
+ },
+ "alima-rca-coordinateur-financier": {
+  "titre": "Finance Coordinator",
+  "description": "ALIMA is hiring a finance coordinator for its Central African Republic mission, based in Bangui. Apply on the official ALIMA portal.",
+  "niveau": "Experience in NGO financial coordination",
+  "financement": "Paid position",
+  "pays": "Central African Republic (Bangui)"
+ },
+ "hi-togo-senior-technical-officer-readaptation": {
+  "titre": "Senior Technical Officer – Rehabilitation",
+  "description": "HI Togo is hiring a Senior Technical Officer in rehabilitation in Lomé (subject to funding, expected start February 2027). Ad relayed by JobRelais; applications go by email to the official HI Togo address given in the ad.",
+  "niveau": "Experienced rehabilitation professional (physiotherapy, etc.)",
+  "financement": "12-month renewable project contract",
+  "pays": "Togo (Lomé)"
+ },
+ "lct-assistant-chef-comptable": {
+  "titre": "Assistant to the Chief Accountant",
+  "description": "LCT is hiring an assistant to the chief accountant for its Finance department. Ad relayed by JobRelais; the application (letter, CV, diplomas, certificates) must be dropped in a sealed envelope at LCT reception before 26 November at 12:00.",
+  "niveau": "Background in accounting, finance or tax",
+  "financement": "Paid position",
+  "pays": "Togo (Lomé)"
+ },
+ "conseils-reunis-raf": {
+  "titre": "Administrative and Finance Manager",
+  "description": "The firm Conseils Réunis is hiring an administrative and finance manager reporting to the Managing Director. Apply on the firm's official recruitment page.",
+  "niveau": "Experience in administrative, financial and accounting management",
+  "financement": "Paid position",
+  "pays": "Togo (Lomé)"
+ },
+ "dkom-assistante-direction": {
+  "titre": "Executive Assistant (HAS Voyage)",
+  "description": "DKOM GROUP is hiring an executive assistant for its HAS Voyage department in Lomé. Ad relayed by EmploiTogo; applications go by email to the HR address given in the ad.",
+  "niveau": "Background in secretarial or executive assistance",
+  "financement": "Paid position",
+  "pays": "Togo (Lomé)"
+ },
+ "umo-interim-techniciens-fibre": {
+  "titre": "Fibre optic installation technicians (25 posts) and other profiles",
+  "description": "UMO Intérim is recruiting for its clients, including 25 fibre optic installation technicians. Ad relayed by EmploiTogo; applications go by email to UMO Intérim's recruitment address given in the ad.",
+  "niveau": "2–3 years of higher education in telecoms or networks, 1–3 years of experience",
+  "financement": "Paid positions",
+  "pays": "Togo"
+ },
+ "bourses-ooas-sante-publique-2026": {
+  "titre": "36 Master's and PhD scholarships in public health (WAHO/ECOWAS)",
+  "description": "WAHO, with the Galien Africa Association, offers 12 PhD and 24 Master's scholarships in public health for 2026/2027. Official call published on the WAHO website.",
+  "niveau": "Health professionals and researchers from ECOWAS countries",
+  "financement": "Fully funded scholarships",
+  "pays": "West Africa (ECOWAS)"
  }
 }
