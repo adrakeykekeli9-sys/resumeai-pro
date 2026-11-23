@@ -1250,5 +1250,116 @@
   "niveau": "Young leaders engaged in digital issues",
   "financement": "Free programme",
   "pays": "International (online)"
+ },
+ "wv-rca-coordonnateur-risques-conformite": {
+  "titre": "Risk and Compliance Coordinator (Global Fund)",
+  "description": "World Vision Central African Republic is hiring a risk and compliance coordinator in Bangui for its Global Fund grant. Local candidates only; apply on the official World Vision portal (JR54102).",
+  "niveau": "Experience in audit, internal control or compliance",
+  "financement": "Paid position (fixed-term)",
+  "pays": "Central African Republic (Bangui)"
+ },
+ "wv-rca-gestionnaire-sr-osc": {
+  "titre": "Sub-Recipient and CSO Manager (Deputy National)",
+  "description": "For its Global Fund HIV, TB and malaria programme, World Vision is hiring a manager in Bangui to oversee sub-recipients and civil society organisations. Local candidates only; apply on the official World Vision portal (JR54179).",
+  "niveau": "Experience managing partners and grants",
+  "financement": "Paid position (fixed-term)",
+  "pays": "Central African Republic (Bangui)"
+ },
+ "wv-rca-manager-engagement-communautaire": {
+  "titre": "Community Engagement and Health Promotion Manager",
+  "description": "World Vision Central African Republic is hiring a community engagement and health promotion manager in Bangui under its Global Fund grant. Local candidates only; apply on the official World Vision portal (JR54116).",
+  "niveau": "Experience in community mobilisation and public health",
+  "financement": "Paid position (fixed-term)",
+  "pays": "Central African Republic (Bangui)"
+ },
+ "irc-rdc-officier-meal-ebola-beni": {
+  "titre": "MEAL Officer – Ebola response (IPC/WASH, RCCE, protection)",
+  "description": "IRC is hiring a monitoring, evaluation and accountability officer in Beni for its Ebola response (infection prevention, WASH, risk communication and protection). Apply on the official IRC portal (JR00006122).",
+  "niveau": "Experience in humanitarian programme monitoring and evaluation",
+  "financement": "Paid position",
+  "pays": "DR Congo (Beni)"
+ },
+ "pam-vnu-rdc-communication-kananga": {
+  "titre": "Communication and Community Engagement Assistant (National UN Volunteer)",
+  "description": "Six-month national volunteer assignment with WFP in Kananga, starting 1 December, on communication and community engagement. Apply on the official UN Volunteers platform.",
+  "niveau": "Background in communication or social sciences",
+  "financement": "Volunteer assignment with monthly allowance",
+  "pays": "DR Congo (Kananga)"
+ },
+ "pnud-mali-assistant-technique-climatisation": {
+  "titre": "Assistant Technician (air conditioning)",
+  "description": "UNDP is hiring an assistant technician in Bamako to maintain air conditioning at the UN common premises. Apply on the official UNDP portal (job 35997).",
+  "niveau": "Technical training in refrigeration and air conditioning",
+  "financement": "Paid position (NPSA-4)",
+  "pays": "Mali (Bamako)"
+ },
+ "pnud-tchad-consultant-produits-locaux": {
+  "titre": "National Consultant – Chadian local products promotion programme",
+  "description": "UNDP Chad is seeking a national consultant to design a programme promoting local products, over 120 working days. The official notice (UNDP-TCD-01049) is on UNDP's procurement portal.",
+  "niveau": "Expertise in local economic development and value chains",
+  "financement": "Paid consultancy (120 days)",
+  "pays": "Chad"
+ },
+ "tgh-tchad-directeur-pays": {
+  "titre": "Country Director",
+  "description": "French NGO TGH is recruiting its Country Director for Chad, based in N'Djamena, starting late December or early January. No deadline is given: apply on TGH's official site.",
+  "niveau": "Solid experience leading a humanitarian mission",
+  "financement": "Paid position (10-month renewable contract)",
+  "pays": "Chad (N'Djamena)"
+ },
+ "croix-rouge-lux-madagascar-delegue-admin-finance": {
+  "titre": "Administration and Finance Delegate",
+  "description": "The Luxembourg Red Cross is hiring an administration and finance delegate for its Madagascar mission (unaccompanied post). No deadline is given: apply on the official Luxembourg Red Cross portal (ref. 7045).",
+  "niveau": "Experience in humanitarian administration and finance",
+  "financement": "12-month renewable fixed-term contract",
+  "pays": "Madagascar (Antananarivo)"
+ },
+ "solidarites-rdc-responsable-finance-rh-beni": {
+  "titre": "Finance and HR Manager",
+  "description": "Solidarités International is hiring a finance and HR manager for a 6-month expatriate mission in Beni, starting mid-January 2027. No deadline is given: apply on Solidarités International's official site.",
+  "niveau": "Experience in NGO finance and HR management",
+  "financement": "From €2,365 gross per month (6-month mission)",
+  "pays": "DR Congo (Beni)"
+ },
+ "alima-senegal-charge-recrutement": {
+  "titre": "Recruitment, Career Paths and Pool Management Officer (bilingual)",
+  "description": "ALIMA is hiring a bilingual recruitment officer at its Dakar operational headquarters, starting January 2027. No deadline is given: apply on ALIMA's official portal.",
+  "niveau": "Recruitment experience, bilingual French-English",
+  "financement": "Permanent contract under Senegalese law",
+  "pays": "Senegal (Dakar)"
+ },
+ "prosper-global-senegal-stage-electricite": {
+  "titre": "Electrical Engineering Intern – productive use of energy",
+  "description": "Prosper Global (formerly Mercy Corps) offers a 6-month qualification internship in Dakar in electrical engineering, on access to productive-use equipment. No deadline is given: apply on the official portal.",
+  "niveau": "Recent graduate in electrical engineering or energy",
+  "financement": "6-month unpaid internship",
+  "pays": "Senegal (Dakar)"
+ },
+ "prosper-global-senegal-stage-achats": {
+  "titre": "Operations Intern (procurement and logistics)",
+  "description": "Prosper Global Senegal offers a procurement and logistics internship in its Energy for Impact component in Dakar. No deadline is given: apply on the official portal.",
+  "niveau": "Student or recent graduate in logistics or procurement",
+  "financement": "Internship",
+  "pays": "Senegal (Dakar)"
+ },
+ "hcr-vnu-en-ligne-fiche-localisation": {
+  "titre": "Graphic design of a localisation fact sheet (Online UN Volunteer)",
+  "description": "Short online volunteering assignment (1 week, 1–5 hours) for UNHCR: lay out a fact sheet. Open to all, from home; apply on the official UN Volunteers platform.",
+  "niveau": "Graphic designer with a portfolio",
+  "financement": "Online volunteering (unpaid)",
+  "pays": "Online (Dakar regional office)"
+ },
+ "ima-corus-rdc-finance-officer-rise": {
+  "titre": "Finance Officer – RISE project",
+  "description": "IMA World Health, part of Corus International, is hiring a finance officer in Goma for the RISE project (local recruitment). No deadline is given: apply on the official Corus portal.",
+  "niveau": "Background in finance or accounting",
+  "financement": "Paid position",
+  "pays": "DR Congo (Goma)"
+ },
+ "canada-jobbank-50769015": {
+  "titre": "Operations Officer – administration, Montréal",
+  "description": "Posted by the employer on the Government of Canada Job Bank, which also accepts applicants without a Canadian work permit. English-language position in Montréal; the work permit must be obtained after hiring.",
+  "niveau": "Experience in administration and operations management",
+  "financement": "CA$36.50 per hour"
  }
 }
