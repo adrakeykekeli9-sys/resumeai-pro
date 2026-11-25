@@ -32,3 +32,17 @@ Le site est généré en français (racine) et en anglais (`/en/…`), avec un s
 - Offres : traductions dans `data/offres_en.json`, indexées par `id` : `{ "titre", "description", "niveau", "financement", "pays" (facultatif) }`. **Chaque nouvelle offre doit y être ajoutée** ; sinon la page anglaise affiche le texte français avec une mention.
 - Programmes à l'étranger : sous-objets `"en"` dans `data/programmes.json`.
 - Les guides et le message WhatsApp restent en français.
+
+## Mise à jour automatique (sans Claude Code)
+
+Le fichier `.github/workflows/opportunite-emplois-quotidien.yml` lance chaque matin à 04:17 UTC
+`scripts/auto_update.py` sur les serveurs de GitHub, puis Render redéploie le site. Cela fonctionne même
+quand l'abonnement Claude est épuisé.
+
+- Sans réglage : retrait des offres expirées depuis plus de 30 jours, offres du Guichet-Emplois du Canada.
+- Avec le secret GitHub `ANTHROPIC_API_KEY` (clé de l'API Claude, facturée à l'usage, séparée de l'abonnement) :
+  lecture des nouvelles annonces de HumanitaireHub, JobRelais et EmploiTogo, règle de vérification, fiche en
+  français et en anglais (20 offres au plus par jour, variable `MAX_NOUVELLES`).
+- Modèle : `claude-opus-5-5` par défaut ; la variable GitHub `CLAUDE_MODEL` peut le changer (par exemple
+  `claude-haiku-5-5`, bien moins cher).
+- `data/vus.json` garde les annonces déjà examinées.

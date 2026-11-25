@@ -1,0 +1,50 @@
+name: Opportunité d'Emplois – mise à jour quotidienne
+
+# Tourne chaque matin sur les serveurs de GitHub, sans session Claude Code.
+# Render redéploie le site automatiquement après le commit.
+on:
+  schedule:
+    - cron: "17 4 * * *"   # 04:17 UTC = 04:17 à Lomé
+  workflow_dispatch: {}      # bouton « Run workflow » pour lancer à la main
+
+permissions:
+  contents: write
+
+concurrency:
+  group: opportunite-emplois-quotidien
+  cancel-in-progress: false
+
+jobs:
+  mise-a-jour:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    defaults:
+      run:
+        working-directory: sites/opportunite-emplois
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Installer le SDK Claude
+        run: pip install anthropic
+      - name: Collecter et vérifier les offres
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL || 'claude-opus-5-5' }}
+        run: python3 -I scripts/auto_update.py
+      - name: Construire le site (contrôle)
+        env:
+          SITE_URL: https://opportunite-emplois.org
+        run: node build.mjs
+      - name: Publier
+        run: |
+          git config user.name "opportunite-emplois-bot"
+          git config user.email "opportunite-emplois-bot@users.noreply.github.com"
+          git add data
+          if git diff --cached --quiet; then echo "Rien de nouveau"; exit 0; fi
+          git commit -m "Mise à jour automatique du $(date -u +%d/%m/%Y)"
+          for i in 1 2 3; do git pull --rebase origin main && git push origin HEAD:main && break || sleep 10; done
