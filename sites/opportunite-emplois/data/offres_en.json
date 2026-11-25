@@ -99,13 +99,6 @@
   "financement": "Fully funded",
   "pays": "Africa, Europe, North America"
  },
- "msf-recrutement-afrique-ouest": {
-  "titre": "Médecins Sans Frontières is recruiting in West Africa and Cameroon",
-  "description": "MSF runs a recruitment portal dedicated to West Africa and Cameroon, for medical profiles (doctors, nurses, midwives) and non-medical profiles (logistics, administration, finance). Applications are accepted on a rolling basis.",
-  "niveau": "All levels (medical and non-medical)",
-  "financement": "Paid positions",
-  "pays": "West Africa, Cameroon"
- },
  "google-digital-skills-africa": {
   "titre": "Google Digital Skills for Africa: free digital skills",
   "description": "Free programme of about 40 hours on digital marketing, using the internet for your business and job hunting. Available any time, at your own pace.",
@@ -1361,5 +1354,317 @@
   "description": "Posted by the employer on the Government of Canada Job Bank, which also accepts applicants without a Canadian work permit. English-language position in Montréal; the work permit must be obtained after hiring.",
   "niveau": "Experience in administration and operations management",
   "financement": "CA$36.50 per hour"
+ },
+ "fhi360-togo-chaine-approvisionnement-vih": {
+  "titre": "HIV Supply Chain Advisor",
+  "description": "FHI 360 Togo is hiring an HIV supply chain advisor in Lomé for its HIV and malaria programme (requisition 2026201649). No deadline is given: apply soon on the official portal.",
+  "niveau": "Pharmacist or health logistics specialist",
+  "financement": "Paid position",
+  "pays": "Togo (Lomé)"
+ },
+ "expertise-france-guinee-bissau-comptabilite-etat": {
+  "titre": "Expert – transition to State general accounting",
+  "description": "Expertise France is recruiting a national or international expert to support Guinea-Bissau's move to State general accounting, in an EU-funded project. No deadline is given: apply soon on the official portal.",
+  "niveau": "Expert in public finance and government accounting",
+  "financement": "Paid expert assignment",
+  "pays": "Guinea-Bissau"
+ },
+ "solidarites-tca-responsable-protection-yaounde": {
+  "titre": "Head of Protection Department – Chad, Cameroon, CAR",
+  "description": "Solidarités International is hiring a head of its protection department in Yaoundé for its Chad-Cameroon-CAR multi-country mission. No deadline is given: apply soon on the official portal.",
+  "niveau": "Solid experience in humanitarian protection",
+  "financement": "Paid expatriate position",
+  "pays": "Cameroon (Yaoundé)"
+ },
+ "irc-rdc-superviseur-risques-environnementaux-bunia": {
+  "titre": "Environmental and Social Risk Management Supervisor",
+  "description": "IRC is hiring an environmental and social risk supervisor in Bunia for the World Bank-funded STAR-DRC Ebola response project. Apply on the official IRC portal (JR00006187).",
+  "niveau": "Experience in environmental and social safeguards",
+  "financement": "Paid position",
+  "pays": "DR Congo (Bunia)"
+ },
+ "plan-tchad-coordonnateur-financier-gffo": {
+  "titre": "Finance Coordinator – GFFO project",
+  "description": "Plan International Chad is hiring a finance coordinator in Adré for a German-funded project. Apply on the official Plan International portal.",
+  "niveau": "Experience in project financial management",
+  "financement": "Paid position (fixed-term to July 2027)",
+  "pays": "Chad (Adré)"
+ },
+ "oms-rca-assistant-securite-locale": {
+  "titre": "Local Security Assistant (GS6)",
+  "description": "WHO is hiring a local security assistant in Bangui. Apply on the official WHO careers portal (2605128).",
+  "niveau": "Experience in operational security",
+  "financement": "Paid position",
+  "pays": "Central African Republic (Bangui)"
+ },
+ "acf-rdc-responsable-smsp-bunia": {
+  "titre": "Mental Health and Psychosocial Support Programme Manager",
+  "description": "Action contre la Faim is hiring a mental health and psychosocial support programme manager in Bunia, on a 3-month expatriate contract from 10 December. Apply on ACF's official site.",
+  "niveau": "Experienced psychologist or MHPSS professional",
+  "financement": "€2,130 to €2,406 gross per month (3 months)",
+  "pays": "DR Congo (Bunia)"
+ },
+ "fhi360-rdc-directeur-financier-adjoint": {
+  "titre": "Associate Director, Finance",
+  "description": "FHI 360 is hiring an associate finance director in Kinshasa for its health projects. Apply on the official FHI 360 portal (2026201711).",
+  "niveau": "Solid experience in health project financial management",
+  "financement": "Paid position",
+  "pays": "DR Congo (Kinshasa)"
+ },
+ "concern-rdc-logistique-achats-goma": {
+  "titre": "Logistics Support Officer – Procurement and Tenders",
+  "description": "Concern Worldwide is hiring an officer in Goma to handle complex procurement and tenders. Apply on Concern's official portal.",
+  "niveau": "Experience in procurement and tender procedures",
+  "financement": "Paid position",
+  "pays": "DR Congo (Goma)"
+ },
+ "intersos-rdc-coordinateur-logistique": {
+  "titre": "Logistics and Supply Coordinator",
+  "description": "INTERSOS is hiring a logistics and supply coordinator in Goma for its DRC mission. Apply on INTERSOS's official site.",
+  "niveau": "Experience coordinating humanitarian logistics",
+  "financement": "Paid position",
+  "pays": "DR Congo (Goma)"
+ },
+ "dca-rdc-responsable-financier-goma": {
+  "titre": "Finance Manager",
+  "description": "DanChurchAid is hiring a finance manager in Goma, starting 15 December. Apply on DCA's official portal.",
+  "niveau": "Experience in NGO financial management",
+  "financement": "6-month renewable contract",
+  "pays": "DR Congo (Goma)"
+ },
+ "nrc-rca-acces-humanitaire-paoua": {
+  "titre": "Humanitarian Access and Security Manager",
+  "description": "NRC is hiring a humanitarian access and security manager in Paoua. Apply on the official NRC portal (22167).",
+  "niveau": "Experience in security and humanitarian access",
+  "financement": "12-month renewable contract",
+  "pays": "Central African Republic (Paoua)"
+ },
+ "crs-guinee-charge-projet-chaine-approvisionnement": {
+  "titre": "Senior Project Officer – Supply Chain",
+  "description": "CRS Guinea is hiring a senior supply chain project officer, a field-based position. Apply on the official CRS portal (3003092).",
+  "niveau": "Experience in health supply chains",
+  "financement": "Paid position",
+  "pays": "Guinea"
+ },
+ "crs-guinee-comptable-projet-reach": {
+  "titre": "Project / Grant Accountant – REACH Malaria",
+  "description": "CRS is hiring an accountant in Guinea for its REACH malaria project. Apply on the official CRS portal (3003086).",
+  "niveau": "Accounting background, grant experience",
+  "financement": "Paid position",
+  "pays": "Guinea"
+ },
+ "onu-femmes-senegal-associe-achats": {
+  "titre": "Procurement Associate (NPSA-7)",
+  "description": "UN Women is hiring a procurement associate in Dakar. Apply on the official UN portal (38107).",
+  "niveau": "Experience in public or humanitarian procurement",
+  "financement": "Paid position (12 months)",
+  "pays": "Senegal (Dakar)"
+ },
+ "intersos-rca-specialiste-wash-ndele": {
+  "titre": "WASH Specialist",
+  "description": "INTERSOS is hiring a WASH specialist in Ndélé for its Central African Republic mission. Apply on INTERSOS's official site (SR-46-10332).",
+  "niveau": "Water, sanitation and hygiene engineer or specialist",
+  "financement": "6-month renewable contract",
+  "pays": "Central African Republic (Ndélé)"
+ },
+ "ima-corus-rdc-chef-projet-var-cdc": {
+  "titre": "Project Manager (Var-CDC) – immunisation and health security",
+  "description": "IMA World Health, part of Corus International, is hiring a project manager in Kinshasa for its immunisation and global health security programmes. No deadline is given: apply soon on the official portal.",
+  "niveau": "Experience managing immunisation programmes",
+  "financement": "Paid position",
+  "pays": "DR Congo (Kinshasa)"
+ },
+ "wcs-tchad-directeur-parc-sena-oura": {
+  "titre": "Director, Sena Oura National Park",
+  "description": "WCS Chad is recruiting the director of Sena Oura National Park. Apply on WCS's official portal.",
+  "niveau": "Experience managing protected areas, French and English",
+  "financement": "Paid position",
+  "pays": "Chad (Sena Oura National Park)"
+ },
+ "wv-rca-gestionnaire-contrats-fonds-mondial": {
+  "titre": "Global Fund Contract and Supply Chain Manager",
+  "description": "World Vision is hiring a contract and supply chain manager in Bangui for its Global Fund grant; local and international applicants accepted. Apply on the official World Vision portal (JR54101).",
+  "niveau": "Experience in procurement, contracts and supply chains",
+  "financement": "Paid position",
+  "pays": "Central African Republic (Bangui)"
+ },
+ "wv-rca-chef-equipe-meal-donnees": {
+  "titre": "MEAL Team Leader – Data and Digitalisation",
+  "description": "World Vision Central African Republic is hiring a MEAL team leader for data and digitalisation in Bangui under its Global Fund grant. Apply on the official World Vision portal (JR54025).",
+  "niveau": "Experience in monitoring and evaluation and data management",
+  "financement": "Paid position",
+  "pays": "Central African Republic (Bangui)"
+ },
+ "plan-rca-chef-projet-prucac-berberati": {
+  "titre": "Project Manager – PRUCAC",
+  "description": "Plan International is recruiting the manager of the PRUCAC project in Berbérati, which supports agricultural productivity and household resilience. Apply on the official Plan International portal.",
+  "niveau": "Experience managing agriculture and resilience projects",
+  "financement": "Paid position (grade 15)",
+  "pays": "Central African Republic (Berbérati)"
+ },
+ "plan-rca-techniciens-agricoles-prucac": {
+  "titre": "Agricultural Technicians (6 posts) – PRUCAC",
+  "description": "Plan International is hiring 6 agricultural technicians for the PRUCAC project in several locations in the Central African Republic. Apply on the official Plan International portal.",
+  "niveau": "Background in agronomy or agriculture",
+  "financement": "Paid positions",
+  "pays": "Central African Republic (several locations)"
+ },
+ "plan-rca-superviseurs-agricoles-prucac": {
+  "titre": "Agricultural Supervisors (26 posts) – PRUCAC",
+  "description": "Plan International is hiring 26 agricultural supervisors for the PRUCAC project around Berbérati. Apply on the official Plan International portal.",
+  "niveau": "Agricultural training and field experience",
+  "financement": "Paid positions",
+  "pays": "Central African Republic (Berbérati)"
+ },
+ "pam-tchad-charge-national-finances": {
+  "titre": "National Finance Officer (SC8)",
+  "description": "WFP is hiring a national finance officer in N'Djamena. Apply on the official WFP portal (JR128677).",
+  "niveau": "Degree in finance or accounting, solid experience",
+  "financement": "Paid position",
+  "pays": "Chad (N'Djamena)"
+ },
+ "pam-rdc-consultant-alimentation-scolaire": {
+  "titre": "International Consultant – Programme Policy, School Feeding",
+  "description": "WFP DRC is recruiting an international consultant for its school feeding programmes in Kinshasa for 11 months (JR128604). Check the deadline on the official WFP portal.",
+  "niveau": "Experience in school feeding programmes",
+  "financement": "11-month international consultancy",
+  "pays": "DR Congo (Kinshasa)"
+ },
+ "oim-rca-charge-protection-retour": {
+  "titre": "Protection Officer – Assisted Voluntary Return",
+  "description": "IOM is hiring a protection officer in Bangui for its assisted voluntary return programme (professional category). Apply on the official IOM portal (23915).",
+  "niveau": "Master's degree and experience in migrant protection",
+  "financement": "Paid international post",
+  "pays": "Central African Republic (Bangui)"
+ },
+ "unicef-niger-consultant-fiscalite-locale": {
+  "titre": "National Consultant – local tax revenue mobilisation strategy",
+  "description": "UNICEF Niger is seeking a national consultant to develop the local authorities' tax revenue mobilisation strategy. Apply on UNICEF's official site (597130).",
+  "niveau": "Expertise in local public finance",
+  "financement": "4-month consultancy",
+  "pays": "Niger (Niamey, home-based)"
+ },
+ "ocdi-caritas-dapaong-pharmacien": {
+  "titre": "Pharmacist in charge of the depot",
+  "description": "OCDI/Caritas Dapaong is hiring a pharmacist to run its pharmaceutical depot. Ad relayed by JobRelais; applications go to the addresses given in the ad before 20 December at 17:00.",
+  "niveau": "Doctor of Pharmacy",
+  "financement": "Paid position",
+  "pays": "Togo (Dapaong)"
+ },
+ "stm-charge-marches-publics": {
+  "titre": "Public Procurement Officer",
+  "description": "STM SA is hiring a public procurement officer at its Lomé headquarters, with possible travel to its mining sites. Ad relayed by JobRelais; applications go to STM's official address.",
+  "niveau": "Experience in procurement",
+  "financement": "Paid position",
+  "pays": "Togo (Lomé)"
+ },
+ "sgmt-technicien-laboratoire": {
+  "titre": "Laboratory Technician (permanent)",
+  "description": "SGMT, a food processing company of Groupe AVOS, is hiring a permanent laboratory technician in Lomé. Ad relayed by JobRelais; apply by email to the recruitment address given.",
+  "niveau": "Background in laboratory analysis or food processing",
+  "financement": "Permanent contract",
+  "pays": "Togo (Lomé)"
+ },
+ "jolonar-standardistes": {
+  "titre": "Switchboard Operators (2 posts)",
+  "description": "HR firm Jolonar Concept is hiring two switchboard operators for a client. Ad relayed by JobRelais; apply by email to the address given in the ad.",
+  "niveau": "Good communication, reception experience",
+  "financement": "Paid positions",
+  "pays": "Togo"
+ },
+ "raycom-chef-projet-evenementiel": {
+  "titre": "Corporate Event Project Manager",
+  "description": "An events agency in Lomé is hiring a project manager for its corporate events. Ad relayed by JobRelais; apply by email before 30 November at 16:00.",
+  "niveau": "Experience organising corporate events",
+  "financement": "Service contract",
+  "pays": "Togo (Lomé)"
+ },
+ "lgi-marketing-communication": {
+  "titre": "Marketing and Communication Officer",
+  "description": "LGI Consulting is hiring a marketing and communication officer in Lomé. Ad relayed by JobRelais; apply by email to the address given.",
+  "niveau": "Background in marketing or communication, aged 30 or under",
+  "financement": "Paid position",
+  "pays": "Togo (Lomé)"
+ },
+ "jaza-ingenieurs-service-terrain": {
+  "titre": "Field Service Engineers (6 posts)",
+  "description": "Solar energy start-up JAZA is hiring six field engineers in Togo through Talents Plus Conseils. Ad relayed by JobRelais; apply by email to the address given.",
+  "niveau": "Electrical or solar energy engineer",
+  "financement": "Paid positions",
+  "pays": "Togo"
+ },
+ "enabel-cote-ivoire-project-event-officer": {
+  "titre": "Project and Event Officer – CALAO programme",
+  "description": "Belgian development agency Enabel is hiring a project and event officer in Abidjan (national post). Apply on Enabel's official portal (23563).",
+  "niveau": "Experience in project and event management",
+  "financement": "40-month fixed-term contract",
+  "pays": "Côte d'Ivoire (Abidjan)"
+ },
+ "fk-corporation-stage-finance": {
+  "titre": "Finance Department Interns",
+  "description": "FK Corporation, an agricultural trading company, is recruiting interns for its Finance department in Cotonou. Ad relayed by JobRelais; apply by email to the address given.",
+  "niveau": "Student or recent graduate in finance or accounting",
+  "financement": "3-month renewable internship with allowance",
+  "pays": "Benin (Cotonou)"
+ },
+ "bourse-anso-cas-twas-doctorat-chine-2027": {
+  "titre": "ANSO-CAS-TWAS/UNESCO PhD Scholarships in China 2027",
+  "description": "Up to 40 full scholarships to pursue a science PhD in China, reserved for students from developing countries. Official call published by TWAS.",
+  "niveau": "Master's in science, nationals of developing countries",
+  "financement": "Full scholarship",
+  "pays": "China"
+ },
+ "auda-nepad-energize-africa-health-fellows": {
+  "titre": "Energize Africa Health Fellows 2026/2027 (15 places)",
+  "description": "AUDA-NEPAD is recruiting 15 young African professionals for a fellowship in public health and development. Apply on AUDA-NEPAD's official careers page.",
+  "niveau": "Young African professionals in public health or public policy",
+  "financement": "Stipend of US$27,200 per year",
+  "pays": "Africa"
+ },
+ "gsma-fonds-innovation-ia-sante-financiere-2026": {
+  "titre": "GSMA Innovation Fund 2026 – AI-enabled financial health",
+  "description": "The GSMA fund supports start-ups using artificial intelligence to improve the financial health of low-income people. Apply on GSMA's official page.",
+  "niveau": "Start-ups using AI for financial services",
+  "financement": "Grant of £100,000 to £250,000",
+  "pays": "Africa and Asia (eligible countries)"
+ },
+ "prix-caine-2027": {
+  "titre": "Caine Prize for African Writing 2027",
+  "description": "The Caine Prize rewards a short story by an African writer published in English. Publishers submit entries on the prize's official site.",
+  "niveau": "African writers of short stories published in English",
+  "financement": "£10,000 prize",
+  "pays": "International"
+ },
+ "tor-community-fellowship-2027": {
+  "titre": "Tor Community Fellowship 2027",
+  "description": "The Tor Project trains human rights defenders, journalists and researchers in censorship circumvention tools, with a monthly stipend. Official call published on the Tor Project forum.",
+  "niveau": "Rights defenders, journalists, technologists and researchers",
+  "financement": "Stipend of US$500 per month",
+  "pays": "International (online)"
+ },
+ "pnue-stage-nairobi-gouvernance-environnementale": {
+  "titre": "UNEP Internship – Environmental Governance and Peacebuilding",
+  "description": "UNEP offers an internship in Nairobi on environmental governance and peacebuilding in Somalia. Check the deadline on the official UN careers portal (288670).",
+  "niveau": "Master's student or recent graduate",
+  "financement": "Unpaid internship",
+  "pays": "Kenya (Nairobi)"
+ },
+ "canada-jobbank-50707901": {
+  "titre": "Pharmacy Technical Assistant, Québec City",
+  "description": "French-language position. Posted by the employer on the Government of Canada Job Bank, which also accepts applicants without a Canadian work permit. The employer has applied for a Labour Market Impact Assessment (LMIA) to hire a foreign worker; the work permit must be obtained after hiring.",
+  "niveau": "Pharmacy assistant training or experience",
+  "financement": "CA$17 to CA$23 per hour"
+ },
+ "canada-jobbank-50792687": {
+  "titre": "Bar Manager, Brampton",
+  "description": "English-language position. Posted by the employer on the Government of Canada Job Bank, which also accepts applicants without a Canadian work permit. The employer has applied for a Labour Market Impact Assessment (LMIA) to hire a foreign worker; the work permit must be obtained after hiring.",
+  "niveau": "Experience in bar or restaurant management",
+  "financement": "CA$37 per hour"
+ },
+ "canada-jobbank-50770167": {
+  "titre": "Agricultural Equipment Mechanic, McLennan",
+  "description": "English-language position. Posted by the employer on the Government of Canada Job Bank, which also accepts applicants without a Canadian work permit. The employer has applied for a Labour Market Impact Assessment (LMIA) to hire a foreign worker; the work permit must be obtained after hiring.",
+  "niveau": "Experience repairing farm machinery",
+  "financement": "CA$46 to CA$50 per hour"
  }
 }
