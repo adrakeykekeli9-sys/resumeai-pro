@@ -3,8 +3,8 @@
 Fonctionne sans session Claude Code : elle tourne même quand l'abonnement Claude est épuisé.
 1. Retire les offres dont la date limite est passée depuis plus de 30 jours.
 2. Ajoute les offres du Guichet-Emplois du Canada ouvertes aux candidats de l'étranger.
-3. Si la variable ANTHROPIC_API_KEY existe : lit les nouvelles annonces de HumanitaireHub,
-   JobRelais et EmploiTogo, applique la règle de vérification et rédige la fiche en
+3. Si la variable ANTHROPIC_API_KEY existe : lit d'abord TOUTES les nouvelles annonces des sites du Togo
+   (JobRelais, EmploiTogo, plusieurs pages), puis celles de HumanitaireHub, applique la règle de vérification et rédige la fiche en
    français et en anglais avec l'API Claude.
 Le fichier data/vus.json garde les annonces déjà examinées pour ne pas les relire.
 
@@ -29,6 +29,7 @@ AUJ = dt.datetime.utcnow().date()
 AUJS = AUJ.isoformat()
 MAX_NOUVELLES = int(os.environ.get("MAX_NOUVELLES", "20"))
 MODELE = os.environ.get("CLAUDE_MODEL", "claude-opus-5-5")
+MAX_APPELS = int(os.environ.get("MAX_APPELS", "80"))
 EXCLUS = re.compile(r"humanitairehub|jobrelais|emploitogo|facebook|twitter|linkedin\.com/share|whatsapp|t\.me|"
                     r"wp\.org|wordpress|gravatar|instagram|youtube|pinterest|fonts\.|schema\.org|x\.com|telegram|"
                     r"reddit|google\.com/maps|akismet|togoemploi|linktr\.ee")
@@ -259,14 +260,20 @@ def candidates_humanitairehub():
 
 
 def candidates_togo():
+    """Sites du Togo, priorité absolue : plusieurs pages de liste pour ne rien manquer."""
     out = []
-    p = get("https://www.jobrelais.com/opportunities/jobs")
-    for u in dict.fromkeys(re.findall(r'href="(https://www\.jobrelais\.com/opportunities/jobs/[0-9a-f]{10,}[^"]*)"', p)):
-        out.append(("JobRelais", u))
-    p = get("https://www.emploitogo.info")
-    for u in dict.fromkeys(re.findall(r'href="(https://www\.emploitogo\.info/[a-z0-9-]{12,}/)"', p)):
-        if not re.search(r"/(category|tag|page|author|contact|a-propos|politique|mentions)", u):
-            out.append(("EmploiTogo", u))
+    for n in (1, 2, 3):
+        p = get(f"https://www.jobrelais.com/opportunities/jobs?page={n}")
+        for u in dict.fromkeys(re.findall(r'href="(https://www\.jobrelais\.com/opportunities/jobs/[0-9a-f]{10,}[^"]*)"', p)):
+            if ("JobRelais", u) not in out:
+                out.append(("JobRelais", u))
+    for page in ("https://www.emploitogo.info", "https://www.emploitogo.info/offres-emploi/",
+                 "https://www.emploitogo.info/offres-emploi/page/2/", "https://www.emploitogo.info/offres-emploi/page/3/"):
+        p = get(page)
+        for u in dict.fromkeys(re.findall(r'href="(https://www\.emploitogo\.info/[a-z0-9-]{12,}/)"', p)):
+            if not re.search(r"/(category|tag|page|author|contact|a-propos|politique|mentions|offres-emploi)", u) \
+                    and ("EmploiTogo", u) not in out:
+                out.append(("EmploiTogo", u))
     return out
 
 
@@ -332,8 +339,15 @@ def annonces(d, en, vus):
                  "ids": {o["id"] for o in d["offres"]}}
     vus_set = set(vus["urls"])
     ajout, par_source, appels = [], {}, 0
-    for source, url in candidates_humanitairehub() + candidates_togo():
-        if len(ajout) >= MAX_NOUVELLES or appels >= MAX_NOUVELLES * 2:
+    # Le Togo d'abord, sans plafond d'ajouts (seulement un plafond d'appels) ; puis HumanitaireHub.
+    nb_togo = None
+    for source, url in candidates_togo() + candidates_humanitairehub():
+        if source == "HumanitaireHub":
+            if nb_togo is None:
+                nb_togo = len(ajout)
+            if len(ajout) - nb_togo >= MAX_NOUVELLES or appels >= MAX_APPELS:
+                break
+        elif appels >= MAX_APPELS:
             break
         if url in vus_set or url in existants["liens"]:
             continue

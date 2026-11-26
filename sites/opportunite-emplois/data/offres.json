@@ -4049,6 +4049,50 @@
    "international": true,
    "description": "Poste en anglais. Offre publiée par l'employeur sur le Guichet-Emplois du gouvernement du Canada, qui accepte aussi les candidats sans permis de travail canadien. L'employeur a demandé une étude d'impact (EIMT) pour embaucher un travailleur étranger ; le permis de travail reste à obtenir après l'embauche.",
    "lien": "https://www.guichetemplois.gc.ca/rechercheemplois/offredemploi/50348070"
+  },
+  {
+   "id": "ecobank-togo-drh",
+   "type": "emploi",
+   "titre": "Directeur(trice) des ressources humaines",
+   "organisme": "Ecobank Togo",
+   "pays": "Togo (Lomé)",
+   "niveau": "Bac+4/5 et solide expérience en gestion RH",
+   "financement": "Poste rémunéré",
+   "dateLimite": "2026-11-27",
+   "publie": "2026-11-26",
+   "description": "Ecobank Togo recrute son directeur ou sa directrice des ressources humaines, membre de l'équipe de direction. Candidature sur le portail de recrutement officiel d'Ecobank (offre 1514).",
+   "lien": "https://fa-emqf-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1004/job/1514/",
+   "international": false
+  },
+  {
+   "id": "iades-togo-animateur-caf",
+   "type": "emploi",
+   "titre": "Animateur(trice) de projet – Collectifs d'autonomisation des femmes",
+   "organisme": "IADES-Togo",
+   "pays": "Togo (Lomé et périphérie)",
+   "niveau": "Expérience en animation communautaire et autonomisation des femmes",
+   "financement": "CDD renouvelable",
+   "dateLimite": "2026-12-11",
+   "publie": "2026-11-26",
+   "description": "L'ONG IADES-Togo recrute un(e) animateur(trice) pour son programme de collectifs d'autonomisation des femmes à Lomé et dans sa périphérie. Annonce relayée par JobRelais ; le dossier s'envoie par e-mail aux adresses indiquées dans l'annonce.",
+   "lien": "https://www.jobrelais.com/opportunities/jobs/6b03f959141a5-iades-togo-recrute",
+   "international": false,
+   "secteur": "ong"
+  },
+  {
+   "id": "credel-secretaire-caissiere",
+   "type": "emploi",
+   "titre": "Secrétaire-caissière",
+   "organisme": "ONG CREDEL",
+   "pays": "Togo",
+   "niveau": "Formation en secrétariat ou comptabilité",
+   "financement": "Contrat précisé à l'entretien",
+   "dateLimite": "2026-12-11",
+   "publie": "2026-11-26",
+   "description": "L'ONG togolaise CREDEL (Centre de recherche et d'expertise pour le développement local) recrute une secrétaire-caissière. Annonce relayée par JobRelais ; le dossier s'envoie par e-mail avant le 11 décembre à 17 h.",
+   "lien": "https://www.jobrelais.com/opportunities/jobs/6b0813dc9a862-ong-credel-recrute-secretaire-caissiere-hf",
+   "international": false,
+   "secteur": "ong"
   }
  ]
 }

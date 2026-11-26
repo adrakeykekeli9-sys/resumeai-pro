@@ -42,7 +42,7 @@ quand l'abonnement Claude est épuisé.
 
 - Sans réglage : retrait des offres expirées depuis plus de 30 jours, offres du Guichet-Emplois du Canada.
 - Avec le secret GitHub `ANTHROPIC_API_KEY` (clé de l'API Claude, facturée à l'usage, séparée de l'abonnement) :
-  lecture des nouvelles annonces de HumanitaireHub, JobRelais et EmploiTogo, règle de vérification, fiche en
+  lecture en priorité de toutes les nouvelles annonces du Togo (JobRelais et EmploiTogo, 3 à 4 pages de liste), puis de HumanitaireHub, règle de vérification, fiche en
   français et en anglais (20 offres au plus par jour, variable `MAX_NOUVELLES`).
 - Modèle : `claude-opus-5-5` par défaut ; la variable GitHub `CLAUDE_MODEL` peut le changer (par exemple
   `claude-haiku-5-5`, bien moins cher).

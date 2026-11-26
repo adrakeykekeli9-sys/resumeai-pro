@@ -1883,5 +1883,23 @@
   "description": "English-language position. Posted by the employer on the Government of Canada Job Bank, which also accepts applicants without a Canadian work permit. The employer has applied for a Labour Market Impact Assessment (LMIA) to hire a foreign worker; the work permit must be obtained after hiring.",
   "niveau": "Dairy farming experience",
   "financement": "CA$27 per hour"
+ },
+ "ecobank-togo-drh": {
+  "titre": "Head of Human Resources",
+  "description": "Ecobank Togo is recruiting its Head of Human Resources, a member of the management team. Apply on Ecobank's official recruitment portal (job 1514).",
+  "niveau": "Master's degree and solid HR management experience",
+  "financement": "Paid position"
+ },
+ "iades-togo-animateur-caf": {
+  "titre": "Project Facilitator – Women's Empowerment Collectives",
+  "description": "NGO IADES-Togo is hiring a facilitator for its women's empowerment collectives programme in Lomé and surrounding areas. Ad relayed by JobRelais; applications go by email to the addresses given in the ad.",
+  "niveau": "Experience in community facilitation and women's empowerment",
+  "financement": "Renewable fixed-term contract"
+ },
+ "credel-secretaire-caissiere": {
+  "titre": "Secretary-Cashier",
+  "description": "Togolese NGO CREDEL (Centre for Research and Expertise for Local Development) is hiring a secretary-cashier. Ad relayed by JobRelais; applications go by email before 11 December at 17:00.",
+  "niveau": "Background in secretarial work or accounting",
+  "financement": "Contract terms set at interview"
  }
 }
