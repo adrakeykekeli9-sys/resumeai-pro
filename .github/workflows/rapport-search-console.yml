@@ -1,0 +1,33 @@
+name: Rapport Google Search Console
+
+# Lit les données Search Console d'opportunite-emplois.org avec un compte de service Google
+# (secret GitHub GSC_SERVICE_ACCOUNT_JSON). Le rapport est un artefact, lu par Claude avec les skills gsc-*.
+on:
+  schedule:
+    - cron: "23 5 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  rapport:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install google-api-python-client google-auth
+      - name: Interroger Search Console
+        env:
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+        run: python3 -I sites/opportunite-emplois/scripts/gsc_rapport.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: rapport-search-console
+          path: rapport-gsc/
+          if-no-files-found: ignore
+          retention-days: 30
