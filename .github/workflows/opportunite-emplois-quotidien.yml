@@ -1,7 +1,7 @@
 name: Opportunité d'Emplois – mise à jour quotidienne
 
 # Tourne chaque matin sur les serveurs de GitHub, sans session Claude Code.
-# Render redéploie le site automatiquement après le commit.
+# Puis Render remet le site en ligne grâce au secret RENDER_DEPLOY_HOOK (Render > Settings > Deploy Hook).
 on:
   schedule:
     - cron: "17 4 * * *"   # 04:17 UTC = 04:17 à Lomé
@@ -48,3 +48,9 @@ jobs:
           if git diff --cached --quiet; then echo "Rien de nouveau"; exit 0; fi
           git commit -m "Mise à jour automatique du $(date -u +%d/%m/%Y)"
           for i in 1 2 3; do git pull --rebase origin main && git push origin HEAD:main && break || sleep 10; done
+      - name: Remettre le site en ligne (Render)
+        env:
+          RENDER_DEPLOY_HOOK: ${{ secrets.RENDER_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$RENDER_DEPLOY_HOOK" ]; then echo "::warning::Secret RENDER_DEPLOY_HOOK absent : le site n'est pas redéployé"; exit 0; fi
+          curl -fsS -X POST "$RENDER_DEPLOY_HOOK" > /dev/null && echo "Déploiement Render demandé"

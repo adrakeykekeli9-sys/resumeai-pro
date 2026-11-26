@@ -36,7 +36,8 @@ Le site est généré en français (racine) et en anglais (`/en/…`), avec un s
 ## Mise à jour automatique (sans Claude Code)
 
 Le fichier `.github/workflows/opportunite-emplois-quotidien.yml` lance chaque matin à 04:17 UTC
-`scripts/auto_update.py` sur les serveurs de GitHub, puis Render redéploie le site. Cela fonctionne même
+`scripts/auto_update.py` sur les serveurs de GitHub, puis demande à Render de remettre le site en ligne
+(secret GitHub `RENDER_DEPLOY_HOOK` = adresse « Deploy Hook » du service Render). Cela fonctionne même
 quand l'abonnement Claude est épuisé.
 
 - Sans réglage : retrait des offres expirées depuis plus de 30 jours, offres du Guichet-Emplois du Canada.
