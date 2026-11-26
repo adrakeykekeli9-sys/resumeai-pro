@@ -129,7 +129,25 @@ function layout({ title, description, pathname, body, jsonld, noindex = false, o
   const url = SITE + (LANG === "en" ? enPath(pathname) : pathname);
   const alt = enAvailable && !noindex ? `<link rel="alternate" hreflang="fr" href="${SITE + pathname}"><link rel="alternate" hreflang="en" href="${SITE + enPath(pathname)}"><link rel="alternate" hreflang="x-default" href="${SITE + pathname}">` : "";
   const sw = LANG === "en" ? `<span class="lang"><a href="${pathname}" hreflang="fr">FR</a><span>EN</span></span>` : `<span class="lang"><span>FR</span>${enAvailable ? `<a href="${enPath(pathname)}" hreflang="en">EN</a>` : ""}</span>`;
-  const fullTitle = pathname === "/" ? title : `${title} | ${NAME}`;
+  // Titres ≤ 60 caractères et descriptions ≤ 158 (affichage complet dans Google ; audit claude-seo)
+  const clip = (s, n) => {
+    s = String(s).replace(/\s+/g, " ").trim();
+    if (s.length <= n) return s;
+    let c = s.slice(0, n - 1);
+    const i = c.lastIndexOf(" ");
+    if (i > n * 0.6) c = c.slice(0, i);
+    return c.replace(/[\s,;:–(\-|]+$/, "") + "…";
+  };
+  const withBrand = `${title} | ${NAME}`;
+  const fullTitle = pathname === "/" ? clip(title, 60) : withBrand.length <= 60 ? withBrand : clip(title, 60);
+  const metaDesc = (() => {
+    const s = String(description).replace(/\s+/g, " ").trim();
+    if (s.length <= 158) return s;
+    const cut = s.slice(0, 158);
+    const dot = cut.lastIndexOf(". ");
+    return dot > 90 ? cut.slice(0, dot + 1) : clip(s, 158);
+  })();
+  description = metaDesc;
   const html = `<!doctype html>
 <html lang="${LANG}">
 <head>
@@ -290,7 +308,7 @@ ${n !== null && n < 0 ? `<p class="notice">${t("Cette offre est clôturée depui
 ${related.length ? `<h2 style="font-family:var(--display);margin:28px 0 12px">${t(`Autres ${TYPES_PL[o.type].toLowerCase()} ouvertes`, `Other open ${TYPES_PL[o.type].toLowerCase()}`)}</h2><div class="list">${related.map((x) => offerCard(x, "h3")).join("")}</div>` : ""}
 </div>${sideBar(all.filter(isOpen))}</main>`;
   return layout({
-    title: `${F(o, "titre")} – ${o.organisme}`.slice(0, 95),
+    title: (() => { const a = `${F(o, "titre")} – ${o.organisme.split(" (")[0]}`; return a.length <= 60 ? a : F(o, "titre"); })(),
     description: `${TYPES[o.type]} – ${o.organisme}, ${F(o, "pays")}. ${t("Date limite", "Deadline")} : ${fmt(o.dateLimite)}. ${F(o, "description")}`.slice(0, 300),
     pathname: `/offres/${o.id}/`, body, ogType: "article",
     jsonld: [breadcrumbLd([[t("Accueil", "Home"), "/"], [TYPES_PL[o.type], typeLink], ...(countryPage(o) ? [[cname(countryPage(o).name), `/pays/${countryPage(o).slug}/`]] : []), [F(o, "titre"), `/offres/${o.id}/`]]), jobPosting(o) || { "@context": "https://schema.org", "@type": "Article", headline: F(o, "titre"), datePublished: o.publie, dateModified: data.maj, inLanguage: LANG, publisher: { "@type": "Organization", name: NAME, url: SITE }, mainEntityOfPage: `${SITE}${LANG === "en" ? "/en" : ""}/offres/${o.id}/` }],
@@ -357,22 +375,22 @@ const intl = open.filter(isInternational);
 const deIn = (c) => (LANG === "en" ? `in ${cname(c.name)}` : c.de);
 
 function buildLang() {
-  write("index.html", listPage({ pathname: "/", title: t(`${NAME} – Emplois, stages et bourses d'études en Afrique (${MOIS_MAJ()})`, `Jobs, internships and scholarships in Africa and abroad (${MOIS_MAJ()}) – ${NAME}`), h1: t("Emplois, stages et <em>bourses d'études</em>, mis à jour chaque jour.", "Jobs, internships and <em>scholarships</em>, updated every day."), lede: t("Les offres ouvertes aux jeunes et aux professionnels d'Afrique francophone, avec un lien vers la source officielle. Service gratuit, sans inscription.", "Open offers for young people and professionals in Africa and abroad, each with a link to the official source. Free service, no sign-up."), items: open, all, showTabs: true, extraLd: [
+  write("index.html", listPage({ pathname: "/", title: t(`Emplois, stages, bourses en Afrique – ${NAME}`, `Jobs and scholarships in Africa – ${NAME}`), h1: t("Emplois, stages et <em>bourses d'études</em>, mis à jour chaque jour.", "Jobs, internships and <em>scholarships</em>, updated every day."), lede: t("Les offres ouvertes aux jeunes et aux professionnels d'Afrique francophone, avec un lien vers la source officielle. Service gratuit, sans inscription.", "Open offers for young people and professionals in Africa and abroad, each with a link to the official source. Free service, no sign-up."), items: open, all, showTabs: true, extraLd: [
     { "@context": "https://schema.org", "@type": "WebSite", name: NAME, url: SITE + t("/", "/en/"), inLanguage: LANG },
     { "@context": "https://schema.org", "@type": "Organization", name: NAME, url: SITE + "/", logo: SITE + "/og.png", ...(CONTACT_EMAIL ? { email: CONTACT_EMAIL } : {}) }] }));
-  write("international/index.html", listPage({ pathname: "/international/", title: t(`Emplois à l'international et bourses à l'étranger (${MOIS_MAJ()})`, `International jobs and scholarships abroad (${MOIS_MAJ()})`), h1: t(`Emplois, stages et bourses <em>à l'international</em>`, `International <em>jobs, internships and scholarships</em>`), lede: t(`${intl.length} offres ouvertes aux candidats de toutes nationalités, y compris du Togo et de toute l'Afrique francophone : postes internationaux des Nations Unies et des ONG, missions dans d'autres pays, bourses d'études à l'étranger. Les postes réservés aux nationaux d'un autre pays et les recrutements locaux sont exclus. Vérifiez toujours les conditions de nationalité sur la fiche officielle.`, `${intl.length} offers open to candidates of all nationalities, including from Togo and all of Africa: international UN and NGO positions, assignments in other countries and scholarships abroad. Positions reserved for nationals of another country and local hires are excluded. Always check nationality requirements on the official posting.`), items: intl, all, showTabs: true, extraLd: [breadcrumbLd([[t("Accueil", "Home"), "/"], ["International", "/international/"]])] }));
+  write("international/index.html", listPage({ pathname: "/international/", title: t(`Emplois et bourses à l'international (${MOIS_MAJ()})`, `International jobs and scholarships (${MOIS_MAJ()})`), h1: t(`Emplois, stages et bourses <em>à l'international</em>`, `International <em>jobs, internships and scholarships</em>`), lede: t(`${intl.length} offres ouvertes aux candidats de toutes nationalités, y compris du Togo et de toute l'Afrique francophone : postes internationaux des Nations Unies et des ONG, missions dans d'autres pays, bourses d'études à l'étranger. Les postes réservés aux nationaux d'un autre pays et les recrutements locaux sont exclus. Vérifiez toujours les conditions de nationalité sur la fiche officielle.`, `${intl.length} offers open to candidates of all nationalities, including from Togo and all of Africa: international UN and NGO positions, assignments in other countries and scholarships abroad. Positions reserved for nationals of another country and local hires are excluded. Always check nationality requirements on the official posting.`), items: intl, all, showTabs: true, extraLd: [breadcrumbLd([[t("Accueil", "Home"), "/"], ["International", "/international/"]])] }));
 
   // ─── Travailler à l'étranger ───
   const progCard = (g) => `<div class="prog"><h3>${esc(PT(g, "nom"))}</h3><p class="pub">${t("Pour qui", "Who it is for")} : ${esc(PT(g, "public"))}</p><ul>${PT(g, "points").map((x) => `<li>${esc(x)}</li>`).join("")}</ul><p><a class="btn primary" href="${esc(g.lien)}" target="_blank" rel="noopener">${t("Site officiel", "Official website")}</a></p></div>`;
   const abroadWarn = `<p class="notice">${t("Ces programmes sont gratuits ou à frais officiels fixés par l'État. Méfiez-vous des agences qui « garantissent » un visa ou un emploi contre paiement. Les conditions changent souvent : vérifiez-les toujours sur le site officiel.", "These programmes are free or charge only official government fees. Beware of agencies that \"guarantee\" a visa or a job for money. Conditions change often: always check them on the official website.")}</p>`;
   if (PROG.length) {
-    write("etranger/index.html", layout({ title: t(`Travailler à l'étranger : Canada, Québec, Allemagne, Luxembourg, France, Belgique, Royaume-Uni (${MOIS_MAJ()})`, `Work abroad from Africa: Canada, Quebec, Germany, Luxembourg, France, Belgium, UK (${MOIS_MAJ()})`), description: t("Programmes officiels de recrutement international et offres d'emploi ouvertes aux candidats d'Afrique : Canada, Québec, Allemagne, Luxembourg, France, Belgique, Royaume-Uni, Portugal, avec les liens vers les sites gouvernementaux.", "Official international recruitment programmes and job offers open to candidates from Africa: Canada, Quebec, Germany, Luxembourg, France, Belgium, UK, Portugal, with links to government websites."), pathname: "/etranger/",
+    write("etranger/index.html", layout({ title: t(`Travailler à l'étranger : offres et visas (${MOIS_MAJ()})`, `Work abroad: jobs and visas (${MOIS_MAJ()})`), description: t("Programmes officiels de recrutement international et offres d'emploi ouvertes aux candidats d'Afrique : Canada, Québec, Allemagne, Luxembourg, France, Belgique, Royaume-Uni, Portugal, avec les liens vers les sites gouvernementaux.", "Official international recruitment programmes and job offers open to candidates from Africa: Canada, Quebec, Germany, Luxembourg, France, Belgium, UK, Portugal, with links to government websites."), pathname: "/etranger/",
       jsonld: [breadcrumbLd([[t("Accueil", "Home"), "/"], [t("Travailler à l'étranger", "Work abroad"), "/etranger/"]])],
       body: `<section class="hero"><div class="wrap"><h1>${t("Travailler <em>à l'étranger</em>", "Work <em>abroad</em>")}</h1><p class="lede">${t("Plusieurs pays recrutent officiellement des travailleurs qualifiés d'Afrique francophone. Voici leurs programmes, expliqués simplement, avec le lien vers le site du gouvernement.", "Several countries officially recruit skilled workers from Africa. Here are their programmes, explained simply, with links to the government websites.")}</p></div></section>${countryBar("/etranger/")}<main class="wrap layout"><div><article class="page"><h2>${t("Choisissez une destination", "Choose a destination")}</h2><div class="dest-grid">${PROG.map((p) => `<a href="/etranger/${p.slug}/"><span class="flag">${p.drapeau}</span><b>${esc(PT(p, "nom"))}</b><br><span style="color:var(--muted)">${p.programmes.length} ${t("programme", "programme")}${p.programmes.length > 1 ? "s" : ""}</span></a>`).join("")}</div>${abroadWarn}<h2>${t("Préparer son dossier", "Preparing your application")}</h2><ul>${t("<li>Un CV au format du pays visé (souvent 2 pages, sans photo au Canada).</li><li>Des diplômes traduits et, selon le pays, une reconnaissance officielle de vos qualifications.</li><li>Un test de langue reconnu (français ou anglais, parfois allemand).</li>", "<li>A CV in the format of the target country (often 2 pages, no photo in Canada).</li><li>Translated diplomas and, depending on the country, official recognition of your qualifications.</li><li>A recognised language test (French or English, sometimes German).</li>")}</ul><p>${t(`Préparez votre CV avec notre <a href="/outil-cv/">outil CV</a> et consultez les <a href="/international/">offres d'emploi à l'international</a>.`, `Prepare your CV with our <a href="/outil-cv/">CV tool</a> and browse <a href="/international/">international job offers</a>.`)}</p></article></div>${sideBar(open)}</main>` }));
     for (const p of PROG) {
       const de = PT(p, "de");
       const jobs = open.filter((o) => p.slug === "quebec" ? countryOf(o) === "Canada" && /\bQC\)/.test(o.pays) : (p.match || []).includes(countryOf(o)));
-      write(`etranger/${p.slug}/index.html`, layout({ title: t(`Travailler ${de} depuis l'Afrique : offres et programmes officiels (${MOIS_MAJ()})`, `Work ${de} from Africa: jobs and official programmes (${MOIS_MAJ()})`), description: `${PT(p, "intro")} ${t("Conditions principales et lien vers le site officiel.", "Main conditions and link to the official website.")}`.slice(0, 300), pathname: `/etranger/${p.slug}/`, ogType: "article",
+      write(`etranger/${p.slug}/index.html`, layout({ title: t(`Travailler ${de} : offres et programmes (${MOIS_MAJ()})`, `Work ${de}: jobs and programmes (${MOIS_MAJ()})`), description: `${PT(p, "intro")} ${t("Conditions principales et lien vers le site officiel.", "Main conditions and link to the official website.")}`.slice(0, 300), pathname: `/etranger/${p.slug}/`, ogType: "article",
         jsonld: [breadcrumbLd([[t("Accueil", "Home"), "/"], [t("Travailler à l'étranger", "Work abroad"), "/etranger/"], [PT(p, "nom"), `/etranger/${p.slug}/`]])],
         body: `<section class="hero"><div class="wrap"><h1>${p.drapeau} ${t("Travailler", "Work")} <em>${esc(de)}</em></h1><p class="lede">${esc(PT(p, "intro"))}</p></div></section>${countryBar(`/etranger/${p.slug}/`)}<main class="wrap layout"><div><nav class="crumbs"><a href="/">${t("Accueil", "Home")}</a> › <a href="/etranger/">${t("Travailler à l'étranger", "Work abroad")}</a> › ${esc(PT(p, "nom"))}</nav>${jobs.length ? `<h2 style="font-family:var(--display);margin:18px 0 10px">💼 ${t(`Offres d'emploi ${de} ouvertes aux candidats de l'étranger`, `Jobs ${de} open to applicants from abroad`)} (${jobs.length})</h2><div class="list">${jobs.map((o) => offerCard(o, "h3")).join("")}</div>` : ""}
 <h2 style="font-family:var(--display);margin:22px 0 10px">📋 ${t("Programmes officiels d'immigration", "Official immigration programmes")}</h2>${p.programmes.map(progCard).join("")}
@@ -381,7 +399,7 @@ ${p.portails ? `<h2 style="font-family:var(--display);margin:22px 0 10px">🔎 $
   }
 
   // ─── Outil CV ───
-  write("outil-cv/index.html", layout({ title: t("Outil CV avec IA pour candidats et recruteurs (ResumeAI Pro)", "AI CV tool for candidates and recruiters (ResumeAI Pro)"), description: t("Créez un CV et une lettre de motivation adaptés à chaque offre, simulez un entretien, ou classez automatiquement les candidatures reçues : ResumeAI Pro, 3 essais gratuits par jour.", "Create a CV and cover letter tailored to each offer, practise interviews, or automatically rank the applications you receive: ResumeAI Pro, 3 free tries per day."), pathname: "/outil-cv/",
+  write("outil-cv/index.html", layout({ title: t("Outil CV avec IA : CV et lettre de motivation", "AI CV tool: CV and cover letter"), description: t("Créez un CV et une lettre de motivation adaptés à chaque offre, simulez un entretien, ou classez automatiquement les candidatures reçues : ResumeAI Pro, 3 essais gratuits par jour.", "Create a CV and cover letter tailored to each offer, practise interviews, or automatically rank the applications you receive: ResumeAI Pro, 3 free tries per day."), pathname: "/outil-cv/",
     jsonld: [{ "@context": "https://schema.org", "@type": "SoftwareApplication", name: "ResumeAI Pro", applicationCategory: "BusinessApplication", operatingSystem: "Web", url: RESUMEAI_URL, inLanguage: LANG, offers: { "@type": "Offer", price: "0", priceCurrency: "XOF", description: t("3 actions IA gratuites par jour ; Pass payant pour un usage intensif.", "3 free AI actions per day; paid Pass for heavy use.") } }],
     body: `<section class="hero"><div class="wrap"><h1>${t("Un CV qui passe les filtres, <em>des recrutements plus rapides</em>", "A CV that gets through the filters, <em>faster hiring</em>")}</h1><p class="lede">${t("ResumeAI Pro utilise l'intelligence artificielle pour aider les candidats à postuler mieux, et les recruteurs à trier plus vite. 3 actions gratuites par jour, sans inscription.", "ResumeAI Pro uses artificial intelligence to help candidates apply better and recruiters sort faster. 3 free actions per day, no sign-up.")}</p><p><a class="btn" style="background:#F2B734;color:#1b1200" href="${RESUMEAI_URL}" target="_blank" rel="noopener">${t("Ouvrir ResumeAI Pro", "Open ResumeAI Pro")}</a></p></div></section>
 <main class="wrap" style="padding-block:24px 50px"><div class="cv-hero">
@@ -408,7 +426,7 @@ ${p.portails ? `<h2 style="font-family:var(--display);margin:22px 0 10px">🔎 $
 
   for (const c of COUNTRY_PAGES) {
     const items = open.filter((o) => countryOf(o) === c.name);
-    write(`pays/${c.slug}/index.html`, listPage({ pathname: `/pays/${c.slug}/`, title: t(`Offres d'emploi ${c.de} : emplois, stages et ONG (${MOIS_MAJ()})`, `Jobs ${deIn(c)}: NGO, UN jobs and internships (${MOIS_MAJ()})`), h1: t(`Offres d'emploi et stages <em>${esc(c.de)}</em>`, `Jobs and internships <em>${esc(deIn(c))}</em>`), lede: t(`${items.length} offres ouvertes ${c.de} : emplois dans les ONG et les agences des Nations Unies, stages et opportunités locales, avec le lien vers l'annonce officielle. Mis à jour chaque jour. Voir aussi les <a href="/international/" style="color:#F2B734">offres à l'international</a>.`, `${items.length} open offers ${deIn(c)}: jobs with NGOs and UN agencies, internships and local opportunities, with a link to the official posting. Updated daily. See also <a href="/international/" style="color:#F2B734">international offers</a>.`), items, all, showTabs: true, extraLd: [breadcrumbLd([[t("Accueil", "Home"), "/"], [t(`Offres ${c.de}`, `Jobs ${deIn(c)}`), `/pays/${c.slug}/`]])] }));
+    write(`pays/${c.slug}/index.html`, listPage({ pathname: `/pays/${c.slug}/`, title: t(`Offres d'emploi ${c.de} (${MOIS_MAJ()})`, `Jobs ${deIn(c)} (${MOIS_MAJ()})`), h1: t(`Offres d'emploi et stages <em>${esc(c.de)}</em>`, `Jobs and internships <em>${esc(deIn(c))}</em>`), lede: t(`${items.length} offres ouvertes ${c.de} : emplois dans les ONG et les agences des Nations Unies, stages et opportunités locales, avec le lien vers l'annonce officielle. Mis à jour chaque jour. Voir aussi les <a href="/international/" style="color:#F2B734">offres à l'international</a>.`, `${items.length} open offers ${deIn(c)}: jobs with NGOs and UN agencies, internships and local opportunities, with a link to the official posting. Updated daily. See also <a href="/international/" style="color:#F2B734">international offers</a>.`), items, all, showTabs: true, extraLd: [breadcrumbLd([[t("Accueil", "Home"), "/"], [t(`Offres ${c.de}`, `Jobs ${deIn(c)}`), `/pays/${c.slug}/`]])] }));
   }
   for (const [type, p] of [["bourse", "/bourses/"], ["emploi", "/emplois/"], ["stage", "/stages/"], ["formation", "/formations/"]]) {
     write(`${p.slice(1)}index.html`, listPage({ pathname: p,
@@ -417,7 +435,7 @@ ${p.portails ? `<h2 style="font-family:var(--display);margin:22px 0 10px">🔎 $
       lede: t({ bourse: "Bourses d'études de licence, master et doctorat accessibles aux étudiants africains, classées par date limite.", emploi: "Offres d'emploi en Afrique et dans les organisations internationales, classées par date limite.", stage: "Stages pour étudiants et jeunes diplômés, classés par date limite.", formation: "Formations gratuites ou financées, en ligne et en présentiel, pour développer vos compétences." }[type], { bourse: "Bachelor's, master's and PhD scholarships open to African students, sorted by deadline.", emploi: "Jobs in Africa and with international organizations, sorted by deadline.", stage: "Internships for students and recent graduates, sorted by deadline.", formation: "Free or funded training, online and in person, to build your skills." }[type]),
       items: open.filter((o) => o.type === type), all, showTabs: false }));
   }
-  write("ong/index.html", listPage({ pathname: "/ong/", title: t(`Offres d'emploi et stages dans les ONG en Afrique (${MOIS_MAJ()})`, `NGO jobs and internships in Africa (${MOIS_MAJ()})`), h1: t("Emplois et stages dans les <em>ONG</em>", "Jobs and internships with <em>NGOs</em>"), lede: t("Offres des ONG et associations humanitaires et de développement qui travaillent en Afrique : santé, éducation, protection, agriculture, eau et assainissement.", "Offers from humanitarian and development NGOs working in Africa: health, education, protection, agriculture, water and sanitation."), items: open.filter(isOng), all, showTabs: true }));
+  write("ong/index.html", listPage({ pathname: "/ong/", title: t(`Emplois et stages dans les ONG (${MOIS_MAJ()})`, `NGO jobs and internships (${MOIS_MAJ()})`), h1: t("Emplois et stages dans les <em>ONG</em>", "Jobs and internships with <em>NGOs</em>"), lede: t("Offres des ONG et associations humanitaires et de développement qui travaillent en Afrique : santé, éducation, protection, agriculture, eau et assainissement.", "Offers from humanitarian and development NGOs working in Africa: health, education, protection, agriculture, water and sanitation."), items: open.filter(isOng), all, showTabs: true }));
   for (const o of all) write(`offres/${o.id}/index.html`, offerPage(o, all));
 
   write("guides/index.html", simplePage("/guides/", t("Conseils pour réussir vos candidatures", "Advice for successful applications"), t("Guides pratiques pour postuler aux bourses, stages et emplois et éviter les arnaques.", "Practical guides to apply for scholarships, internships and jobs and avoid scams."), `<p>${t(`Des guides pratiques, rédigés par l'équipe ${NAME}, pour préparer vos candidatures.`, `Practical guides written by the ${NAME} team to prepare your applications. These guides are currently in French.`)}</p><div class="list">${articles.map((a) => `<div class="card"><h2><a href="/guides/${a.slug}/">${esc(a.titre)}</a></h2><p style="margin:0">${esc(a.resume)}</p></div>`).join("")}</div>`));
@@ -477,6 +495,36 @@ const entries = urls.flatMap(([u, dt, both]) => {
 });
 write("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${entries.join("\n")}\n</urlset>\n`);
 write("robots.txt", `User-agent: *\nAllow: /\nDisallow: /whatsapp/\nDisallow: /o/\nSitemap: ${SITE}/sitemap.xml\n`);
+// llms.txt : résumé du site pour les moteurs de réponse IA (recommandation geo-optimizer / seo-geo)
+{
+  const LANG0 = LANG; LANG = "fr";
+  const togo = open.filter((o) => /togo/i.test(o.pays || ""));
+  const ligne = (o) => `- [${F(o, "titre")} – ${o.organisme}](${SITE}/offres/${o.id}/) : ${o.pays}${o.dateLimite ? `, date limite ${fmt(o.dateLimite)}` : ""}`;
+  write("llms.txt", `# ${NAME}
+
+> Site gratuit d'offres d'emploi, de stages, de bourses d'études et de postes dans les ONG et les agences des Nations Unies, pour les jeunes et les professionnels du Togo, d'Afrique francophone et pour l'international. Chaque offre est vérifiée et renvoie vers l'annonce officielle. Mis à jour chaque matin (dernière mise à jour : ${fmt(data.maj)}). ${open.length} offres ouvertes.
+
+## Pages principales
+- [Offres d'emploi au Togo](${SITE}/pays/togo/) : ${togo.length} offres ouvertes au Togo
+- [Emplois à l'international](${SITE}/international/) : postes ouverts à toutes les nationalités
+- [Travailler à l'étranger](${SITE}/etranger/) : offres et programmes officiels d'immigration (Canada, Québec, Allemagne, Luxembourg, France, Belgique, Royaume-Uni, Portugal)
+- [Emplois dans les ONG](${SITE}/ong/)
+- [Bourses d'études](${SITE}/bourses/) · [Stages](${SITE}/stages/) · [Formations](${SITE}/formations/) · [Emplois](${SITE}/emplois/)
+- [Outil CV avec IA](${SITE}/outil-cv/)
+- [English version](${SITE}/en/)
+
+## Guides
+${articles.map((a) => `- [${a.titre}](${SITE}/guides/${a.slug}/) : ${a.resume}`).join("\n")}
+
+## Offres au Togo
+${togo.slice(0, 40).map(ligne).join("\n")}
+
+## Règles
+- Postuler est toujours gratuit ; aucune offre publiée ne demande de payer.
+- Contact : ${SITE}/contact/
+`);
+  LANG = LANG0;
+}
 if (ADSENSE) write("ads.txt", `google.com, ${ADSENSE.replace(/^ca-/, "")}, DIRECT, f08c47fec0942fa0\n`);
 
 const nEn = open.filter(hasEN).length;
