@@ -180,18 +180,6 @@
   "niveau": "Experienced professional (M&E)",
   "financement": "Paid position"
  },
- "imc-manager-pci-mokolo": {
-  "titre": "Infection Prevention and Control (IPC) Manager, Mokolo",
-  "description": "IPC manager role at International Medical Corps' Mokolo office. The closing date is not shown at the top of the posting: apply quickly. Read the official posting for the exact profile and how to apply.",
-  "niveau": "Experienced health professional",
-  "financement": "Paid position"
- },
- "imc-officer-me-mokolo": {
-  "titre": "Monitoring and Evaluation (M&E) Officer, Mokolo",
-  "description": "M&E officer role at International Medical Corps' Mokolo office. The closing date is not shown at the top of the posting: apply quickly. Read the official posting for the exact profile and how to apply.",
-  "niveau": "Professional (M&E)",
-  "financement": "Paid position"
- },
  "wv-suivi-bien-etre-enfant-rdc": {
   "titre": "Child Well-being Tracking Officer, Kinshasa / Ngandu",
   "description": "Tracking child well-being indicators in World Vision's programmes in DR Congo. Read the official posting for the exact profile and how to apply.",
@@ -1666,5 +1654,234 @@
   "description": "English-language position. Posted by the employer on the Government of Canada Job Bank, which also accepts applicants without a Canadian work permit. The employer has applied for a Labour Market Impact Assessment (LMIA) to hire a foreign worker; the work permit must be obtained after hiring.",
   "niveau": "Experience repairing farm machinery",
   "financement": "CA$46 to CA$50 per hour"
+ },
+ "fhi360-togo-analyste-donnees-approvisionnement": {
+  "titre": "Senior Technical Officer – Supply Chain Data Management",
+  "description": "FHI 360 Togo is hiring a senior health supply chain data analyst in Lomé. Apply on the official FHI 360 portal (2026201652).",
+  "niveau": "Experience in logistics data and health information systems",
+  "financement": "XOF 14 to 18 million per year",
+  "pays": "Togo (Lomé)"
+ },
+ "fhi360-togo-conseiller-approvisionnement-paludisme": {
+  "titre": "Malaria Supply Chain Advisor",
+  "description": "For its EpiC programme, FHI 360 Togo is hiring an advisor in Lomé for the supply of malaria commodities. Apply on the official FHI 360 portal (2026201651).",
+  "niveau": "Experienced pharmacist or health logistician",
+  "financement": "Paid position (national fixed-term)",
+  "pays": "Togo (Lomé)"
+ },
+ "plan-togo-directeur-financier": {
+  "titre": "Finance Manager",
+  "description": "Plan International Togo is recruiting its Finance Manager in Lomé, a member of the leadership team. Apply on the official Plan International portal.",
+  "niveau": "Solid experience as an NGO finance director",
+  "financement": "Permanent contract (local)",
+  "pays": "Togo (Lomé)"
+ },
+ "solidarites-btn-responsable-grants-lome": {
+  "titre": "Head of Grants and Partnerships Department – Benin, Togo, Niger",
+  "description": "Solidarités International is hiring a head of grants and partnerships in Lomé for its Benin-Togo-Niger mission, from January 2027. No deadline is given: apply soon on the official portal.",
+  "niveau": "Experience in grant management and donor relations",
+  "financement": "6-month expatriate mission",
+  "pays": "Togo (Lomé)"
+ },
+ "arcep-benin-secretaire-executif": {
+  "titre": "Executive Secretary of ARCEP Benin",
+  "description": "Benin's electronic communications and postal regulator is recruiting its Executive Secretary through a recruitment firm. Call published on the recruiting firm's official page.",
+  "niveau": "Senior executive experienced in telecom regulation",
+  "financement": "Paid senior management position",
+  "pays": "Benin (Cotonou)"
+ },
+ "unicef-burkina-consultant-paysage-climatique": {
+  "titre": "International Consultant – Climate Landscape Analysis for Children",
+  "description": "UNICEF Burkina Faso is hiring an international consultant to analyse climate impacts on children. Apply on UNICEF's official site (597197).",
+  "niveau": "Climate and child rights expertise",
+  "financement": "2-month international consultancy",
+  "pays": "Burkina Faso (Ouagadougou, remote)"
+ },
+ "cicr-senegal-charge-finances": {
+  "titre": "Finance Officer",
+  "description": "ICRC is hiring a finance officer at its Dakar regional delegation (local post). Apply on ICRC's official site.",
+  "niveau": "Finance background, fluent English and French",
+  "financement": "Paid local position",
+  "pays": "Senegal (Dakar)"
+ },
+ "stc-rdc-infirmier-superviseur-bunia": {
+  "titre": "Nursing Supervisor",
+  "description": "Save the Children is hiring a nursing supervisor in Bunia for its health and nutrition activities. Apply on the official portal (17654).",
+  "niveau": "Qualified nurse with supervisory experience",
+  "financement": "Paid position",
+  "pays": "DR Congo (Bunia)"
+ },
+ "irc-cameroun-responsable-pedagogique-makary": {
+  "titre": "Education Project Manager – Makary",
+  "description": "IRC Cameroon is hiring an education project manager for Makary, based in Kousseri (Far North). Apply on the official IRC portal (JR00006217).",
+  "niveau": "Experience managing education projects",
+  "financement": "Paid position",
+  "pays": "Cameroon (Kousseri)"
+ },
+ "nrc-rdc-coordinateur-meal-fonds-locaux": {
+  "titre": "Monitoring, Evidence, Accountability and Learning Coordinator – Local Initiatives Fund",
+  "description": "NRC is hiring a monitoring and evaluation coordinator in Goma for a fund supporting local initiatives in eastern DRC (22189). Check the deadline on NRC's official portal.",
+  "niveau": "Solid monitoring and evaluation experience",
+  "financement": "Paid position",
+  "pays": "DR Congo (Goma)"
+ },
+ "pnud-mauritanie-ingenieur-electrification": {
+  "titre": "Technical Engineer – Rural Electrification",
+  "description": "UNDP Mauritania is hiring an engineer for its rural electrification programme for isolated areas. Apply on the official UNDP portal (38279).",
+  "niveau": "Electrical or renewable energy engineer",
+  "financement": "Paid position",
+  "pays": "Mauritania (Nouakchott)"
+ },
+ "pnud-cote-ivoire-specialiste-ia-donnees": {
+  "titre": "Strategic and Operational Lead – AI and Data Innovation Component",
+  "description": "UNDP Côte d'Ivoire is hiring a specialist to lead its artificial intelligence and data innovation component. Apply on the official UNDP portal (38258).",
+  "niveau": "Experience managing digital and AI projects",
+  "financement": "Paid national position (NPSA)",
+  "pays": "Côte d'Ivoire (Abidjan)"
+ },
+ "oim-guinee-medecin-sante-migrations": {
+  "titre": "National Migration Health Physician (NO-B)",
+  "description": "IOM Guinea is hiring a physician in Conakry for its assisted voluntary return and reintegration programme. Apply on the official IOM portal (24229).",
+  "niveau": "Medical doctor with public health experience",
+  "financement": "Paid national position",
+  "pays": "Guinea (Conakry)"
+ },
+ "intersos-rdc-coordinateur-rh-goma": {
+  "titre": "HR Coordinator",
+  "description": "INTERSOS is hiring an HR coordinator in Goma for its DRC mission (non-family post). Apply on INTERSOS's official site (SR-38-10343).",
+  "niveau": "Experience in humanitarian HR management",
+  "financement": "Paid expatriate position",
+  "pays": "DR Congo (Goma)"
+ },
+ "medair-madagascar-coordinateur-projet": {
+  "titre": "Project Coordinator",
+  "description": "Medair is hiring a project coordinator for its work in north-eastern Madagascar, in Maroantsetra. Apply on Medair's official site.",
+  "niveau": "Experience managing humanitarian projects",
+  "financement": "Paid position",
+  "pays": "Madagascar (Maroantsetra)"
+ },
+ "ficr-rdc-delegue-protection-genre-bunia": {
+  "titre": "Protection, Gender and Inclusion Delegate – Ebola response",
+  "description": "IFRC is hiring a protection, gender and inclusion delegate in Bunia for its Ebola response (international contract). Apply on the official IFRC portal (S19393).",
+  "niveau": "Experience in protection and inclusion in emergencies",
+  "financement": "6-month international contract",
+  "pays": "DR Congo (Bunia)"
+ },
+ "ficr-rdc-coordonnateur-protection-kinshasa": {
+  "titre": "Protection, Gender and Inclusion Coordinator",
+  "description": "IFRC is hiring a protection, gender and inclusion coordinator in Kinshasa for its Ebola preparedness and response (national contract). Apply on the official IFRC portal (S19406).",
+  "niveau": "Experience in protection and inclusion",
+  "financement": "6-month national contract",
+  "pays": "DR Congo (Kinshasa)"
+ },
+ "ficr-rdc-medecin-chef-cte-bunia": {
+  "titre": "Chief Medical Officer – Ebola Treatment Centre",
+  "description": "IFRC is recruiting the chief medical officer of its Ebola treatment centre in Bunia (international contract). Apply on the official IFRC portal (S19348).",
+  "niveau": "Physician with epidemic response experience",
+  "financement": "12-month international contract",
+  "pays": "DR Congo (Bunia)"
+ },
+ "ficr-rdc-infirmier-chef-cte-bunia": {
+  "titre": "Head Nurse – Ebola Treatment Centre",
+  "description": "IFRC is recruiting the head nurse of its Ebola treatment centre in Bunia. Apply on the official IFRC portal (S19349).",
+  "niveau": "Nurse experienced in emergency care",
+  "financement": "International contract",
+  "pays": "DR Congo (Bunia)"
+ },
+ "oit-cameroun-coordinateur-national-rbc": {
+  "titre": "National Project Coordinator – Responsible Business Conduct (NOA)",
+  "description": "ILO is hiring a national coordinator in Yaoundé for its regional project on responsible business conduct in Africa. Apply on the official ILO portal (13943).",
+  "niveau": "Experience in labour rights and business",
+  "financement": "Paid national position",
+  "pays": "Cameroon (Yaoundé)"
+ },
+ "oit-cote-ivoire-coordinateur-national-rbc": {
+  "titre": "National Project Coordinator – Responsible Business Conduct (NOA)",
+  "description": "ILO is hiring a national coordinator in Abidjan for its regional project on responsible business conduct. Apply on the official ILO portal (13944).",
+  "niveau": "Experience in labour rights and business",
+  "financement": "Paid national position",
+  "pays": "Côte d'Ivoire (Abidjan)"
+ },
+ "msf-senegal-responsable-bureau-dakar": {
+  "titre": "Head of Office, Dakar",
+  "description": "MSF is recruiting the head of its regional operations support office in Dakar (about 100 staff). Apply on MSF's official site.",
+  "niveau": "Solid experience managing an office or mission",
+  "financement": "Paid position",
+  "pays": "Senegal (Dakar)"
+ },
+ "drc-rdc-specialiste-partenariats-localisation": {
+  "titre": "Partnerships and Localisation Specialist",
+  "description": "DRC is hiring a specialist in Bunia for partnerships with local organisations. Apply on DRC's official site (177267).",
+  "niveau": "Experience in partnerships with local organisations",
+  "financement": "6-month national contract",
+  "pays": "DR Congo (Bunia)"
+ },
+ "mdm-rdc-coordinateur-administratif-isiro": {
+  "titre": "Administrative Coordinator – Ebola emergency",
+  "description": "Médecins du Monde is hiring an administrative coordinator for its Ebola emergency mission in Isiro. Apply on Médecins du Monde's official site.",
+  "niveau": "Experience in humanitarian administration, HR and finance",
+  "financement": "Paid expatriate position",
+  "pays": "DR Congo (Isiro)"
+ },
+ "fao-benin-representant-p5": {
+  "titre": "FAO Representative in Benin (P-5)",
+  "description": "FAO is recruiting its Representative in Benin, an international P-5 post. Apply on FAO's official portal (2602378).",
+  "niveau": "Senior experience in agricultural development",
+  "financement": "Paid international post (2 years)",
+  "pays": "Benin (Cotonou)"
+ },
+ "pam-mali-politiques-action-anticipatoire": {
+  "titre": "Programme Policy Officer – Anticipatory Action and Nutrition",
+  "description": "WFP Mali is hiring a programme policy officer in Bamako for anticipatory action and nutrition. Apply on the official WFP portal (JR128719).",
+  "niveau": "Experience in nutrition and crisis anticipation",
+  "financement": "Paid position",
+  "pays": "Mali (Bamako)"
+ },
+ "oim-rdc-charge-projet-dtm-goma": {
+  "titre": "National Project Officer – Displacement Tracking Matrix (DTM)",
+  "description": "IOM DRC is hiring a project officer in Goma for its displacement tracking matrix. Apply on the official IOM portal (24222).",
+  "niveau": "Experience in humanitarian data collection and analysis",
+  "financement": "Paid national position",
+  "pays": "DR Congo (Goma)"
+ },
+ "inso-rca-directeur-adjoint": {
+  "titre": "Deputy Director – Central African Republic",
+  "description": "INSO, which advises NGOs on their safety, is recruiting the deputy director of its Central African Republic programme. Apply on INSO's official portal.",
+  "niveau": "Experience in humanitarian security and team management",
+  "financement": "12-month renewable contract",
+  "pays": "Central African Republic"
+ },
+ "unops-tchad-chef-projet-infrastructure": {
+  "titre": "Senior Project Manager – Digital Infrastructure",
+  "description": "UNOPS is hiring a senior project manager in N'Djamena for the government cloud and data centres of Chad's Ministry of Finance. Apply on the official UNOPS portal (5248).",
+  "niveau": "Solid experience in data centre or IT infrastructure projects",
+  "financement": "International contract (IICA 3)",
+  "pays": "Chad (N'Djamena)"
+ },
+ "imc-rdc-responsable-sante-bunia": {
+  "titre": "Health Officer",
+  "description": "International Medical Corps is hiring a health officer in Bunia to plan and monitor its emergency health programmes. Apply on IMC's official portal (posting 5763).",
+  "niveau": "Health professional with emergency programme experience",
+  "financement": "Paid position",
+  "pays": "DR Congo (Bunia)"
+ },
+ "imc-rdc-responsable-principal-sante-bunia": {
+  "titre": "Senior Health Officer",
+  "description": "International Medical Corps is hiring a senior health officer in Bunia to plan and monitor its emergency health programmes. Apply on IMC's official portal (posting 5761).",
+  "niveau": "Experienced health professional with team leadership",
+  "financement": "Paid position",
+  "pays": "DR Congo (Bunia)"
+ },
+ "canada-jobbank-50373783": {
+  "titre": "Food Service Supervisor, Bathurst",
+  "description": "English-language position. Posted by the employer on the Government of Canada Job Bank, which also accepts applicants without a Canadian work permit. The employer has applied for a Labour Market Impact Assessment (LMIA) to hire a foreign worker; the work permit must be obtained after hiring.",
+  "niveau": "Food service experience",
+  "financement": "CA$17 to CA$19 per hour"
+ },
+ "canada-jobbank-50348070": {
+  "titre": "Dairy Farm Manager, Apohaqui",
+  "description": "English-language position. Posted by the employer on the Government of Canada Job Bank, which also accepts applicants without a Canadian work permit. The employer has applied for a Labour Market Impact Assessment (LMIA) to hire a foreign worker; the work permit must be obtained after hiring.",
+  "niveau": "Dairy farming experience",
+  "financement": "CA$27 per hour"
  }
 }

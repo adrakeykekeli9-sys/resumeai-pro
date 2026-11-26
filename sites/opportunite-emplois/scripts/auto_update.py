@@ -169,7 +169,7 @@ def canada(d, en, maxn=6):
         # titre anglais : même offre sur le site anglais officiel
         page_en = get(f"https://www.jobbank.gc.ca/jobsearch/jobposting/{x['jobbank_id']}")
         te = re.search(r"<title>(.*?)</title>", page_en, re.S)
-        titre_en = html.unescape(te.group(1)).split(" - Job Bank")[0].strip() if te else ""
+        titre_en = re.sub(r"\s*-\s*Job (posting|Bank).*$", "", html.unescape(te.group(1)).strip()) if te else ""
         titre_en = re.sub(r"\s*-\s*[^-]+,\s*[A-Z]{2}\s*$", "", titre_en)
         if not titre_en:
             continue
