@@ -1,0 +1,85 @@
+{
+    "valid_dimensions": [
+      "country",
+      "device", 
+      "page",
+      "query",
+      "searchAppearance",
+      "date",
+      "brandedClassification"
+    ],
+    "operators": {
+      "equals": "Exact match for the specified value",
+      "notEquals": "Does not match the specified value",
+      "contains": "Contains the specified substring",
+      "notContains": "Does not contain the specified substring",
+      "includingRegex": "Matches the specified regular expression",
+      "excludingRegex": "Does not match the specified regular expression"
+    },
+    "search_types": [
+      "web",
+      "image", 
+      "video",
+      "news",
+      "discover",
+      "googleNews",
+      "webMultimodal"
+    ],
+    "filter_examples": {
+      "country_filter": {
+        "dimension": "country",
+        "operator": "equals",
+        "expression": "usa"
+      },
+      "device_filter": {
+        "dimension": "device",
+        "operator": "equals", 
+        "expression": "MOBILE"
+      },
+      "query_contains": {
+        "dimension": "query",
+        "operator": "contains",
+        "expression": "your keyword"
+      },
+      "page_filter": {
+        "dimension": "page",
+        "operator": "contains",
+        "expression": "/blog/"
+      },
+      "search_appearance_filter": {
+        "dimension": "searchAppearance",
+        "operator": "equals",
+        "expression": "FEATURED_SNIPPET"
+      },
+      "date_filter": {
+        "dimension": "date",
+        "operator": "equals",
+        "expression": "2024-01-15"
+      },
+      "branded_filter": {
+        "dimension": "brandedClassification",
+        "operator": "equals",
+        "expression": "BRANDED"
+      }
+    },
+    "filter_lists": {
+      "note": "filterLists matches several exact values for one dimension in one request. Dimension must be country or device. A dimension cannot appear in both filters and filterLists.",
+      "example": [
+        {"dimension": "country", "expressions": ["usa", "gbr", "deu"]},
+        {"dimension": "device", "expressions": ["MOBILE", "TABLET"]}
+      ]
+    },
+    "device_values": [
+      "DESKTOP",
+      "MOBILE", 
+      "TABLET"
+    ],
+    "common_search_appearances": [
+      "AMP_BLUE_LINK",
+      "RICHCARD",
+      "FEATURED_SNIPPET",
+      "WEB_LIGHT_RESULT",
+      "MOBILE_FRIENDLY",
+      "ANDROID_APP"
+    ]
+  }

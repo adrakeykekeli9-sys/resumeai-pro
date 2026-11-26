@@ -6,3 +6,5 @@ coverage/
 *.log
 .env*
 !.env.example
+.claude/skills/seo/.venv/
+**/__pycache__/
