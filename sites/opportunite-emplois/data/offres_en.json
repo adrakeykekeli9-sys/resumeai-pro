@@ -1901,5 +1901,207 @@
   "description": "Togolese NGO CREDEL (Centre for Research and Expertise for Local Development) is hiring a secretary-cashier. Ad relayed by JobRelais; applications go by email before 11 December at 17:00.",
   "niveau": "Background in secretarial work or accounting",
   "financement": "Contract terms set at interview"
+ },
+ "cbm-togo-charge-suivi-evaluation": {
+  "titre": "Monitoring and Evaluation Officer",
+  "description": "CBM, an NGO specialising in disability inclusion, is hiring a monitoring and Evaluation Officer in Togo for its SSF project. Apply on CBM's official recruitment portal.",
+  "niveau": "Experience in project monitoring and evaluation",
+  "financement": "Paid position (full time)",
+  "pays": "Togo"
+ },
+ "cbm-togo-coordinateur-programme": {
+  "titre": "Programme Coordinator",
+  "description": "CBM, an NGO specialising in disability inclusion, is hiring a programme Coordinator in Togo for its SSF project. Apply on CBM's official recruitment portal.",
+  "niveau": "Experience managing development programmes",
+  "financement": "Paid position (full time)",
+  "pays": "Togo"
+ },
+ "cbm-togo-charge-finances-programme": {
+  "titre": "Programme Finance Officer",
+  "description": "CBM, an NGO specialising in disability inclusion, is hiring a programme Finance Officer in Togo for its SSF project. Apply on CBM's official recruitment portal.",
+  "niveau": "Finance or accounting background, NGO experience",
+  "financement": "Paid position (full time)",
+  "pays": "Togo"
+ },
+ "zircon-responsable-commercial-vin": {
+  "titre": "Sales Manager – premium local wine brand",
+  "description": "Recruitment firm Zircon Supply is hiring a sales manager for a premium Togolese local wine brand. Ad relayed by EmploiTogo; apply by email to the address given in the ad, with the requested subject line.",
+  "niveau": "Solid experience in sales and business development",
+  "financement": "Paid position",
+  "pays": "Togo"
+ },
+ "zircon-charge-marketing-digital": {
+  "titre": "Digital Marketing Officer",
+  "description": "Recruitment firm Zircon Supply is hiring a digital marketing officer for a contact centre and web marketing agency. Ad relayed by EmploiTogo; apply by email to the address given in the ad.",
+  "niveau": "Experience in digital marketing and social media",
+  "financement": "Paid position",
+  "pays": "Togo"
+ },
+ "wv-mali-directeur-reseau-visionfund": {
+  "titre": "Network Director – VisionFund Mali",
+  "description": "World Vision is recruiting the network director of VisionFund Mali, its microfinance institution, in Bamako. Apply on the official World Vision portal (JR54278).",
+  "niveau": "Solid microfinance experience",
+  "financement": "Paid fixed-term contract",
+  "pays": "Mali (Bamako)"
+ },
+ "wv-rdc-mobilisation-communautaire-beni": {
+  "titre": "Community Mobilisation Officer (2 posts) – Ebola response",
+  "description": "World Vision is hiring two community mobilisation officers in Beni for its Ebola response. Apply on the official World Vision portal (JR54266, JR54267).",
+  "niveau": "Experience in community mobilisation",
+  "financement": "Paid positions",
+  "pays": "DR Congo (Beni)"
+ },
+ "wv-rdc-gestionnaire-donnees-beni": {
+  "titre": "Data Officer (3 posts) – Ebola response",
+  "description": "World Vision is hiring three data officers in Beni for its Ebola response. Apply on the official World Vision portal (JR54263 to JR54265).",
+  "niveau": "Background in statistics, IT or data management",
+  "financement": "Paid positions",
+  "pays": "DR Congo (Beni)"
+ },
+ "wv-rdc-suivi-contacts-beni": {
+  "titre": "Contact Tracer Officer (4 posts) – Ebola response",
+  "description": "World Vision is hiring four contact tracing officers in Beni for its Ebola response. Apply on the official World Vision portal (JR54259 to JR54262).",
+  "niveau": "Health background, community experience",
+  "financement": "Paid positions",
+  "pays": "DR Congo (Beni)"
+ },
+ "fongi-rdc-directeur-forum": {
+  "titre": "Director, International NGO Forum in DRC",
+  "description": "The International NGO Forum in DRC, hosted by Humanity & Inclusion, is recruiting its director in Kinshasa. Check the deadline on the official application page.",
+  "niveau": "Solid experience in humanitarian coordination",
+  "financement": "Paid position",
+  "pays": "DR Congo (Kinshasa)"
+ },
+ "technoserve-benin-communication-infographiste": {
+  "titre": "Communication Assistant and Graphic Designer – BeniPoule project",
+  "description": "TechnoServe is hiring a communication assistant and graphic designer in Cotonou for its poultry industry transformation project in Benin. Apply on TechnoServe's official portal.",
+  "niveau": "Experience in communication and graphic design",
+  "financement": "Paid position",
+  "pays": "Benin (Cotonou)"
+ },
+ "enabel-mauritanie-expert-sante-mobilite": {
+  "titre": "Public Health and Human Mobility Expert",
+  "description": "Belgian agency Enabel is hiring a public health and human mobility expert in Néma to strengthen the health system in Hodh El Chargui. Apply on Enabel's official portal.",
+  "niveau": "Experience in public health and migration",
+  "financement": "Paid position",
+  "pays": "Mauritania (Néma)"
+ },
+ "intersos-rdc-responsable-finances-bunia": {
+  "titre": "Finance Manager",
+  "description": "INTERSOS is hiring a finance manager in Bunia, starting 1 March 2027 (non-family post). Apply on INTERSOS's official site (SR-38-10339).",
+  "niveau": "Experience in humanitarian financial management",
+  "financement": "Paid expatriate position",
+  "pays": "DR Congo (Bunia)"
+ },
+ "croix-rouge-flandre-burundi-chef-projet": {
+  "titre": "Project Manager – Burundi",
+  "description": "Belgian Red Cross – Flanders is hiring a project manager in Bujumbura, in partnership with the Burundi Red Cross. Apply on the Flemish Red Cross's official portal.",
+  "niveau": "Experience managing humanitarian projects",
+  "financement": "Permanent contract, competitive salary",
+  "pays": "Burundi (Bujumbura)"
+ },
+ "msi-niger-directeur-pays": {
+  "titre": "Country Director – MSI Niger",
+  "description": "MSI Reproductive Choices is recruiting the Country Director of MSI Niger. Apply on MSI's official portal.",
+  "niveau": "Solid leadership experience in reproductive health",
+  "financement": "2-year fixed-term contract",
+  "pays": "Niger"
+ },
+ "ficr-cameroun-charge-dref": {
+  "titre": "DREF Officer (Disaster Response Emergency Fund)",
+  "description": "IFRC is hiring an officer in Yaoundé for its Disaster Response Emergency Fund (DREF), Africa region. Apply on IFRC's official portal.",
+  "niveau": "Experience in emergency management",
+  "financement": "4-month national contract",
+  "pays": "Cameroon (Yaoundé)"
+ },
+ "drc-mali-charge-meal-sevare": {
+  "titre": "MEAL Officer",
+  "description": "DRC is hiring a MEAL officer in Sévaré for its central zone in Mali. Apply on DRC's official site (177284).",
+  "niveau": "Monitoring and evaluation experience",
+  "financement": "12-month national contract",
+  "pays": "Mali (Sévaré)"
+ },
+ "plan-rca-officier-securite-berberati": {
+  "titre": "Security Officer",
+  "description": "Plan International is hiring a security Officer in Berbérati, Central African Republic. Apply on the official Plan International portal.",
+  "niveau": "Experience in the field of the post",
+  "financement": "Paid position (base salary per scale)",
+  "pays": "Central African Republic (Berbérati)"
+ },
+ "plan-rca-officier-approvisionnement-berberati": {
+  "titre": "Supply Chain Officer, Berbérati",
+  "description": "Plan International is hiring a supply Chain Officer in Berbérati, Central African Republic. Apply on the official Plan International portal.",
+  "niveau": "Experience in the field of the post",
+  "financement": "Paid position (base salary per scale)",
+  "pays": "Central African Republic (Berbérati)"
+ },
+ "plan-rca-assistant-rh-berberati": {
+  "titre": "HR Assistant",
+  "description": "Plan International is hiring a hR Assistant in Berbérati, Central African Republic. Apply on the official Plan International portal.",
+  "niveau": "Experience in the field of the post",
+  "financement": "Paid position (base salary per scale)",
+  "pays": "Central African Republic (Berbérati)"
+ },
+ "plan-rca-officier-approvisionnement-paoua": {
+  "titre": "Supply Chain Officer, Paoua",
+  "description": "Plan International is hiring a supply Chain Officer in Paoua, Central African Republic. Apply on the official Plan International portal.",
+  "niveau": "Experience in the field of the post",
+  "financement": "Paid position (base salary per scale)",
+  "pays": "Central African Republic (Paoua)"
+ },
+ "pnud-rdc-coordonnateur-delivery-unit": {
+  "titre": "Delivery Unit Project Coordinator",
+  "description": "UNDP DRC is hiring a coordinator in Kinshasa to support the Prime Minister's Delivery Unit. Apply on UNDP's official portal (38306).",
+  "niveau": "Experience managing governance projects",
+  "financement": "Paid position",
+  "pays": "DR Congo (Kinshasa)"
+ },
+ "pam-tchad-assistant-gestion-finances-mongo": {
+  "titre": "Management Services and Finance Assistant (G5)",
+  "description": "WFP is hiring a management services and finance assistant in Mongo. Apply on WFP's official portal.",
+  "niveau": "Background in management or accounting",
+  "financement": "Paid position",
+  "pays": "Chad (Mongo)"
+ },
+ "oim-senegal-hr-business-partner": {
+  "titre": "Regional HR Business Partner (P category)",
+  "description": "IOM is hiring an HR business partner for West and Central Africa at its Dakar regional office (international recruitment). Apply on IOM's official portal (24266).",
+  "niveau": "Master's degree and solid HR experience",
+  "financement": "Paid international post",
+  "pays": "Senegal (Dakar)"
+ },
+ "reach-mali-charge-recherche": {
+  "titre": "Research Officer – REACH Mali",
+  "description": "IMPACT Initiatives is hiring a research officer in Bamako for REACH Mali. Apply on IMPACT Initiatives' official site.",
+  "niveau": "Experience in humanitarian research and data analysis",
+  "financement": "6-month contract",
+  "pays": "Mali (Bamako)"
+ },
+ "crs-tchad-charge-projet-protection": {
+  "titre": "Senior Project Officer – Protection",
+  "description": "CRS Chad is hiring a senior protection project officer. Apply on CRS's official portal (3003120).",
+  "niveau": "Experience in humanitarian protection",
+  "financement": "Paid position",
+  "pays": "Chad"
+ },
+ "crs-tchad-responsable-meal": {
+  "titre": "MEAL Manager",
+  "description": "CRS Chad is hiring a monitoring, evaluation, accountability and learning manager. Apply on CRS's official portal (3003124).",
+  "niveau": "Solid monitoring and evaluation experience",
+  "financement": "Paid position",
+  "pays": "Chad"
+ },
+ "unops-rca-chef-projet-bangui": {
+  "titre": "Project Manager",
+  "description": "UNOPS is hiring a project manager in Bangui for its Central African Republic portfolio. Apply on UNOPS's official portal (5337).",
+  "niveau": "Solid project management experience",
+  "financement": "International contract (IICA 2)",
+  "pays": "Central African Republic (Bangui)"
+ },
+ "canada-jobbank-50804537": {
+  "titre": "Herd attendant, Saint-Urbain-de-Charlevoix",
+  "description": "French-language position. Posted by the employer on the Government of Canada Job Bank, which also accepts applicants without a Canadian work permit. The employer has applied for a Labour Market Impact Assessment (LMIA) to hire a foreign worker; the work permit must be obtained after hiring.",
+  "niveau": "See the requirements in the official posting",
+  "financement": "21,00 CA$ per hour"
  }
 }
