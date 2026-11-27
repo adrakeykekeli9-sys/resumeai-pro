@@ -41,13 +41,34 @@ jobs:
           SITE_URL: https://opportunite-emplois.org
         run: node build.mjs
       - name: Publier
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL || 'claude-opus-5-5' }}
         run: |
           git config user.name "opportunite-emplois-bot"
           git config user.email "opportunite-emplois-bot@users.noreply.github.com"
+          MSG="Mise à jour automatique du $(date -u +%d/%m/%Y)"
           git add data
           if git diff --cached --quiet; then echo "Rien de nouveau"; exit 0; fi
-          git commit -m "Mise à jour automatique du $(date -u +%d/%m/%Y)"
-          for i in 1 2 3; do git pull --rebase origin main && git push origin HEAD:main && break || sleep 10; done
+          git commit -qm "$MSG"
+          for i in 1 2 3; do
+            git fetch -q origin main
+            if git rebase origin/main; then
+              git push origin HEAD:main && { echo "Publié"; exit 0; }
+            else
+              # Une autre mise à jour a été publiée entre-temps (par exemple la routine manuelle) :
+              # on repart de sa version et on relance la collecte, qui ignore les annonces déjà vues.
+              echo "::warning::Conflit avec une autre mise à jour : nouvelle collecte sur la dernière version"
+              git rebase --abort
+              git reset -q --hard origin/main
+              python3 -I scripts/auto_update.py
+              git add data
+              if git diff --cached --quiet; then echo "Rien de nouveau après la mise à jour déjà publiée"; exit 0; fi
+              git commit -qm "$MSG"
+            fi
+            sleep 10
+          done
+          echo "::error::Impossible de publier la mise à jour"; exit 1
       - name: Remettre le site en ligne (Render)
         env:
           RENDER_DEPLOY_HOOK: ${{ secrets.RENDER_DEPLOY_HOOK }}
