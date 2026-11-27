@@ -155,7 +155,7 @@ def canada(d, en, maxn=6):
                         o["dateLimite"] = dl
             continue
         titre = x["titre"]
-        m = re.match(r"(.+?) - (.+?), ([A-Z]{2})\s*$", titre)
+        m = re.match(r"(.+) - (.+?), ([A-Z]{2})\s*$", titre)
         if not m:
             continue
         poste, ville, prov = m.group(1).strip(), m.group(2).strip(), m.group(3)
