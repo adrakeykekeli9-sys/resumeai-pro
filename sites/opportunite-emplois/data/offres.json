@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-27",
+ "maj": "2026-11-28",
  "offres": [
   {
    "id": "unicef-me-sa",
@@ -4628,6 +4628,63 @@
    "international": true,
    "description": "Poste en anglais. Offre publiée par l'employeur sur le Guichet-Emplois du gouvernement du Canada, qui accepte aussi les candidats sans permis de travail canadien. L'employeur a demandé une étude d'impact (EIMT) pour embaucher un travailleur étranger ; le permis de travail reste à obtenir après l'embauche.",
    "lien": "https://www.guichetemplois.gc.ca/rechercheemplois/offredemploi/50787322"
+  },
+  {
+   "id": "tti-coordinateur-traductions-lome",
+   "type": "emploi",
+   "titre": "Coordinateur(trice) des traductions et de la mise en page, Lomé",
+   "organisme": "The Timothy Initiative (TTI)",
+   "pays": "Togo (Lomé)",
+   "niveau": "Expérience en mise en page (InDesign), relecture et gestion de projets de traduction",
+   "financement": "Salaire non précisé",
+   "dateLimite": "2026-12-31",
+   "publie": "2026-11-28",
+   "international": false,
+   "secteur": "ong",
+   "description": "L'organisation chrétienne The Timothy Initiative recrute à Lomé, à temps plein, un coordinateur des traductions pour son bureau régional : mise en page de livres de formation, création de couvertures sous InDesign et relecture des traductions. Le dossier (CV, lettre, recommandation d'une église locale et portfolio) s'envoie par e-mail à l'adresse indiquée dans l'annonce, avant le 31 décembre 2026. Annonce relayée par EmploiTogo.",
+   "lien": "https://www.emploitogo.info/the-timothy-initiative-tti-recrute-31-12-2026/"
+  },
+  {
+   "id": "bourse-queen-elizabeth-commonwealth-2027",
+   "type": "bourse",
+   "titre": "Bourses Queen Elizabeth Commonwealth 2027-2028 : master de deux ans",
+   "organisme": "Association of Commonwealth Universities (ACU)",
+   "pays": "Pays du Commonwealth",
+   "niveau": "Master",
+   "financement": "Entièrement financée",
+   "dateLimite": "2027-01-13",
+   "publie": "2026-11-28",
+   "international": true,
+   "description": "Les bourses Queen Elizabeth Commonwealth financent un master de deux ans dans une université d'un autre pays du Commonwealth, avec frais de scolarité, voyage et allocation de vie. Le Togo étant membre du Commonwealth, les candidats togolais peuvent postuler. La candidature se fait sur le site de l'ACU avant le 13 janvier 2027 à 15 h (UTC), sans aucune prolongation.",
+   "lien": "https://www.acu.ac.uk/funding-opportunities/for-students/scholarships/queen-elizabeth-commonwealth-scholarships/"
+  },
+  {
+   "id": "hfg-african-fellows-2027",
+   "type": "bourse",
+   "titre": "Bourses HFG African Fellows 2027 pour doctorants africains",
+   "organisme": "Harry Frank Guggenheim Foundation (HFG)",
+   "pays": "Afrique (universités africaines)",
+   "niveau": "Doctorat",
+   "financement": "10 000 $ US de recherche de terrain + accompagnement",
+   "dateLimite": "2027-01-15",
+   "publie": "2026-11-28",
+   "international": true,
+   "description": "La fondation Harry Frank Guggenheim soutient des doctorants inscrits dans une université africaine dont la thèse porte sur la violence, les conflits ou l'agression. La bourse de deux ans comprend une subvention de terrain de 10 000 dollars, un mentorat et la participation à des conférences. Les candidats doivent avoir 45 ans au plus et vivre en Afrique ; dossier à déposer en ligne avant le 15 janvier 2027.",
+   "lien": "https://www.hfg.org/african-fellows/"
+  },
+  {
+   "id": "icma-scholarship-2027",
+   "type": "bourse",
+   "titre": "Bourses ICMA 2027 : diplôme en ligne en finance de marché",
+   "organisme": "International Capital Market Association (ICMA)",
+   "pays": "En ligne (Afrique, Asie-Pacifique, Amérique latine)",
+   "niveau": "19 à 30 ans, bon niveau d'études",
+   "financement": "Frais de cours et d'examen pris en charge",
+   "dateLimite": "2027-01-15",
+   "publie": "2026-11-28",
+   "international": true,
+   "description": "L'ICMA offre 15 bourses à des jeunes de 19 à 30 ans d'Afrique, d'Asie-Pacifique et d'Amérique latine pour suivre en ligne, pendant 12 mois, un de ses diplômes en marchés financiers (dette, titres et dérivés, opérations, finance durable). Les frais de cours et d'examen sont entièrement couverts, mais il faut réussir les examens pour garder la bourse. Candidature sur le site de l'ICMA avant le 15 janvier 2027.",
+   "lien": "https://www.icmagroup.org/executive-education/2027-scholarship-programme/"
   }
  ]
 }

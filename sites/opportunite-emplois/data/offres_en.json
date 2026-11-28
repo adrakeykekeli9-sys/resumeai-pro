@@ -2157,5 +2157,30 @@
   "description": "English-language position. Posted by the employer on the Government of Canada Job Bank, which also accepts applicants without a Canadian work permit. The employer has applied for a Labour Market Impact Assessment (LMIA) to hire a foreign worker; the work permit must be obtained after hiring.",
   "niveau": "See the requirements in the official posting",
   "financement": "31,50 CA$ per hour"
+ },
+ "tti-coordinateur-traductions-lome": {
+  "titre": "Translations and layout coordinator, Lomé",
+  "description": "The faith-based organization The Timothy Initiative is hiring a full-time translations coordinator for its regional office in Lomé: laying out training books, designing covers in InDesign and proofreading translations. Send the application (CV, cover letter, recommendation from a local church and portfolio) by e-mail to the address given in the posting, by 31 December 2026. Posting shared by EmploiTogo.",
+  "niveau": "Experience in layout (InDesign), proofreading and translation project management",
+  "financement": "Salary not specified"
+ },
+ "bourse-queen-elizabeth-commonwealth-2027": {
+  "titre": "Queen Elizabeth Commonwealth Scholarships 2027-2028: two-year master's",
+  "description": "The Queen Elizabeth Commonwealth Scholarships fund a two-year master's degree at a university in another Commonwealth country, covering tuition, travel and a living allowance. Togo is a Commonwealth member, so Togolese candidates can apply. Applications are made on the ACU website by 13 January 2027 at 15:00 UTC, with no extensions.",
+  "niveau": "Master's",
+  "financement": "Fully funded"
+ },
+ "hfg-african-fellows-2027": {
+  "titre": "HFG African Fellows 2027 for African PhD students",
+  "description": "The Harry Frank Guggenheim Foundation supports PhD students enrolled at an African university whose research deals with violence, conflict or aggression. The two-year fellowship includes a USD 10,000 fieldwork grant, mentoring and conference participation. Applicants must be 45 or younger and live in Africa; apply online by 15 January 2027.",
+  "niveau": "PhD",
+  "financement": "USD 10,000 fieldwork grant + mentoring"
+ },
+ "icma-scholarship-2027": {
+  "titre": "ICMA 2027 scholarships: online diploma in capital markets",
+  "description": "ICMA offers 15 scholarships to people aged 19 to 30 from Africa, Asia Pacific and Latin America to take one of its capital markets diplomas online over 12 months (debt, securities and derivatives, operations, sustainable finance). Course and exam fees are fully covered, but you must pass the exams to keep the scholarship. Apply on the ICMA website by 15 January 2027.",
+  "niveau": "Aged 19 to 30, good level of education",
+  "financement": "Course and exam fees covered",
+  "pays": "Online (Africa, Asia Pacific, Latin America)"
  }
 }
